@@ -1,0 +1,8 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#1a1a1a"/>
+  <rect x="50" y="50" width="700" height="500" fill="#2a2a2a" stroke="#4a5568" stroke-width="2"/>
+  <text x="400" y="300" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Liquid Cooling</text>
+  <text x="400" y="340" text-anchor="middle" fill="#a0aec0" font-family="Arial, sans-serif" font-size="18">Advanced Cooling Systems</text>
+  <circle cx="400" cy="200" r="40" fill="#4299e1" stroke="#3182ce" stroke-width="3"/>
+  <path d="M370 200 Q400 170 430 200 Q400 230 370 200" fill="#63b3ed"/>
+</svg>

@@ -4,19 +4,19 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Logo from "@/components/logo";
-import businessVehicleImg from "@assets/118159882_2661484653954988_4487587664726070543_n_1749805657552.jpg";
-import vehicleServicingImg from "@assets/480580703_8422622434507819_6324339413906591208_n_1749805657553.jpg";
-import dieselInjectorsImg from "@assets/480767987_8424530307650365_973478690302225057_n_1749805657553.jpg";
-import sparkPlugImg from "@assets/480769492_8438025702967492_3915631524323777433_n_1749805657554.jpg";
-import coolantSensorsImg from "@assets/481011555_8433712596732136_7045488006639825717_n_1749805657554.jpg";
-import servicePromoImg from "@assets/481906401_8469623613141034_5789006434150836708_n_1749805657555.jpg";
-import batteryPackImg from "@assets/486147528_1252681930196431_3887197685312681905_n_1749805657555.jpg";
-import liquidCoolingImg from "@assets/486261126_1252681640196460_4688732123092460616_n_1749805657556.jpg";
-import hybridBatteryImg from "@assets/486284443_1252677416863549_7166789577646969114_n_1749805657556.jpg";
-import aquaFitImg from "@assets/486377372_1252553180209306_3213171532241942266_n_1749805657557.jpg";
-import hybridBatteryPackImg from "@assets/495601431_8925306940906030_5804913198261990529_n_1749805657557.jpg";
-import teamPhotoImg from "@assets/495601431_8925306940906030_5804913198261990529_n_1749805657557.jpg";
-import warrantyImg from "@assets/WhatsApp Image 2025-06-11 at 14.38.40_0b193b83_1749805671941.jpg";
+const businessVehicleImg = "/images/business-vehicle.svg";
+const vehicleServicingImg = "/images/vehicle-servicing.svg";
+const dieselInjectorsImg = "/images/diesel-injectors.svg";
+const sparkPlugImg = "/images/spark-plugs.svg";
+const coolantSensorsImg = "/images/coolant-sensors.svg";
+const servicePromoImg = "/images/service-promo.svg";
+const batteryPackImg = "/images/battery-pack.svg";
+const liquidCoolingImg = "/images/liquid-cooling.svg";
+const hybridBatteryImg = "/images/hybrid-battery.svg";
+const aquaFitImg = "/images/aqua-fit.svg";
+const hybridBatteryPackImg = "/images/hybrid-battery.svg";
+const teamPhotoImg = "/images/business-vehicle.svg";
+const warrantyImg = "/images/warranty.svg";
 
 export default function BlogPage() {
   const services = [
