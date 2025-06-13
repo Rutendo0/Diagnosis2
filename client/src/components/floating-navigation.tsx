@@ -28,7 +28,7 @@ export default function FloatingNavigation() {
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
             <img 
-              src="@assets/image_1749801530194.png" 
+              src="/attached_assets/image_1749801530194.png" 
               alt="Diagnosis & Sensors Logo" 
               className="h-10 w-auto"
             />

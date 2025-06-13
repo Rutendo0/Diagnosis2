@@ -1,26 +1,40 @@
-import { Search, Cpu, Wrench } from "lucide-react";
+import { Search, Cpu, Wrench, Settings, LifeBuoy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function ServicesSection() {
   const services = [
     {
-      title: "Injector Pressure Testing",
-      description: "Diesel injection diagnosis, petrol injector testing & diagnosis, uniformity & sprayability test, leakage test, injection flow test & ultrasonic cleaning.",
+      title: "Injector Pressure Test",
+      description: "Diesel injection diagnosis, Petrol Injector Testing & Diagnosis, uniformity & sprayability test, injection flow test & Ultrasonic Cleaning",
       icon: Search,
       color: "brand-orange",
       image: "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     },
     {
       title: "Vehicle Diagnostics & Troubleshooting",
-      description: "Expert vehicle diagnostics and troubleshooting services, identifying issues quickly and accurately to ensure optimal performance and reliability.",
+      description: "Expert vehicle diagnostics and troubleshooting services, identifying issues quickly and accurately to ensure optimal performance",
       icon: Cpu,
       color: "brand-blue",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     },
     {
-      title: "Automotive Sensors & Parts",
-      description: "High-quality automotive sensors and electronic components for all major vehicle systems. Serving businesses, individuals, and institutions with precision.",
+      title: "Vehicle Automotive Repair",
+      description: "Diesel Repairs, Service Replacement, Automotive Repair, Multi-Point Inspection, Filters, Checking Leak, Checking the sensor",
       icon: Wrench,
+      color: "brand-orange",
+      image: "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+    },
+    {
+      title: "Vehicle Parts & Accessories",
+      description: "Parts and diesel supplies, Petrol and aftermarket / premium automotive housing, diesel injection, automotive electronics, Commrail fuel, Diesel fuel connection, Abs sensors, Industrial valves, Air control system",
+      icon: Settings,
+      color: "brand-blue",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+    },
+    {
+      title: "Automotive Sensors Supply & Fitting",
+      description: "Supply and fitting of automotive sensors such as Airflow direction, car fuel system, water temperature, speed sensor, position sensor, exhaust gas sensor as well as related system vehicle air con repairer",
+      icon: LifeBuoy,
       color: "brand-orange",
       image: "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     }
@@ -36,7 +50,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="glassmorphism rounded-2xl border-none hover:transform hover:scale-105 transition-all duration-300 group bg-transparent">
               <CardContent className="p-8">
