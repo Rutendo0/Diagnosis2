@@ -179,7 +179,7 @@ export default function BlogPage() {
       </nav>
 
       {/* Hero Header Section */}
-      <section className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
+      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
@@ -197,14 +197,14 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8">
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
           {services.map((service) => (
             <Card key={service.id} className="group hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 glassmorphism rounded-2xl border border-[var(--brand-blue)]/20 bg-transparent overflow-hidden transform hover:-translate-y-2">
               <CardHeader className="p-0">
-                <div className="relative overflow-hidden h-64">
+                <div className="relative overflow-hidden h-48">
                   <img
                     src={service.image}
                     alt={service.title}
