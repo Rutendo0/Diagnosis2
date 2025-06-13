@@ -54,7 +54,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-white">Get In Touch</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Ready to elevate your automotive diagnostic capabilities? Connect with our experts today.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function ContactSection() {
                   <i className="fas fa-map-marker-alt text-2xl text-white"></i>
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-[var(--brand-blue)]">Bulawayo Branch</h3>
-                <p className="text-gray-300 mb-2">114 George Silundika St.</p>
+                <p className="text-white mb-2">114 George Silundika St.</p>
                 <div className="space-y-1 text-sm text-gray-400">
                   <a href="tel:+263292883884" className="block hover:text-[var(--brand-blue)]">+263 292 88 3884</a>
                   <a href="https://wa.me/263778633785" className="block hover:text-[var(--brand-blue)]">+263 779 298 117</a>
@@ -123,7 +123,7 @@ export default function ContactSection() {
                     <i className="fab fa-instagram text-white text-sm"></i>
                   </a>
                   <a 
-                    href="https://wa.me/263778633785" 
+                    href="https://wa.me/263719974846" 
                     className="bg-green-500 hover:bg-green-600 rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"

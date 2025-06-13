@@ -38,42 +38,42 @@ export default function FloatingNavigation() {
               <div className="hidden lg:flex items-center space-x-8">
                 <button 
                   onClick={() => scrollToSection('home')} 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Home</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </button>
                 <button 
                   onClick={() => scrollToSection('services')} 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white/ hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Services</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </button>
                 <button 
                   onClick={() => scrollToSection('products')} 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Products</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')} 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">About</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </button>
                 <Link 
                   href="/blog" 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Blog</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </Link>
                 <button 
                   onClick={() => scrollToSection('contact')} 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Contact</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -112,7 +112,7 @@ export default function FloatingNavigation() {
                 <Logo className="h-8 w-auto" />
                 <button 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-white/90 hover:text-white"
+                  className="text-white hover:text-white"
                 >
                   <X size={24} />
                 </button>
@@ -121,38 +121,38 @@ export default function FloatingNavigation() {
               <div className="space-y-8">
                 <button 
                   onClick={() => scrollToSection('home')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white/90 hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
                 >
                   Home
                 </button>
                 <button 
                   onClick={() => scrollToSection('services')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white/90 hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
                 >
                   Services
                 </button>
                 <button 
                   onClick={() => scrollToSection('products')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white/90 hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
                 >
                   Products
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white/90 hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
                 >
                   About
                 </button>
                 <Link 
                   href="/blog" 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white/90 hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50" 
+                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50" 
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
                 </Link>
                 <button 
                   onClick={() => scrollToSection('contact')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white/90 hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
                 >
                   Contact
                 </button>

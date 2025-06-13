@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <div className="font-orbitron font-bold text-3xl gradient-text mb-4">DIAGNOSIS & SENSORS</div>
-          <p className="text-gray-400 mb-6">Premier automotive diagnostic solutions for the modern workshop</p>
+          <p className="text-white mb-6">Premier automotive diagnostic solutions for the modern workshop</p>
           <div className="flex justify-center space-x-6 mb-6 flex-wrap">
             <button 
               onClick={() => scrollToSection('home')} 
@@ -21,7 +21,7 @@ export default function Footer() {
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-gray-400 hover:text-[var(--brand-orange)] transition-colors duration-300"
+              className="text-white hover:text-[var(--brand-orange)] transition-colors duration-300"
             >
               Services
             </button>

@@ -1,10 +1,10 @@
 import { Award, Users, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const teamPhotoImg = "/images/business-vehicle.jpg";
+const teamPhotoImg = "/images/about.jpg";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white to-[var(--dark-bg)]">
+    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white/100 to-[var(--dark-bg)]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>

@@ -1,8 +1,8 @@
 import { Check, Battery, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const hybridBatteryPackImg = "/images/hybrid-battery.jpg";
-const hybridBatteryImg = "/images/hybrid-battery.jpg";
-const liquidCoolingImg = "/images/liquid-cooling.jpg";
+const hybridBatteryPackImg = "/images/battery3.jpg";
+const hybridBatteryImg = "/images/battery2.jpg";
+const liquidCoolingImg = "/images/battery.jpg";
 
 export default function ProductsShowcase() {
   return (
@@ -10,7 +10,7 @@ export default function ProductsShowcase() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 ultra-premium-text">Our Products & Services</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair
           </p>
         </div>
@@ -23,10 +23,10 @@ export default function ProductsShowcase() {
                   <Battery className="mr-3" size={24} />
                   Hybrid Battery Packs
                 </h3>
-                <p className="text-gray-300 mb-4">
+                <p className="text-white mb-4">
                   Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.
                 </p>
-                <ul className="space-y-2 text-gray-400">
+                <ul className="space-y-2 text-white">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
                     Low mileage batteries
@@ -53,10 +53,10 @@ export default function ProductsShowcase() {
                   <Zap className="mr-3" size={24} />
                   Liquid Battery Cooling Systems
                 </h3>
-                <p className="text-gray-300 mb-4">
+                <p className="text-white mb-4">
                   Specialized liquid battery cooling systems for hybrid vehicles ensuring optimal battery performance and longevity.
                 </p>
-                <ul className="space-y-2 text-gray-400">
+                <ul className="space-y-2 text-white">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
                     Hybrid vehicle cooling

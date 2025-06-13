@@ -1,10 +1,10 @@
 import { Search, Cpu, Wrench, Settings, LifeBuoy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const vehicleServicingImg = "/images/vehicle-servicing.jpg";
-const dieselInjectorsImg = "/images/diesel-injectors.jpg";
-const sparkPlugImg = "/images/spark-plugs.jpg";
-const coolantSensorsImg = "/images/coolant-sensors.jpg";
-const servicePromoImg = "/images/service-promo.jpg";
+const vehicleServicingImg = "/images/vehicle.jpg";
+const dieselInjectorsImg = "/images/injector.jpg";
+const sparkPlugImg = "/images/parts.jpg";
+const coolantSensorsImg = "/images/sensors.jpg";
+const servicePromoImg = "/images/vehicle-servicing.jpg";
 
 export default function ServicesSection() {
   const services = [

@@ -119,7 +119,7 @@ export default function HeroSection() {
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <Button
-          onClick={() => window.open('https://wa.me/263242770389', '_blank')}
+          onClick={() => window.open('https://wa.me/+263719974846', '_blank')}
           className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 shadow-2xl hover:shadow-green-500/40 transition-all duration-300 transform hover:scale-110 animate-glow"
         >
           <MessageSquare size={28} />

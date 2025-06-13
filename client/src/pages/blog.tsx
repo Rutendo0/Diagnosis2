@@ -4,19 +4,19 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Logo from "@/components/logo";
-const businessVehicleImg = "/images/business-vehicle.jpg";
-const vehicleServicingImg = "/images/vehicle-servicing.jpg";
-const dieselInjectorsImg = "/images/diesel-injectors.jpg";
-const sparkPlugImg = "/images/spark-plugs.jpg";
-const coolantSensorsImg = "/images/coolant-sensors.jpg";
-const servicePromoImg = "/images/service-promo.jpg";
-const batteryPackImg = "/images/battery-pack.jpg";
-const liquidCoolingImg = "/images/liquid-cooling.jpg";
-const hybridBatteryImg = "/images/hybrid-battery.jpg";
-const aquaFitImg = "/images/aqua.jpg";
-const hybridBatteryPackImg = "/images/hybrid-battery.jpg";
-const teamPhotoImg = "/images/business-vehicle.jpg";
-const warrantyImg = "/images/warranty.jpg";
+const businessVehicleImg = "/images/image4.jpg";
+const vehicleServicingImg = "/images/image4.jpg";
+const coolentTemperitureSensorsImg = "/images/image3.jpg";
+const sparkPlugImg = "/images/image2.jpg";
+const coolantSensorsImg = "/images/image3.jpg";
+const servicePromoImg = "/images/image9.jpg";
+const batteryPackImg = "/images/image7.jpg";
+const liquidCoolingImg = "/images/image6.jpg";
+const hybridBatteryImg = "/images/image9.jpg";
+const aquaFitImg = "/images/image10.jpg";
+const hybridBatteryPackImg = "/images/image8.jpg";
+const teamPhotoImg = "/images/image12.jpg";
+const warrantyImg = "/images/image13.jpg";
 
 export default function BlogPage() {
   const services = [
@@ -25,8 +25,6 @@ export default function BlogPage() {
       title: "Vehicle Servicing and Repairs",
       excerpt: "Complete automotive servicing including wiring repairs, sensor replacement, common rail injector fitments, high pressure pump fitment, and oil changes.",
       image: vehicleServicingImg,
-      category: "Services",
-      icon: <Wrench className="w-5 h-5" />,
       services: [
         "Wiring repairs",
         "Sensor replacement", 
@@ -42,9 +40,7 @@ export default function BlogPage() {
       id: 2,
       title: "Diesel Injectors - IN STOCK",
       excerpt: "Toyota D4D 1KD, Land Rover TDV6, Mercedes Benz and many more. Visit us today and get your injectors checked, serviced or replaced.",
-      image: dieselInjectorsImg,
-      category: "Parts",
-      icon: <Zap className="w-5 h-5" />,
+      image: coolentTemperitureSensorsImg,
       services: [
         "Toyota D4D 1KD",
         "Land Rover TDV6", 
@@ -59,8 +55,6 @@ export default function BlogPage() {
       title: "Spark Plug Diagnostics & Replacement",
       excerpt: "A Spark Plug supplies the spark that ignites the air/fuel mixture, creating the explosion which makes the engine produce power.",
       image: sparkPlugImg,
-      category: "Diagnostics",
-      icon: <Zap className="w-5 h-5" />,
       services: [
         "Engine misfire diagnosis",
         "High fuel consumption analysis",
@@ -74,8 +68,6 @@ export default function BlogPage() {
       title: "Coolant Temperature Sensors",
       excerpt: "Professional coolant temperature sensor diagnosis and replacement for optimal engine performance and temperature regulation.",
       image: coolantSensorsImg,
-      category: "Sensors",
-      icon: <Wrench className="w-5 h-5" />,
       services: [
         "Temperature sensor testing",
         "Sensor replacement",
@@ -88,8 +80,6 @@ export default function BlogPage() {
       title: "Complete Battery Packs - Toyota Aqua & Honda Fit Hybrid",
       excerpt: "Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.",
       image: hybridBatteryPackImg,
-      category: "Battery",
-      icon: <Battery className="w-5 h-5" />,
       services: [
         "Low mileage batteries",
         "3 months warranty",
@@ -104,8 +94,6 @@ export default function BlogPage() {
       title: "Liquid Battery Cooling Systems",
       excerpt: "Specialized liquid battery cooling systems for hybrid vehicles ensuring optimal battery performance and longevity.",
       image: liquidCoolingImg,
-      category: "Hybrid Systems",
-      icon: <Battery className="w-5 h-5" />,
       services: [
         "Hybrid vehicle cooling",
         "Battery temperature management",
@@ -118,8 +106,6 @@ export default function BlogPage() {
       title: "Professional Service - Car Trouble Solutions",
       excerpt: "Service due? Car trouble? Wait no more! Our experienced technicians provide comprehensive automotive diagnostics and repairs.",
       image: servicePromoImg,
-      category: "Services",
-      icon: <Wrench className="w-5 h-5" />,
       services: [
         "Comprehensive diagnostics",
         "Professional service",
@@ -132,8 +118,6 @@ export default function BlogPage() {
       title: "Our Business Vehicle",
       excerpt: "Our mobile diagnostic unit equipped with the latest automotive diagnostic equipment, ready to serve you at your location.",
       image: businessVehicleImg,
-      category: "About Us",
-      icon: <MapPin className="w-5 h-5" />,
       services: [
         "Mobile diagnostics",
         "On-site service",
@@ -154,28 +138,28 @@ export default function BlogPage() {
               <div className="hidden lg:flex items-center space-x-8">
                 <Link 
                   href="/" 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Home</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </Link>
                 <Link 
                   href="/#services" 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Services</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </Link>
                 <Link 
                   href="/#products" 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Products</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </Link>
                 <Link 
                   href="/#about" 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">About</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -189,7 +173,7 @@ export default function BlogPage() {
                 </Link>
                 <Link 
                   href="/#contact" 
-                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                  className="relative font-orbitron font-medium text-white/ hover:text-white transition-all duration-300 group"
                 >
                   <span className="relative z-10">Contact</span>
                   <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -210,7 +194,7 @@ export default function BlogPage() {
       </nav>
 
       {/* Hero Header Section */}
-      <section className="relative pt-32 pb-24 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
+      <section className="relative pt-32 pb-24 px-6 bg-gradient-to-b from-white to-[var(--dark-bg)]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
@@ -224,7 +208,7 @@ export default function BlogPage() {
           <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 ultra-premium-text">
             Our Services
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-light">
             Professional automotive solutions with premium quality and exceptional service
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto"></div>
@@ -247,10 +231,6 @@ export default function BlogPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4">
-                    <Badge variant="secondary" className="bg-[var(--brand-orange)] text-white border-0 flex items-center space-x-1 font-orbitron shadow-lg backdrop-blur-sm">
-                      {service.icon}
-                      <span>{service.category}</span>
-                    </Badge>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-8 h-8 bg-[var(--brand-orange)] rounded-full flex items-center justify-center">
@@ -265,7 +245,7 @@ export default function BlogPage() {
                 <h2 className="ultra-premium-text font-orbitron text-xl font-bold mb-3 transition-all duration-300">
                   {service.title}
                 </h2>
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <p className="text-white mb-4 leading-relaxed">
                   {service.excerpt}
                 </p>
                 
@@ -275,7 +255,7 @@ export default function BlogPage() {
                     <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full mr-2"></div>
                     Services Include:
                   </h4>
-                  <ul className="text-sm text-gray-400 space-y-2">
+                  <ul className="text-sm text-white space-y-2">
                     {service.services.slice(0, 4).map((item, index) => (
                       <li key={index} className="flex items-center space-x-3 group/item hover:text-gray-300 transition-colors">
                         <div className="w-1.5 h-1.5 bg-[var(--brand-orange)] rounded-full group-hover/item:scale-125 transition-transform"></div>
@@ -292,7 +272,7 @@ export default function BlogPage() {
                 </div>
                 
                 <div className="flex items-center justify-between pt-4 border-t border-[var(--brand-blue)]/20">
-                  <div className="flex items-center space-x-4 text-xs text-gray-500">
+                  <div className="flex items-center space-x-4 text-xs text-white">
                     <div className="flex items-center space-x-1 hover:text-[var(--brand-blue)] transition-colors">
                       <Calendar className="w-3 h-3" />
                       <span>Available</span>
@@ -330,7 +310,7 @@ export default function BlogPage() {
             <Button 
               size="lg"
               className="rounded-full w-16 h-16 bg-[var(--brand-blue)] hover:bg-[var(--brand-blue)]/80 shadow-2xl hover:shadow-[var(--brand-blue)]/40 transition-all duration-300 transform hover:scale-110"
-              onClick={() => window.open('https://wa.me/263242770389', '_blank')}
+              onClick={() => window.open('https://wa.me/+263719974846', '_blank')}
             >
               <MessageSquare size={24} />
             </Button>
