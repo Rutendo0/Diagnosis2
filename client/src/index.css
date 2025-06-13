@@ -149,6 +149,60 @@
     50% { transform: translateY(-10px); }
   }
 
+  /* Lamborghini-inspired animations */
+  @keyframes slideInFromLeft {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  /* Lamborghini-style premium effects */
+  .lambo-gradient {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  }
+
+  .lambo-border {
+    border-image: linear-gradient(45deg, var(--brand-orange), var(--brand-blue), var(--brand-orange)) 1;
+  }
+
+  .lambo-text-shadow {
+    text-shadow: 
+      0 0 10px rgba(255, 107, 53, 0.3),
+      0 0 20px rgba(255, 107, 53, 0.2),
+      0 0 30px rgba(255, 107, 53, 0.1);
+  }
+
+  /* Enhanced glassmorphism with Lamborghini style */
+  .lambo-glass {
+    backdrop-filter: blur(20px) saturate(200%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }

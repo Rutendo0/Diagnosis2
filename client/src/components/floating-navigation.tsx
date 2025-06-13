@@ -34,10 +34,13 @@ export default function FloatingNavigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 relative">
-        {/* Glass Panel Background */}
-        <div className="absolute inset-0 glassmorphism-premium"></div>
+        {/* Lamborghini-inspired Glass Panel */}
+        <div className="absolute inset-0 lambo-glass"></div>
+        
+        {/* Accent Line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
 
-        <div className="relative z-10 bg-transparent border-b border-white/20">
+        <div className="relative z-10 bg-transparent">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-12">
