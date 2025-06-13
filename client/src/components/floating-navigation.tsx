@@ -26,7 +26,13 @@ export default function FloatingNavigation() {
     <>
       <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 glassmorphism rounded-full px-8 py-4 transition-all duration-300 ${isScrolled ? 'bg-opacity-95' : ''}`}>
         <div className="flex items-center space-x-8">
-          <div className="font-orbitron font-bold text-xl gradient-text">D&S</div>
+          <div className="flex items-center space-x-2">
+            <img 
+              src="@assets/image_1749801530194.png" 
+              alt="Diagnosis & Sensors Logo" 
+              className="h-10 w-auto"
+            />
+          </div>
           <div className="hidden md:flex space-x-6">
             <button onClick={() => scrollToSection('home')} className="hover:text-[var(--brand-orange)] transition-colors duration-300">
               Home
