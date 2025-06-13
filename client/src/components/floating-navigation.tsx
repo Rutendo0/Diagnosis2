@@ -26,11 +26,18 @@ export default function FloatingNavigation() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-[var(--dark-bg)]/95 backdrop-blur-xl border-b border-white/10' 
-          : 'bg-transparent'
-      }`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url(https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1920&h=400&fit=crop&crop=center)',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--dark-bg)]/95 via-[var(--dark-bg)]/90 to-[var(--dark-bg)]/95 backdrop-blur-sm"></div>
+        </div>
+
+        <div className="relative z-10 bg-transparent border-b border-gray-800/30">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-12">
@@ -80,7 +87,7 @@ export default function FloatingNavigation() {
                 </button>
               </div>
             </div>
-            
+
             <div className="hidden lg:flex items-center space-x-4">
               <button 
                 onClick={() => window.open('tel:+263242770389', '_self')}
@@ -100,6 +107,8 @@ export default function FloatingNavigation() {
             </div>
           </div>
         </div>
+</div>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -117,7 +126,7 @@ export default function FloatingNavigation() {
                   <X size={24} />
                 </button>
               </div>
-              
+
               <div className="space-y-8">
                 <button 
                   onClick={() => scrollToSection('home')} 
@@ -156,7 +165,7 @@ export default function FloatingNavigation() {
                 >
                   Contact
                 </button>
-                
+
                 <div className="pt-8">
                   <button 
                     onClick={() => {

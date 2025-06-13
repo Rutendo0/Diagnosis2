@@ -652,3 +652,28 @@ html {
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
+
+/* Enhanced glassmorphism effects */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced navigation styling */
+.nav-background {
+  background: linear-gradient(135deg, 
+    rgba(30, 41, 59, 0.95) 0%, 
+    rgba(51, 65, 85, 0.90) 50%, 
+    rgba(30, 41, 59, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
