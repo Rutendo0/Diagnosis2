@@ -18,6 +18,12 @@ export default function FloatingNavigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, navigate to home first
+    if (location !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -37,13 +43,17 @@ export default function FloatingNavigation() {
               <div className="flex items-center space-x-12">
                 <Logo className="h-10 w-auto" />
                 <div className="hidden lg:flex items-center space-x-8">
-                  <button 
-                    onClick={() => scrollToSection('home')} 
-                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                  <Link 
+                    href="/" 
+                    className={`relative font-orbitron font-semibold transition-all duration-300 group ${
+                      location === '/' ? 'text-[var(--brand-orange)]' : 'text-gray-700 hover:text-[var(--brand-orange)]'
+                    }`}
                   >
                     <span className="relative z-10">Home</span>
-                    <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  </button>
+                    <div className={`absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-transform duration-300 ${
+                      location === '/' ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'
+                    }`}></div>
+                  </Link>
                   <button 
                     onClick={() => scrollToSection('services')} 
                     className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
@@ -125,12 +135,15 @@ export default function FloatingNavigation() {
               </div>
 
               <div className="space-y-8">
-                <button 
-                  onClick={() => scrollToSection('home')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                <Link 
+                  href="/" 
+                  className={`block w-full text-left font-orbitron text-lg font-medium transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50 ${
+                    location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-white'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
-                </button>
+                </Link>
                 <button 
                   onClick={() => scrollToSection('services')} 
                   className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
