@@ -4,19 +4,22 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Logo from "@/components/logo";
-const businessVehicleImg = "/images/image4.jpg";
-const vehicleServicingImg = "/images/image4.jpg";
-const coolentTemperitureSensorsImg = "/images/image3.jpg";
-const sparkPlugImg = "/images/image2.jpg";
-const coolantSensorsImg = "/images/image3.jpg";
-const servicePromoImg = "/images/image9.jpg";
-const batteryPackImg = "/images/image7.jpg";
-const liquidCoolingImg = "/images/image6.jpg";
-const hybridBatteryImg = "/images/image9.jpg";
+
+// Image declarations
+const businessVehicleImg = "/images/bussinesvehicle.jpg";
+const vehicleServicingImg = "/images/vehicle-servicing.jpg";
+const coolentTemperitureSensorsImg = "/images/sensors.jpg";
+const sparkPlugImg = "/images/parts.jpg";
+const coolantSensorsImg = "/images/sensors.jpg";
+const servicePromoImg = "/images/vehicle.jpg";
+const batteryPackImg = "/images/battery.jpg";
+const liquidCoolingImg = "/images/battery2.jpg";
+const hybridBatteryImg = "/images/battery3.jpg";
 const aquaFitImg = "/images/image10.jpg";
-const hybridBatteryPackImg = "/images/image8.jpg";
-const teamPhotoImg = "/images/image12.jpg";
+const hybridBatteryPackImg = "/images/battery.jpg";
+const teamPhotoImg = "/images/about.jpg";
 const warrantyImg = "/images/image13.jpg";
+const dieselInjectorsImg = "/images/injector.jpg";
 
 export default function BlogPage() {
   const services = [
@@ -40,7 +43,7 @@ export default function BlogPage() {
       id: 2,
       title: "Diesel Injectors - IN STOCK",
       excerpt: "Toyota D4D 1KD, Land Rover TDV6, Mercedes Benz and many more. Visit us today and get your injectors checked, serviced or replaced.",
-      image: coolentTemperitureSensorsImg,
+      image: dieselInjectorsImg,
       services: [
         "Toyota D4D 1KD",
         "Land Rover TDV6", 
@@ -79,7 +82,7 @@ export default function BlogPage() {
       id: 5,
       title: "Complete Battery Packs - Toyota Aqua & Honda Fit Hybrid",
       excerpt: "Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.",
-      image: hybridBatteryPackImg,
+      image: hybridBatteryImg,
       services: [
         "Low mileage batteries",
         "3 months warranty",
@@ -205,7 +208,7 @@ export default function BlogPage() {
         </div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 ultra-premium-text">
+          <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 text-white">
             Our Services
           </h1>
           <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-light">
