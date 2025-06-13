@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logoImage from "@/assets/logo.png";
+import Logo from "@/components/logo";
 
 export default function FloatingNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,13 +27,7 @@ export default function FloatingNavigation() {
     <>
       <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 glassmorphism rounded-full px-8 py-4 transition-all duration-300 ${isScrolled ? 'bg-opacity-95' : ''}`}>
         <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-2">
-            <img 
-              src={logoImage} 
-              alt="Diagnosis & Sensors Logo" 
-              className="h-10 w-auto"
-            />
-          </div>
+          <Logo />
           <div className="hidden md:flex space-x-6">
             <button onClick={() => scrollToSection('home')} className="hover:text-[var(--brand-orange)] transition-colors duration-300">
               Home
