@@ -156,47 +156,12 @@ export default function BlogPage() {
         
         <div className="relative z-10 text-center max-w-6xl mx-auto">
           <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 gradient-text">
-            Our Services & Solutions
+            Blog
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Professional automotive diagnostics, repairs, and specialized hybrid vehicle services
-          </p>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-12">
-
-        {/* Contact Information Banner */}
-        <div className="glassmorphism rounded-2xl p-8 mb-12 border border-[var(--brand-blue)]/20">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-orbitron text-xl font-bold mb-4 text-[var(--brand-orange)]">Contact Us Today</h3>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <Phone className="w-4 h-4 text-[var(--brand-blue)]" />
-                  <span>Harare: +263 242 770 389 | +263 772 974 846</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <Phone className="w-4 h-4 text-[var(--brand-blue)]" />
-                  <span>Bulawayo: +263 292 883 884 | +263 779 298 117</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-orbitron text-xl font-bold mb-4 text-[var(--brand-orange)]">Visit Our Locations</h3>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <MapPin className="w-4 h-4 text-[var(--brand-blue)]" />
-                  <span>03 Robert Mugabe Rd, Harare</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <MapPin className="w-4 h-4 text-[var(--brand-blue)]" />
-                  <span>114 George Silundika St, Bulawayo</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-8">
@@ -268,34 +233,7 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16 glassmorphism rounded-2xl p-8 border border-[var(--brand-blue)]/20">
-          <h3 className="font-orbitron text-2xl font-bold mb-4 text-white">Need Expert Automotive Service?</h3>
-          <p className="text-lg mb-6 text-gray-300">
-            Contact us today for professional diagnostics, repairs, and hybrid vehicle services
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-[var(--brand-orange)] hover:bg-[var(--brand-orange)]/80 text-white font-orbitron"
-              onClick={() => window.open('tel:+263242770389', '_self')}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call Harare: +263 242 770 389
-            </Button>
-            <Button 
-              size="lg" 
-              className="bg-[var(--brand-orange)] hover:bg-[var(--brand-orange)]/80 text-white font-orbitron"
-              onClick={() => window.open('tel:+263292883884', '_self')}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call Bulawayo: +263 292 883 884
-            </Button>
-          </div>
-          <p className="mt-4 text-sm text-gray-400">
-            Visit us at: www.diagnosisandsensors.co.zw
-          </p>
-        </div>
+
       </div>
     </div>
   );
