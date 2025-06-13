@@ -42,7 +42,7 @@ export default function AdvantagesSection() {
   ];
 
   return (
-    <section id="advantages" className="py-24 px-6 bg-gradient-to-b from-[var(--dark-bg)] to-gray-900">
+    <section id="advantages" className="py-24 px-6 bg-gradient-to-b from-[var(--dark-bg)] to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-[var(--brand-orange)] font-semibold text-lg mb-4 italic">Why Choose Us</p>

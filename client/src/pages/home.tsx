@@ -15,8 +15,8 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <AdvantagesSection />
+       <ProductsShowcase />
       <AboutSection />
-      <ProductsShowcase />
       <ContactSection />
       <Footer />
       <WhatsAppFloat />

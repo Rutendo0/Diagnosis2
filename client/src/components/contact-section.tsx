@@ -87,7 +87,7 @@ export default function ContactSection() {
                 <p className="text-gray-300 mb-2">114 George Silundika St.</p>
                 <div className="space-y-1 text-sm text-gray-400">
                   <a href="tel:+263292883884" className="block hover:text-[var(--brand-blue)]">+263 292 88 3884</a>
-                  <a href="https://wa.me/263779298117" className="block hover:text-[var(--brand-blue)]">+263 779 298 117</a>
+                  <a href="https://wa.me/263778633785" className="block hover:text-[var(--brand-blue)]">+263 779 298 117</a>
                 </div>
               </CardContent>
             </Card>
@@ -123,7 +123,7 @@ export default function ContactSection() {
                     <i className="fab fa-instagram text-white text-sm"></i>
                   </a>
                   <a 
-                    href="https://wa.me/263772974846" 
+                    href="https://wa.me/263778633785" 
                     className="bg-green-500 hover:bg-green-600 rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"

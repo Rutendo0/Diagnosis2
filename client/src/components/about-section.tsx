@@ -4,7 +4,7 @@ import teamPhotoImg from "@assets/475302653_8297967280306669_8088948475092022602
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
+    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white to-[var(--dark-bg)]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -12,25 +12,25 @@ export default function AboutSection() {
             <h2 className="font-orbitron font-bold text-4xl md:text-5xl mb-8 ultra-premium-text">
               We are the leading service provider in vehicle diagnosis and supply of automotive sensors.
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-white mb-8 leading-relaxed">
               We have been specializing in commercial and private automotive troubleshooting, auto repairs, selling parts and accessories, with extensive experience serving clients across a market including the following:
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full"></div>
-                <span className="text-gray-300">Based on medium enterprises</span>
+                <span className="text-white">Based on medium enterprises</span>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full"></div>
-                <span className="text-gray-300">Individual customers</span>
+                <span className="text-white">Individual customers</span>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full"></div>
-                <span className="text-gray-300">Service companies</span>
+                <span className="text-white">Service companies</span>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full"></div>
-                <span className="text-gray-300">Other institutions</span>
+                <span className="text-white">Other institutions</span>
               </div>
             </div>
           </div>
@@ -53,8 +53,8 @@ export default function AboutSection() {
                 <Target className="text-white" size={32} />
               </div>
               <h3 className="ultra-premium-text font-bold text-2xl mb-4">Our Mission</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Our mission is to lead excellence and innovation for Automotive business. We're committed to providing the highest quality services and products to keep vehicles running at peak performance.
+              <p className="text-white leading-relaxed">
+                Our mission is to provide effecient and effective to all automative challenges at the most convenient and pratical time with guaranteed customer satisfacrion.
               </p>
             </CardContent>
           </Card>
@@ -65,8 +65,8 @@ export default function AboutSection() {
                 <Award className="text-white" size={32} />
               </div>
               <h3 className="ultra-premium-text font-bold text-2xl mb-4">Our Vision</h3>
-              <p className="text-gray-300 leading-relaxed">
-                We envision to be the leading provider of innovative solutions that empowers automotive excellence. We're striving to set new benchmarks in quality and service.
+              <p className="text-white leading-relaxed">
+                We envision to be the leading best one-stop shop in Zimbabwe that provides effecient servicesin automotive engineering,diagnosis and selling sensors & accessories.
               </p>
             </CardContent>
           </Card>
