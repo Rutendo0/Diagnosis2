@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logoImage from "@/assets/logo.png";
 
 export default function FloatingNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +29,7 @@ export default function FloatingNavigation() {
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
             <img 
-              src="/attached_assets/image_1749801530194.png" 
+              src={logoImage} 
               alt="Diagnosis & Sensors Logo" 
               className="h-10 w-auto"
             />
