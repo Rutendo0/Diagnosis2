@@ -1,0 +1,18 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gear/Cog background -->
+  <g transform="translate(20, 40)">
+    <path d="M0 -20 L5 -18 L10 -20 L12 -15 L17 -13 L15 -8 L18 -3 L13 -1 L15 4 L10 6 L5 11 L0 9 L-5 11 L-10 6 L-15 4 L-13 -1 L-18 -3 L-15 -8 L-17 -13 L-12 -15 L-10 -20 L-5 -18 Z" 
+          fill="#3B4F7A" stroke="#2563EB" stroke-width="1"/>
+    <circle cx="0" cy="0" r="12" fill="#F97316"/>
+    <circle cx="0" cy="0" r="8" fill="#FFF"/>
+    <circle cx="0" cy="0" r="4" fill="#3B4F7A"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="50" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3B4F7A">
+    Diagnosis &amp; Sensors
+  </text>
+  <text x="50" y="50" font-family="Arial, sans-serif" font-size="10" fill="#F97316">
+    The best solution to your automotive
+  </text>
+</svg>
