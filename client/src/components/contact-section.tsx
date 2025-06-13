@@ -62,56 +62,77 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="space-y-8">
-            <Card className="glassmorphism rounded-2xl border-none bg-transparent text-center hover:transform hover:scale-105 transition-all duration-300">
+            {/* Harare Branch */}
+            <Card className="glassmorphism rounded-2xl border-none bg-transparent hover:transform hover:scale-105 transition-all duration-300">
               <CardContent className="p-6">
                 <div className="bg-[var(--brand-orange)] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <i className="fab fa-whatsapp text-2xl text-white"></i>
+                  <i className="fas fa-map-marker-alt text-2xl text-white"></i>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">WhatsApp</h3>
-                <a 
-                  href="https://wa.me/263719974846" 
-                  className="text-[var(--brand-orange)] hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  +263 71 997 4846
-                </a>
+                <h3 className="font-semibold text-lg mb-2 text-[var(--brand-orange)]">Harare Branch</h3>
+                <p className="text-gray-300 mb-2">03 Robert Mugabe Way</p>
+                <div className="space-y-1 text-sm text-gray-400">
+                  <a href="tel:+263242770389" className="block hover:text-[var(--brand-orange)]">+263 242 77 0389</a>
+                  <a href="https://wa.me/263772974846" className="block hover:text-[var(--brand-orange)]">+263 772 974 846</a>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="glassmorphism rounded-2xl border-none bg-transparent text-center hover:transform hover:scale-105 transition-all duration-300">
+            {/* Bulawayo Branch */}
+            <Card className="glassmorphism rounded-2xl border-none bg-transparent hover:transform hover:scale-105 transition-all duration-300">
               <CardContent className="p-6">
                 <div className="bg-[var(--brand-blue)] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-map-marker-alt text-2xl text-white"></i>
+                </div>
+                <h3 className="font-semibold text-lg mb-2 text-[var(--brand-blue)]">Bulawayo Branch</h3>
+                <p className="text-gray-300 mb-2">114 George Silundika St.</p>
+                <div className="space-y-1 text-sm text-gray-400">
+                  <a href="tel:+263292883884" className="block hover:text-[var(--brand-blue)]">+263 292 88 3884</a>
+                  <a href="https://wa.me/263779298117" className="block hover:text-[var(--brand-blue)]">+263 779 298 117</a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Email & Social */}
+            <Card className="glassmorphism rounded-2xl border-none bg-transparent hover:transform hover:scale-105 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <i className="fas fa-envelope text-2xl text-white"></i>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Email</h3>
+                <h3 className="font-semibold text-lg mb-2">Email Us</h3>
                 <a 
                   href="mailto:sales@diagnosisandsensors.co.zw" 
-                  className="text-[var(--brand-blue)] hover:underline"
+                  className="text-[var(--brand-orange)] hover:underline mb-4 block"
                 >
                   sales@diagnosisandsensors.co.zw
                 </a>
+                <div className="flex space-x-4 justify-center">
+                  <a 
+                    href="https://www.facebook.com/p/Diagnosis-and-Sensors-100063639080600/" 
+                    className="bg-blue-600 hover:bg-blue-700 rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-facebook-f text-white text-sm"></i>
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/diagnosisandsensorszw/" 
+                    className="bg-pink-600 hover:bg-pink-700 rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-instagram text-white text-sm"></i>
+                  </a>
+                  <a 
+                    href="https://wa.me/263772974846" 
+                    className="bg-green-500 hover:bg-green-600 rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-whatsapp text-white text-sm"></i>
+                  </a>
+                </div>
               </CardContent>
             </Card>
-
-            <div className="flex space-x-4 justify-center">
-              <a 
-                href="https://www.facebook.com/p/Diagnosis-and-Sensors-100063639080600/" 
-                className="bg-blue-600 hover:bg-blue-700 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-facebook-f text-white"></i>
-              </a>
-              <a 
-                href="https://www.instagram.com/diagnosisandsensorszw/" 
-                className="bg-pink-600 hover:bg-pink-700 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-instagram text-white"></i>
-              </a>
-            </div>
           </div>
 
           {/* Contact Form */}

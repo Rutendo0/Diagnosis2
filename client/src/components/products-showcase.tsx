@@ -6,9 +6,9 @@ export default function ProductsShowcase() {
     <section id="products" className="py-24 px-6 bg-[var(--dark-surface)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-white">Premium Products</h2>
+          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-white">Our Products & Services</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Cutting-edge diagnostic equipment and sensors engineered for the modern automotive industry
+            Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair
           </p>
         </div>
 
@@ -17,23 +17,23 @@ export default function ProductsShowcase() {
             <Card className="glassmorphism rounded-2xl border-l-4 border-[var(--brand-orange)] bg-transparent border-none">
               <CardContent className="p-8">
                 <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-orange)]">
-                  Advanced Diagnostic Scanners
+                  Injector Testing & Diagnosis
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Professional-grade OBD scanners with multi-brand compatibility and real-time data streaming capabilities.
+                  Comprehensive injector testing services including diesel and petrol injection diagnosis with advanced testing equipment.
                 </p>
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Multi-protocol support
+                    Uniformity & sprayability testing
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Live data streaming
+                    Leakage & flow testing
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Comprehensive coverage
+                    Ultrasonic cleaning
                   </li>
                 </ul>
               </CardContent>
@@ -42,23 +42,23 @@ export default function ProductsShowcase() {
             <Card className="glassmorphism rounded-2xl border-l-4 border-[var(--brand-blue)] bg-transparent border-none">
               <CardContent className="p-8">
                 <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-blue)]">
-                  Precision Sensors
+                  Vehicle Diagnostics & Sensors
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  High-quality automotive sensors for all major vehicle systems with guaranteed accuracy and durability.
+                  Expert vehicle troubleshooting and high-quality automotive sensors for all major vehicle systems and brands.
                 </p>
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    OEM quality standards
+                    Multi-brand vehicle support
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Extended warranty
+                    Quality sensor components
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Wide compatibility
+                    Professional installation
                   </li>
                 </ul>
               </CardContent>
