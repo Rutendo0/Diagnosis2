@@ -10,12 +10,6 @@ export default function HeroSection() {
     }
   };
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -51,9 +45,9 @@ export default function HeroSection() {
             {/* Main Headline - Lamborghini Style */}
             <div className="space-y-6">
               <h1 className="font-orbitron font-black text-5xl md:text-7xl lg:text-8xl leading-none text-white">
-                <span className="block">AUTOMOTIVE</span>
+                <span className="block">Diagnosis</span>
                 <span className="block bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] bg-clip-text text-transparent">
-                  EXCELLENCE
+                  Sensors
                 </span>
               </h1>
 
