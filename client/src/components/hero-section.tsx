@@ -35,7 +35,7 @@ export default function HeroSection() {
             <span className="text-[var(--brand-blue)]">SENSORS</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Expert diagnosis & quality sensors for every vehicle. Comprehensive vehicle diagnosis, expert troubleshooting, and high-quality automotive sensors.
+            The best solution to your automotive. Leading service provider in vehicle diagnosis and supply of automotive sensors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
