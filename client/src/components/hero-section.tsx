@@ -77,31 +77,7 @@ export default function HeroSection() {
           </Button>
         </div>
 
-        {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16 animate-fade-in">
-          <div className="premium-card rounded-2xl p-8 hover-lift">
-            <div className="flex items-center mb-4">
-              <MapPin className="text-[var(--brand-orange)] mr-3" size={24} />
-              <h3 className="font-orbitron text-[var(--brand-orange)] font-bold text-xl">Harare Office</h3>
-            </div>
-            <p className="text-gray-300 mb-3 text-lg">03 Robert Mugabe Rd, Harare</p>
-            <div className="space-y-1">
-              <p className="text-[var(--brand-blue)] font-bold text-lg">+263 242 770 389</p>
-              <p className="text-[var(--brand-blue)] font-bold text-lg">+263 772 974 846</p>
-            </div>
-          </div>
-          <div className="premium-card rounded-2xl p-8 hover-lift">
-            <div className="flex items-center mb-4">
-              <MapPin className="text-[var(--brand-orange)] mr-3" size={24} />
-              <h3 className="font-orbitron text-[var(--brand-orange)] font-bold text-xl">Bulawayo Office</h3>
-            </div>
-            <p className="text-gray-300 mb-3 text-lg">114 George Silundika St, Bulawayo</p>
-            <div className="space-y-1">
-              <p className="text-[var(--brand-blue)] font-bold text-lg">+263 292 883 884</p>
-              <p className="text-[var(--brand-blue)] font-bold text-lg">+263 779 298 117</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       {/* Enhanced Scroll Indicator */}
