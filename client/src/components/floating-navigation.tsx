@@ -28,10 +28,10 @@ export default function FloatingNavigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 relative">
-        {/* White/Transparent Background */}
-        <div className="absolute inset-0 bg-white/95 backdrop-blur-md"></div>
+        {/* Glass Panel Background */}
+        <div className="absolute inset-0 glassmorphism-premium"></div>
 
-        <div className="relative z-10 bg-transparent border-b border-gray-200/30">
+        <div className="relative z-10 bg-transparent border-b border-white/20">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-12">
