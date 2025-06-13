@@ -46,11 +46,15 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-24 px-6">
+    <section id="services" className="py-24 px-6 bg-gradient-to-b from-[var(--dark-bg)] to-[var(--dark-surface)]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 gradient-text">Our Expertise</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-4">
+            <span className="text-[var(--brand-orange)] font-orbitron font-semibold text-lg tracking-wide">Professional Services</span>
+          </div>
+          <h2 className="font-orbitron font-black text-5xl md:text-7xl mb-8 gradient-text text-glow">Our Expertise</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6"></div>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Comprehensive automotive diagnostic solutions engineered for precision and performance
           </p>
         </div>
