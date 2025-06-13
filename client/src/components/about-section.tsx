@@ -9,7 +9,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-[var(--brand-orange)] font-semibold text-lg mb-4 italic">Auto Repair since 2017</p>
-            <h2 className="font-orbitron font-bold text-4xl md:text-5xl mb-8 text-white">
+            <h2 className="font-orbitron font-bold text-4xl md:text-5xl mb-8 ultra-premium-text">
               We are the leading service provider in vehicle diagnosis and supply of automotive sensors.
             </h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
@@ -47,12 +47,12 @@ export default function AboutSection() {
 
         {/* Mission and Vision Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-          <Card className="bg-white rounded-2xl border-none shadow-xl">
+          <Card className="premium-card border-none">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[var(--brand-blue)] flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] flex items-center justify-center">
                 <Target className="text-white" size={32} />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-800">Our Mission</h3>
+              <h3 className="ultra-premium-text font-bold text-2xl mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
                 Our mission is to lead excellence and innovation for Automotive business. We're committed to providing the highest quality services and products to keep vehicles running at peak performance.
               </p>

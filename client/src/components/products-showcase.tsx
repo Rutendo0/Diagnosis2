@@ -9,7 +9,7 @@ export default function ProductsShowcase() {
     <section id="products" className="py-24 px-6 bg-[var(--dark-surface)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-white">Our Products & Services</h2>
+          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 ultra-premium-text">Our Products & Services</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair
           </p>
@@ -17,9 +17,9 @@ export default function ProductsShowcase() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <Card className="glassmorphism rounded-2xl border-l-4 border-[var(--brand-orange)] bg-transparent border-none">
+            <Card className="premium-card border-l-4 border-[var(--brand-orange)] bg-transparent border-none">
               <CardContent className="p-8">
-                <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-orange)] flex items-center">
+                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 flex items-center">
                   <Battery className="mr-3" size={24} />
                   Hybrid Battery Packs
                 </h3>
@@ -47,9 +47,9 @@ export default function ProductsShowcase() {
               </CardContent>
             </Card>
 
-            <Card className="glassmorphism rounded-2xl border-l-4 border-[var(--brand-blue)] bg-transparent border-none">
+            <Card className="premium-card border-l-4 border-[var(--brand-blue)] bg-transparent border-none">
               <CardContent className="p-8">
-                <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-blue)] flex items-center">
+                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 flex items-center">
                   <Zap className="mr-3" size={24} />
                   Liquid Battery Cooling Systems
                 </h3>

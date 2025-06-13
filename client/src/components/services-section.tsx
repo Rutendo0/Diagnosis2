@@ -61,7 +61,7 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="glassmorphism rounded-2xl border-none hover:transform hover:scale-105 transition-all duration-300 group bg-transparent">
+            <Card key={index} className="premium-card border-none group bg-transparent">
               <CardContent className="p-8">
                 <div 
                   className="h-48 bg-cover bg-center rounded-xl mb-6 relative overflow-hidden"
@@ -76,7 +76,7 @@ export default function ServicesSection() {
                     </div>
                   </div>
                 </div>
-                <h3 className={`font-orbitron font-bold text-2xl mb-4 text-white group-hover:${service.color === 'brand-orange' ? 'text-[var(--brand-orange)]' : 'text-[var(--brand-blue)]'} transition-colors`}>
+                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed">
