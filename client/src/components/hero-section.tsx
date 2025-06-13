@@ -1,6 +1,6 @@
 import { ChevronDown, Phone, MessageSquare, MapPin, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const businessVehicleImg = "/images/aqua.jpg";
+const bussinesvehicleImg = "/images/bussinesvehicle.jpg";
 
 export default function HeroSection() {
   const scrollToServices = () => {
@@ -20,12 +20,12 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1920&h=1080&fit=crop&crop=center)' }}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bussinesvehicleImg})`, filter: 'brightness(0.5)' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/70 via-[var(--brand-orange)]/40 to-slate-900/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-800/50 via-transparent to-[var(--brand-blue)]/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/70 via-[var(--brand-orange)]/40 to-slate-200/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-200/50 via-transparent to-[var(--brand-blue)]/30"></div>
       </div>
 
       {/* Floating Particles */}
@@ -51,7 +51,7 @@ export default function HeroSection() {
         </div>
 
         {/* Enhanced Description */}
-        <p className="text-lg md:text-xl text-gray-300 max-w-5xl mx-auto mb-12 leading-relaxed animate-slide-up opacity-90">
+        <p className="text-lg md:text-xl text-white max-w-5xl mx-auto mb-12 leading-relaxed animate-slide-up opacity-90">
           Professional automotive diagnostics, repairs, and specialized hybrid vehicle services in Harare and Bulawayo. 
           Expert technicians with cutting-edge equipment for all your automotive needs.
         </p>

@@ -6,7 +6,7 @@ const liquidCoolingImg = "/images/battery.jpg";
 
 export default function ProductsShowcase() {
   return (
-    <section id="products" className="py-24 px-6 bg-[var(--dark-surface)]">
+    <section id="products" className="py-24 px-6 bg-[var--white] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 ultra-premium-text">Our Products & Services</h2>
@@ -98,9 +98,9 @@ export default function ProductsShowcase() {
                 />
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[var(--brand-orange)] to-red-500 rounded-2xl p-6 shadow-xl animate-float">
+            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-2xl p-6 shadow-xl animate-float">
               <div className="text-center">
-                <div className="font-orbitron font-bold text-2xl">500+</div>
+                <div className="font-orbitron font-bold text-2xl">200+</div>
                 <div className="text-sm opacity-90">Products Available</div>
               </div>
             </div>
