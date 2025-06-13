@@ -22,10 +22,10 @@ export default function HeroSection() {
       {/* Hero Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1920&h=1080&fit=crop&crop=center)' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/60 via-[var(--brand-orange)]/30 to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-[var(--brand-blue)]/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/70 via-[var(--brand-orange)]/40 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-800/50 via-transparent to-[var(--brand-blue)]/30"></div>
       </div>
 
       {/* Floating Particles */}
