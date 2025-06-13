@@ -31,7 +31,7 @@ export default function AboutSection() {
               About Our Excellence
             </h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              With over a decade of experience in automotive diagnostics, Diagnosis & Sensors stands at the forefront of automotive technology solutions in Zimbabwe and beyond.
+              Diagnosis & Sensors is Zimbabwe's leading provider of automotive diagnostic solutions and sensor technology. We serve businesses, individuals, and institutions with two convenient locations in Harare and Bulawayo.
             </p>
             <div className="space-y-6">
               {features.map((feature, index) => (

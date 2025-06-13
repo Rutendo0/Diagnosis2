@@ -4,22 +4,22 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function ServicesSection() {
   const services = [
     {
-      title: "Engine Diagnostics",
-      description: "Advanced engine diagnostic services using state-of-the-art equipment to identify and resolve complex automotive issues with precision.",
+      title: "Injector Pressure Testing",
+      description: "Diesel injection diagnosis, petrol injector testing & diagnosis, uniformity & sprayability test, leakage test, injection flow test & ultrasonic cleaning.",
       icon: Search,
       color: "brand-orange",
       image: "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     },
     {
-      title: "Sensor Technology",
-      description: "Premium automotive sensors and electronic components designed for optimal performance and long-lasting reliability in all conditions.",
+      title: "Vehicle Diagnostics & Troubleshooting",
+      description: "Expert vehicle diagnostics and troubleshooting services, identifying issues quickly and accurately to ensure optimal performance and reliability.",
       icon: Cpu,
       color: "brand-blue",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     },
     {
-      title: "Professional Installation",
-      description: "Expert installation and calibration services performed by certified technicians with years of automotive expertise.",
+      title: "Automotive Sensors & Parts",
+      description: "High-quality automotive sensors and electronic components for all major vehicle systems. Serving businesses, individuals, and institutions with precision.",
       icon: Wrench,
       color: "brand-orange",
       image: "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
