@@ -31,7 +31,7 @@ export default function FloatingNavigation() {
         {/* White/Transparent Background */}
         <div className="absolute inset-0 bg-white/95 backdrop-blur-md"></div>
 
-        <div className="relative z-10 bg-transparent border-b border-gray-200/30"></div>
+        <div className="relative z-10 bg-transparent border-b border-gray-200/30">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-12">
