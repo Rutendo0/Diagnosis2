@@ -1,6 +1,7 @@
 import FloatingNavigation from "@/components/floating-navigation";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
+import AdvantagesSection from "@/components/advantages-section";
 import ProductsShowcase from "@/components/products-showcase";
 import AboutSection from "@/components/about-section";
 import ContactSection from "@/components/contact-section";
@@ -13,8 +14,9 @@ export default function Home() {
       <FloatingNavigation />
       <HeroSection />
       <ServicesSection />
-      <ProductsShowcase />
+      <AdvantagesSection />
       <AboutSection />
+      <ProductsShowcase />
       <ContactSection />
       <Footer />
       <WhatsAppFloat />

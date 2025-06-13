@@ -29,13 +29,12 @@ export default function HeroSection() {
       
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         <div className="animate-fade-in-up">
-          <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight">
-            <span className="gradient-text">DIAGNOSIS</span><br />
-            <span className="text-white">&</span><br />
-            <span className="text-[var(--brand-blue)]">SENSORS</span>
+          <p className="text-[var(--brand-orange)] font-semibold text-xl md:text-2xl mb-4 italic">Expert Diagnosis of Quality Sensors for Every Vehicle</p>
+          <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight text-white">
+            Our Services
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            The best solution to your automotive. Leading service provider in vehicle diagnosis and supply of automotive sensors.
+            Home {'>'} Our Services
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
