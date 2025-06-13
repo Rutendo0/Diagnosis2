@@ -39,36 +39,36 @@ export default function FloatingNavigation() {
                 <div className="hidden lg:flex items-center space-x-8">
                   <button 
                     onClick={() => scrollToSection('home')} 
-                    className="relative font-orbitron font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Home</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('services')} 
-                    className="relative font-orbitron font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Services</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('products')} 
-                    className="relative font-orbitron font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Products</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('about')} 
-                    className="relative font-orbitron font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">About</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
                   <Link 
                     href="/blog" 
-                    className={`relative font-orbitron font-medium transition-all duration-300 group ${
-                      location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-gray-800 hover:text-[var(--brand-orange)]'
+                    className={`relative font-orbitron font-semibold transition-all duration-300 group ${
+                      location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-gray-700 hover:text-[var(--brand-orange)]'
                     }`}
                   >
                     <span className="relative z-10">Blog</span>
@@ -78,7 +78,7 @@ export default function FloatingNavigation() {
                   </Link>
                   <button 
                     onClick={() => scrollToSection('contact')} 
-                    className="relative font-orbitron font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Contact</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -98,7 +98,7 @@ export default function FloatingNavigation() {
               <div className="lg:hidden">
                 <button 
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-gray-800 hover:text-[var(--brand-orange)] transition-colors"
+                  className="text-gray-700 hover:text-[var(--brand-orange)] transition-colors"
                 >
                   {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
