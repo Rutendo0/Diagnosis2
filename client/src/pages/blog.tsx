@@ -1,7 +1,9 @@
-import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap } from "lucide-react";
+import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import Logo from "@/components/logo";
 import businessVehicleImg from "@assets/118159882_2661484653954988_4487587664726070543_n_1749805657552.jpg";
 import vehicleServicingImg from "@assets/480580703_8422622434507819_6324339413906591208_n_1749805657553.jpg";
 import dieselInjectorsImg from "@assets/480767987_8424530307650365_973478690302225057_n_1749805657553.jpg";
@@ -143,8 +145,41 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[var(--dark-bg)]">
+      {/* Navigation */}
+      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 glassmorphism rounded-full px-8 py-4 transition-all duration-300">
+        <div className="flex items-center space-x-8">
+          <Logo className="h-8 w-auto" />
+          <div className="hidden md:flex space-x-6">
+            <Link href="/" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
+              <Home size={16} />
+              <span>Home</span>
+            </Link>
+            <Link href="/#services" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
+              <Wrench size={16} />
+              <span>Services</span>
+            </Link>
+            <Link href="/#products" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
+              <Settings size={16} />
+              <span>Products</span>
+            </Link>
+            <Link href="/#about" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
+              <User size={16} />
+              <span>About</span>
+            </Link>
+            <Link href="/blog" className="flex items-center space-x-1 text-[var(--brand-orange)] transition-colors duration-300">
+              <MessageSquare size={16} />
+              <span>Blog</span>
+            </Link>
+            <Link href="/#contact" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
+              <Phone size={16} />
+              <span>Contact</span>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Header Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
+      <section className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
@@ -158,79 +193,114 @@ export default function BlogPage() {
           <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 gradient-text">
             Blog
           </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto"></div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-12">
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.id} className="group hover:shadow-xl transition-all duration-300 glassmorphism rounded-2xl border border-[var(--brand-blue)]/20 bg-transparent">
+            <Card key={service.id} className="group hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 glassmorphism rounded-2xl border border-[var(--brand-blue)]/20 bg-transparent overflow-hidden transform hover:-translate-y-2">
               <CardHeader className="p-0">
-                <div className="relative overflow-hidden rounded-t-2xl h-64">
+                <div className="relative overflow-hidden h-64">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4">
-                    <Badge variant="secondary" className="bg-[var(--brand-orange)] text-white border-0 flex items-center space-x-1 font-orbitron">
+                    <Badge variant="secondary" className="bg-[var(--brand-orange)] text-white border-0 flex items-center space-x-1 font-orbitron shadow-lg backdrop-blur-sm">
                       {service.icon}
                       <span>{service.category}</span>
                     </Badge>
                   </div>
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-8 h-8 bg-[var(--brand-orange)] rounded-full flex items-center justify-center">
+                      <MapPin size={16} className="text-white" />
+                    </div>
+                  </div>
                 </div>
               </CardHeader>
-              <CardContent className="p-6">
-                <h2 className="font-orbitron text-xl font-bold text-white mb-3 group-hover:text-[var(--brand-orange)] transition-colors">
+              <CardContent className="p-6 relative">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                
+                <h2 className="font-orbitron text-xl font-bold text-white mb-3 group-hover:text-[var(--brand-orange)] transition-colors duration-300">
                   {service.title}
                 </h2>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4 leading-relaxed">
                   {service.excerpt}
                 </p>
                 
                 {/* Services List */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-[var(--brand-orange)] mb-2 font-orbitron">Services Include:</h4>
-                  <ul className="text-sm text-gray-400 space-y-1">
+                  <h4 className="text-sm font-semibold text-[var(--brand-orange)] mb-3 font-orbitron flex items-center">
+                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full mr-2"></div>
+                    Services Include:
+                  </h4>
+                  <ul className="text-sm text-gray-400 space-y-2">
                     {service.services.slice(0, 4).map((item, index) => (
-                      <li key={index} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-[var(--brand-orange)] rounded-full"></div>
+                      <li key={index} className="flex items-center space-x-3 group/item hover:text-gray-300 transition-colors">
+                        <div className="w-1.5 h-1.5 bg-[var(--brand-orange)] rounded-full group-hover/item:scale-125 transition-transform"></div>
                         <span>{item}</span>
                       </li>
                     ))}
                     {service.services.length > 4 && (
-                      <li className="text-[var(--brand-orange)] font-medium">+ {service.services.length - 4} more services</li>
+                      <li className="text-[var(--brand-orange)] font-medium flex items-center space-x-2">
+                        <Settings size={12} />
+                        <span>+ {service.services.length - 4} more services</span>
+                      </li>
                     )}
                   </ul>
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500">
-                    <div className="flex items-center space-x-1">
-                      <Calendar className="w-4 h-4 text-[var(--brand-blue)]" />
-                      <span>Available Now</span>
+                <div className="flex items-center justify-between pt-4 border-t border-[var(--brand-blue)]/20">
+                  <div className="flex items-center space-x-4 text-xs text-gray-500">
+                    <div className="flex items-center space-x-1 hover:text-[var(--brand-blue)] transition-colors">
+                      <Calendar className="w-3 h-3" />
+                      <span>Available</span>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4 text-[var(--brand-blue)]" />
-                      <span>Professional Service</span>
+                    <div className="flex items-center space-x-1 hover:text-[var(--brand-blue)] transition-colors">
+                      <Clock className="w-3 h-3" />
+                      <span>Professional</span>
                     </div>
                   </div>
                   
                   <Button 
                     size="sm" 
-                    className="bg-[var(--brand-orange)] hover:bg-[var(--brand-orange)]/80 text-white font-orbitron"
+                    className="bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-[var(--brand-orange)]/80 hover:to-red-400 text-white font-orbitron shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     onClick={() => window.open('tel:+263242770389', '_self')}
                   >
-                    <Phone className="w-4 h-4 mr-1" />
-                    Call Now
+                    <Phone className="w-3 h-3 mr-1" />
+                    Call
                   </Button>
                 </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Floating Action Section */}
+        <div className="fixed bottom-8 right-8 z-40">
+          <div className="flex flex-col space-y-4">
+            <Button 
+              size="lg"
+              className="rounded-full w-16 h-16 bg-[var(--brand-orange)] hover:bg-[var(--brand-orange)]/80 shadow-2xl hover:shadow-[var(--brand-orange)]/40 transition-all duration-300 transform hover:scale-110"
+              onClick={() => window.open('tel:+263242770389', '_self')}
+            >
+              <Phone size={24} />
+            </Button>
+            <Button 
+              size="lg"
+              className="rounded-full w-16 h-16 bg-[var(--brand-blue)] hover:bg-[var(--brand-blue)]/80 shadow-2xl hover:shadow-[var(--brand-blue)]/40 transition-all duration-300 transform hover:scale-110"
+              onClick={() => window.open('https://wa.me/263242770389', '_blank')}
+            >
+              <MessageSquare size={24} />
+            </Button>
+          </div>
         </div>
 
 
