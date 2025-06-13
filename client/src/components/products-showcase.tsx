@@ -1,5 +1,8 @@
-import { Check } from "lucide-react";
+import { Check, Battery, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import hybridBatteryPackImg from "@assets/495601431_8925306940906030_5804913198261990529_n_1749805657557.jpg";
+import hybridBatteryImg from "@assets/486284443_1252677416863549_7166789577646969114_n_1749805657556.jpg";
+import liquidCoolingImg from "@assets/486261126_1252681640196460_4688732123092460616_n_1749805657556.jpg";
 
 export default function ProductsShowcase() {
   return (
@@ -16,24 +19,29 @@ export default function ProductsShowcase() {
           <div className="space-y-8">
             <Card className="glassmorphism rounded-2xl border-l-4 border-[var(--brand-orange)] bg-transparent border-none">
               <CardContent className="p-8">
-                <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-orange)]">
-                  Injector Testing & Diagnosis
+                <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-orange)] flex items-center">
+                  <Battery className="mr-3" size={24} />
+                  Hybrid Battery Packs
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Comprehensive injector testing services including diesel and petrol injection diagnosis with advanced testing equipment.
+                  Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.
                 </p>
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Uniformity & sprayability testing
+                    Low mileage batteries
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Leakage & flow testing
+                    3 months warranty
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Ultrasonic cleaning
+                    Trade-in options available
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
+                    Professional installation - $120
                   </li>
                 </ul>
               </CardContent>
@@ -41,38 +49,54 @@ export default function ProductsShowcase() {
 
             <Card className="glassmorphism rounded-2xl border-l-4 border-[var(--brand-blue)] bg-transparent border-none">
               <CardContent className="p-8">
-                <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-blue)]">
-                  Vehicle Diagnostics & Sensors
+                <h3 className="font-orbitron font-bold text-2xl mb-4 text-[var(--brand-blue)] flex items-center">
+                  <Zap className="mr-3" size={24} />
+                  Liquid Battery Cooling Systems
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Expert vehicle troubleshooting and high-quality automotive sensors for all major vehicle systems and brands.
+                  Specialized liquid battery cooling systems for hybrid vehicles ensuring optimal battery performance and longevity.
                 </p>
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Multi-brand vehicle support
+                    Hybrid vehicle cooling
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Quality sensor components
+                    Battery temperature management
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Professional installation
+                    Performance optimization
                   </li>
                 </ul>
               </CardContent>
             </Card>
           </div>
 
-          <div className="relative">
+          <div className="relative space-y-4">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Advanced automotive diagnostic equipment" 
-                className="w-full h-96 object-cover" 
+                src={hybridBatteryPackImg}
+                alt="Complete battery packs for Toyota Aqua and Honda Fit Hybrid" 
+                className="w-full h-64 object-cover" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/60 to-transparent"></div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src={hybridBatteryImg}
+                  alt="Hybrid battery systems" 
+                  className="w-full h-32 object-cover" 
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src={liquidCoolingImg}
+                  alt="Liquid battery cooling systems" 
+                  className="w-full h-32 object-cover" 
+                />
+              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[var(--brand-orange)] to-red-500 rounded-2xl p-6 shadow-xl animate-float">
               <div className="text-center">

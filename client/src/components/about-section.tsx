@@ -1,5 +1,6 @@
 import { Award, Users, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import teamPhotoImg from "@assets/475302653_8297967280306669_8088948475092022602_n_1749805999127.jpg";
 
 export default function AboutSection() {
   return (
@@ -36,13 +37,8 @@ export default function AboutSection() {
           <div className="relative">
             <div className="grid grid-cols-1 gap-6">
               <img 
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
-                alt="Automotive diagnostic work" 
-                className="rounded-2xl shadow-2xl"
-              />
-              <img 
-                src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" 
-                alt="Automotive sensors and parts" 
+                src={teamPhotoImg}
+                alt="Diagnosis & Sensors team at automotive expo" 
                 className="rounded-2xl shadow-2xl"
               />
             </div>
