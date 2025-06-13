@@ -1,10 +1,10 @@
 import { Search, Cpu, Wrench, Settings, LifeBuoy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const vehicleServicingImg = "/images/vehicle-servicing.svg";
-const dieselInjectorsImg = "/images/diesel-injectors.svg";
-const sparkPlugImg = "/images/spark-plugs.svg";
-const coolantSensorsImg = "/images/coolant-sensors.svg";
-const servicePromoImg = "/images/service-promo.svg";
+const vehicleServicingImg = "/images/vehicle-servicing.jpg";
+const dieselInjectorsImg = "/images/diesel-injectors.jpg";
+const sparkPlugImg = "/images/spark-plugs.jpg";
+const coolantSensorsImg = "/images/coolant-sensors.jpg";
+const servicePromoImg = "/images/service-promo.jpg";
 
 export default function ServicesSection() {
   const services = [
@@ -59,32 +59,37 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="premium-card border-none group bg-transparent">
-              <CardContent className="p-8">
-                <div 
-                  className="h-48 bg-cover bg-center rounded-xl mb-6 relative overflow-hidden"
-                  style={{ backgroundImage: `url('${service.image}')` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/80 to-transparent rounded-xl flex items-end">
-                    <div className="p-4">
-                      <service.icon 
-                        className={`text-3xl ${service.color === 'brand-orange' ? 'text-[var(--brand-orange)]' : 'text-[var(--brand-blue)]'} mb-2`} 
-                        size={32} 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div key={index} className="card-enhanced hover-lift animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+                <div className="image-overlay h-64">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end z-10">
+                    <div className="p-6">
+                      <IconComponent 
+                        className={`${service.color === 'brand-orange' ? 'text-[var(--brand-orange)]' : 'text-[var(--brand-blue)]'} mb-2 animate-pulse-slow`} 
+                        size={36} 
                       />
                     </div>
                   </div>
                 </div>
-                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+                <div className="p-8">
+                  <h3 className="text-gradient font-orbitron font-bold text-2xl mb-4 transition-all duration-300 hover:text-glow">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

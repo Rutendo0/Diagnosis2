@@ -4,19 +4,19 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Logo from "@/components/logo";
-const businessVehicleImg = "/images/business-vehicle.svg";
-const vehicleServicingImg = "/images/vehicle-servicing.svg";
-const dieselInjectorsImg = "/images/diesel-injectors.svg";
-const sparkPlugImg = "/images/spark-plugs.svg";
-const coolantSensorsImg = "/images/coolant-sensors.svg";
-const servicePromoImg = "/images/service-promo.svg";
-const batteryPackImg = "/images/battery-pack.svg";
-const liquidCoolingImg = "/images/liquid-cooling.svg";
-const hybridBatteryImg = "/images/hybrid-battery.svg";
-const aquaFitImg = "/images/aqua-fit.svg";
-const hybridBatteryPackImg = "/images/hybrid-battery.svg";
-const teamPhotoImg = "/images/business-vehicle.svg";
-const warrantyImg = "/images/warranty.svg";
+const businessVehicleImg = "/images/business-vehicle.jpg";
+const vehicleServicingImg = "/images/vehicle-servicing.jpg";
+const dieselInjectorsImg = "/images/diesel-injectors.jpg";
+const sparkPlugImg = "/images/spark-plugs.jpg";
+const coolantSensorsImg = "/images/coolant-sensors.jpg";
+const servicePromoImg = "/images/service-promo.jpg";
+const batteryPackImg = "/images/battery-pack.jpg";
+const liquidCoolingImg = "/images/liquid-cooling.jpg";
+const hybridBatteryImg = "/images/hybrid-battery.jpg";
+const aquaFitImg = "/images/aqua.jpg";
+const hybridBatteryPackImg = "/images/hybrid-battery.jpg";
+const teamPhotoImg = "/images/business-vehicle.jpg";
+const warrantyImg = "/images/warranty.jpg";
 
 export default function BlogPage() {
   const services = [

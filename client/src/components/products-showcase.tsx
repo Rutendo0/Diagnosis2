@@ -1,8 +1,8 @@
 import { Check, Battery, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const hybridBatteryPackImg = "/images/hybrid-battery.svg";
-const hybridBatteryImg = "/images/hybrid-battery.svg";
-const liquidCoolingImg = "/images/liquid-cooling.svg";
+const hybridBatteryPackImg = "/images/hybrid-battery.jpg";
+const hybridBatteryImg = "/images/hybrid-battery.jpg";
+const liquidCoolingImg = "/images/liquid-cooling.jpg";
 
 export default function ProductsShowcase() {
   return (
