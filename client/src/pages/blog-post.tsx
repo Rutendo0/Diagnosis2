@@ -102,6 +102,10 @@ export default function BlogPostPage() {
                 src={post.imageUrl}
                 alt={post.title}
                 className="w-full h-64 md:h-96 object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80';
+                }}
+                loading="lazy"
               />
             </div>
           )}
@@ -109,7 +113,7 @@ export default function BlogPostPage() {
           {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <div className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              {post.content.split('\n').map((paragraph, index) => (
+              {post.content && post.content.split('\n').map((paragraph, index) => (
                 <p key={index} className="mb-4">
                   {paragraph}
                 </p>

@@ -51,6 +51,10 @@ export default function BlogPage() {
                       src={post.imageUrl}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80';
+                      }}
+                      loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
                       <Badge variant="secondary" className="bg-orange-500 text-white border-0">
@@ -82,12 +86,11 @@ export default function BlogPage() {
                     </div>
                   </div>
                   
-                  <Link
-                    href={`/blog/${post.id}`}
-                    className="inline-flex items-center space-x-1 text-orange-600 hover:text-orange-700 font-medium transition-colors"
-                  >
-                    <span>Read More</span>
-                    <ArrowRight className="w-4 h-4" />
+                  <Link href={`/blog/${post.id}`}>
+                    <div className="inline-flex items-center space-x-1 text-orange-600 hover:text-orange-700 font-medium transition-colors cursor-pointer">
+                      <span>Read More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </Link>
                 </div>
               </CardContent>
