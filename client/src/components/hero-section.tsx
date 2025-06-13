@@ -1,6 +1,6 @@
 import { ChevronDown, Phone, MessageSquare, MapPin, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import businessVehicleImg from "@/assets/images/Aqua.jpg"; // Ensure this path is correct
+const businessVehicleImg = "/images/aqua.svg";
 
 export default function HeroSection() {
   const scrollToServices = () => {

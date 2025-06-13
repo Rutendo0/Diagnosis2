@@ -1,8 +1,8 @@
 import { Check, Battery, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import hybridBatteryPackImg from "@assets/495601431_8925306940906030_5804913198261990529_n_1749805657557.jpg";
-import hybridBatteryImg from "@assets/486284443_1252677416863549_7166789577646969114_n_1749805657556.jpg";
-import liquidCoolingImg from "@assets/486261126_1252681640196460_4688732123092460616_n_1749805657556.jpg";
+const hybridBatteryPackImg = "/images/hybrid-battery.svg";
+const hybridBatteryImg = "/images/hybrid-battery.svg";
+const liquidCoolingImg = "/images/liquid-cooling.svg";
 
 export default function ProductsShowcase() {
   return (

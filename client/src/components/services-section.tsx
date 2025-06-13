@@ -1,10 +1,10 @@
 import { Search, Cpu, Wrench, Settings, LifeBuoy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import vehicleServicingImg from "@assets/480580703_8422622434507819_6324339413906591208_n_1749805657553.jpg";
-import dieselInjectorsImg from "@assets/480767987_8424530307650365_973478690302225057_n_1749805657553.jpg";
-import sparkPlugImg from "@assets/480769492_8438025702967492_3915631524323777433_n_1749805657554.jpg";
-import coolantSensorsImg from "@assets/481011555_8433712596732136_7045488006639825717_n_1749805657554.jpg";
-import servicePromoImg from "@assets/481906401_8469623613141034_5789006434150836708_n_1749805657555.jpg";
+const vehicleServicingImg = "/images/vehicle-servicing.svg";
+const dieselInjectorsImg = "/images/diesel-injectors.svg";
+const sparkPlugImg = "/images/spark-plugs.svg";
+const coolantSensorsImg = "/images/coolant-sensors.svg";
+const servicePromoImg = "/images/service-promo.svg";
 
 export default function ServicesSection() {
   const services = [

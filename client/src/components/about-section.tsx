@@ -1,6 +1,6 @@
 import { Award, Users, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import teamPhotoImg from "@assets/475302653_8297967280306669_8088948475092022602_n_1749805999127.jpg";
+const teamPhotoImg = "/images/business-vehicle.svg";
 
 export default function AboutSection() {
   return (
