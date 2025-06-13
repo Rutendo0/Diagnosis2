@@ -43,7 +43,7 @@ export default function HeroSection() {
           <p className="text-[var(--brand-orange)] font-orbitron font-semibold text-lg md:text-xl mb-4 tracking-wide">
             Is Your Check Engine Light On?
           </p>
-          <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight gradient-text text-glow">
+          <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight ultra-premium-text text-glow">
             Diagnosis & Sensors
           </h1>
           <div className="w-32 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6 animate-slide-up"></div>
@@ -63,7 +63,7 @@ export default function HeroSection() {
           <Button 
             onClick={scrollToServices}
             size="lg"
-            className="px-12 py-6 text-lg font-orbitron font-bold button-gradient text-white rounded-full shadow-2xl hover:shadow-[var(--brand-orange)]/50 transition-all duration-500 transform hover:scale-105 neon-glow"
+            className="luxury-button px-12 py-6 text-lg font-orbitron font-bold text-white rounded-full shadow-2xl neon-glow"
           >
             <Wrench className="mr-3" size={20} />
             Our Services
@@ -72,7 +72,7 @@ export default function HeroSection() {
             onClick={() => window.open('tel:+263242770389', '_self')}
             variant="outline"
             size="lg"
-            className="px-12 py-6 text-lg font-orbitron font-bold border-2 border-[var(--brand-blue)] text-[var(--brand-blue)] hover:bg-[var(--brand-blue)] hover:text-white rounded-full transition-all duration-500 transform hover:scale-105 glassmorphism"
+            className="luxury-button px-12 py-6 text-lg font-orbitron font-bold text-white rounded-full glassmorphism-card"
           >
             <Phone className="mr-3" size={20} />
             Call Now

@@ -190,9 +190,12 @@ export default function BlogPage() {
         </div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 gradient-text">
-            Blog
+          <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 ultra-premium-text">
+            Our Services
           </h1>
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+            Professional automotive solutions with premium quality and exceptional service
+          </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto"></div>
         </div>
       </section>
@@ -202,7 +205,7 @@ export default function BlogPage() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
           {services.map((service) => (
-            <Card key={service.id} className="group hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 glassmorphism rounded-2xl border border-[var(--brand-blue)]/20 bg-transparent overflow-hidden transform hover:-translate-y-2">
+            <Card key={service.id} className="group premium-card overflow-hidden">
               <CardHeader className="p-0">
                 <div className="relative overflow-hidden h-48">
                   <img
@@ -228,7 +231,7 @@ export default function BlogPage() {
               <CardContent className="p-6 relative">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 
-                <h2 className="font-orbitron text-xl font-bold text-white mb-3 group-hover:text-[var(--brand-orange)] transition-colors duration-300">
+                <h2 className="ultra-premium-text font-orbitron text-xl font-bold mb-3 transition-all duration-300">
                   {service.title}
                 </h2>
                 <p className="text-gray-300 mb-4 leading-relaxed">
@@ -271,11 +274,11 @@ export default function BlogPage() {
                   
                   <Button 
                     size="sm" 
-                    className="bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-[var(--brand-orange)]/80 hover:to-red-400 text-white font-orbitron shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    className="luxury-button font-orbitron text-xs px-4 py-2"
                     onClick={() => window.open('tel:+263242770389', '_self')}
                   >
                     <Phone className="w-3 h-3 mr-1" />
-                    Call
+                    Call Now
                   </Button>
                 </div>
               </CardContent>
