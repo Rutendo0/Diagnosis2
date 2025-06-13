@@ -53,19 +53,19 @@ export default function AboutSection() {
                 <Target className="text-white" size={32} />
               </div>
               <h3 className="ultra-premium-text font-bold text-2xl mb-4">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Our mission is to lead excellence and innovation for Automotive business. We're committed to providing the highest quality services and products to keep vehicles running at peak performance.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white rounded-2xl border-none shadow-xl">
+          <Card className="premium-card border-none">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[var(--brand-blue)] flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-gold)] flex items-center justify-center">
                 <Award className="text-white" size={32} />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-800">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="ultra-premium-text font-bold text-2xl mb-4">Our Vision</h3>
+              <p className="text-gray-300 leading-relaxed">
                 We envision to be the leading provider of innovative solutions that empowers automotive excellence. We're striving to set new benchmarks in quality and service.
               </p>
             </CardContent>
