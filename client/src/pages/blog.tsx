@@ -146,40 +146,71 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-[var(--dark-bg)]">
       {/* Navigation */}
-      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 glassmorphism rounded-full px-8 py-4 transition-all duration-300">
-        <div className="flex items-center space-x-8">
-          <Logo className="h-8 w-auto" />
-          <div className="hidden md:flex space-x-6">
-            <Link href="/" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
-              <Home size={16} />
-              <span>Home</span>
-            </Link>
-            <Link href="/#services" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
-              <Wrench size={16} />
-              <span>Services</span>
-            </Link>
-            <Link href="/#products" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
-              <Settings size={16} />
-              <span>Products</span>
-            </Link>
-            <Link href="/#about" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
-              <User size={16} />
-              <span>About</span>
-            </Link>
-            <Link href="/blog" className="flex items-center space-x-1 text-[var(--brand-orange)] transition-colors duration-300">
-              <MessageSquare size={16} />
-              <span>Blog</span>
-            </Link>
-            <Link href="/#contact" className="flex items-center space-x-1 hover:text-[var(--brand-orange)] transition-colors duration-300">
-              <Phone size={16} />
-              <span>Contact</span>
-            </Link>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--dark-bg)]/95 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-12">
+              <Logo className="h-10 w-auto" />
+              <div className="hidden lg:flex items-center space-x-8">
+                <Link 
+                  href="/" 
+                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                >
+                  <span className="relative z-10">Home</span>
+                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </Link>
+                <Link 
+                  href="/#services" 
+                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                >
+                  <span className="relative z-10">Services</span>
+                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </Link>
+                <Link 
+                  href="/#products" 
+                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                >
+                  <span className="relative z-10">Products</span>
+                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </Link>
+                <Link 
+                  href="/#about" 
+                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                >
+                  <span className="relative z-10">About</span>
+                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </Link>
+                <Link 
+                  href="/blog" 
+                  className="relative font-orbitron font-medium text-[var(--brand-orange)] transition-all duration-300 group"
+                >
+                  <span className="relative z-10">Blog</span>
+                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-100 transition-transform duration-300"></div>
+                </Link>
+                <Link 
+                  href="/#contact" 
+                  className="relative font-orbitron font-medium text-white/90 hover:text-white transition-all duration-300 group"
+                >
+                  <span className="relative z-10">Contact</span>
+                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="hidden lg:flex items-center space-x-4">
+              <button 
+                onClick={() => window.open('tel:+263242770389', '_self')}
+                className="luxury-button px-6 py-2 text-sm font-orbitron font-semibold"
+              >
+                Call Now
+              </button>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Header Section */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
+      <section className="relative pt-32 pb-24 px-6 bg-gradient-to-b from-gray-900 to-[var(--dark-bg)]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
