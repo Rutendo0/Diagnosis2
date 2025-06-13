@@ -123,7 +123,7 @@ export default function ContactSection() {
                     <i className="fab fa-instagram text-white text-sm"></i>
                   </a>
                   <a 
-                    href="https://wa.me/263719974846" 
+                    href="https://wa.me/+263719974846" 
                     className="bg-green-500 hover:bg-green-600 rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"

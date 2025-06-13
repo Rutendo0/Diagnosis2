@@ -18,25 +18,23 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Enhanced Background with Real Business Image */}
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-1000"
-        style={{
-          backgroundImage: `url(${businessVehicleImg})`
-        }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--dark-bg)]/85 via-[var(--dark-bg)]/70 to-[var(--dark-bg)]/95"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[var(--brand-orange)]/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-[var(--brand-blue)]/20 to-[var(--brand-orange)]/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/60"></div>
       </div>
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[var(--brand-orange)] rounded-full animate-float opacity-60"></div>
         <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-[var(--brand-blue)] rounded-full animate-float opacity-40" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-float opacity-30" style={{animationDelay: '4s'}}></div>
       </div>
-      
+
       <div className="relative z-10 text-center max-w-7xl mx-auto px-6">
         {/* Enhanced Brand Section */}
         <div className="animate-fade-in mb-8">
@@ -57,7 +55,7 @@ export default function HeroSection() {
           Professional automotive diagnostics, repairs, and specialized hybrid vehicle services in Harare and Bulawayo. 
           Expert technicians with cutting-edge equipment for all your automotive needs.
         </p>
-        
+
         {/* Action Buttons with Enhanced Styling */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up mb-16">
           <Button 
@@ -105,7 +103,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      
+
       {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={scrollToServices}>
         <div className="glassmorphism rounded-full p-4 hover:bg-[var(--brand-orange)]/20 transition-all duration-300 neon-glow">
@@ -115,7 +113,7 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      
+
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <Button
