@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "wouter";
 import Logo from "@/components/logo";
 
 export default function FloatingNavigation() {
@@ -41,6 +42,9 @@ export default function FloatingNavigation() {
             <button onClick={() => scrollToSection('about')} className="hover:text-[var(--brand-orange)] transition-colors duration-300">
               About
             </button>
+            <Link href="/blog" className="hover:text-[var(--brand-orange)] transition-colors duration-300">
+              Blog
+            </Link>
             <button onClick={() => scrollToSection('contact')} className="hover:text-[var(--brand-orange)] transition-colors duration-300">
               Contact
             </button>
@@ -74,6 +78,9 @@ export default function FloatingNavigation() {
               <button onClick={() => scrollToSection('about')} className="text-left hover:text-[var(--brand-orange)] transition-colors duration-300">
                 About
               </button>
+              <Link href="/blog" className="text-left hover:text-[var(--brand-orange)] transition-colors duration-300" onClick={() => setIsMobileMenuOpen(false)}>
+                Blog
+              </Link>
               <button onClick={() => scrollToSection('contact')} className="text-left hover:text-[var(--brand-orange)] transition-colors duration-300">
                 Contact
               </button>

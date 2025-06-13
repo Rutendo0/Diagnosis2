@@ -25,6 +25,7 @@ This is a full-stack web application for "Diagnosis & Sensors," an automotive di
 
 ### Database Schema
 - **Users Table**: Basic user management with username/password authentication
+- **Blog Posts Table**: Content management with title, content, excerpt, category, and publishing status
 - **Schema Definition**: Centralized in `shared/schema.ts` with Drizzle ORM
 - **Validation**: Zod schemas generated from Drizzle tables
 - **Migrations**: Managed through Drizzle Kit
@@ -33,13 +34,15 @@ This is a full-stack web application for "Diagnosis & Sensors," an automotive di
 
 ### Frontend Components
 - **Landing Page**: Single-page application with sections for services, about, products, and contact
-- **Floating Navigation**: Responsive navigation with glassmorphism design
+- **Blog System**: Full-featured blog with article listings, individual post pages, and category filtering
+- **Floating Navigation**: Responsive navigation with glassmorphism design including blog access
 - **Service Sections**: Detailed automotive service offerings with visual cards
 - **Contact Integration**: WhatsApp integration and email contact forms
 - **Responsive Design**: Mobile-first approach with desktop enhancements
 
 ### Backend Services
 - **Storage Interface**: Abstracted storage layer with in-memory and database implementations
+- **Blog API**: RESTful endpoints for blog post CRUD operations
 - **Route Registration**: Centralized route management in Express
 - **Development Tools**: Integrated Vite middleware for seamless development experience
 - **Error Handling**: Centralized error handling with proper HTTP status codes
@@ -105,4 +108,5 @@ Preferred communication style: Simple, everyday language.
 ```
 Changelog:
 - June 13, 2025. Initial setup
+- June 13, 2025. Added blog functionality with full CRUD operations, updated logo design to match brand identity
 ```
