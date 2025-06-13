@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Logo from "@/components/logo";
+import FloatingNavigation from "@/components/floating-navigation";
 
 // Image declarations
 const businessVehicleImg = "/images/bussinesvehicle.jpg";
@@ -133,68 +134,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-[var(--dark-bg)]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--dark-bg)]/95 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-12">
-              <Logo className="h-10 w-auto" />
-              <div className="hidden lg:flex items-center space-x-8">
-                <Link 
-                  href="/" 
-                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
-                >
-                  <span className="relative z-10">Home</span>
-                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </Link>
-                <Link 
-                  href="/#services" 
-                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
-                >
-                  <span className="relative z-10">Services</span>
-                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </Link>
-                <Link 
-                  href="/#products" 
-                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
-                >
-                  <span className="relative z-10">Products</span>
-                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </Link>
-                <Link 
-                  href="/#about" 
-                  className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
-                >
-                  <span className="relative z-10">About</span>
-                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </Link>
-                <Link 
-                  href="/blog" 
-                  className="relative font-orbitron font-medium text-[var(--brand-orange)] transition-all duration-300 group"
-                >
-                  <span className="relative z-10">Blog</span>
-                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-100 transition-transform duration-300"></div>
-                </Link>
-                <Link 
-                  href="/#contact" 
-                  className="relative font-orbitron font-medium text-white/ hover:text-white transition-all duration-300 group"
-                >
-                  <span className="relative z-10">Contact</span>
-                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </Link>
-              </div>
-            </div>
-            
-            <div className="hidden lg:flex items-center space-x-4">
-              <button 
-                onClick={() => window.open('tel:+263242770389', '_self')}
-                className="luxury-button px-6 py-2 text-sm font-orbitron font-semibold"
-              >
-                Call Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <FloatingNavigation />
 
       {/* Hero Header Section */}
       <section className="relative pt-32 pb-24 px-6 bg-gradient-to-b from-white to-[var(--dark-bg)]">

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import Logo from "@/components/logo";
 
 export default function FloatingNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,10 +74,14 @@ export default function FloatingNavigation() {
                   </button>
                   <Link 
                     href="/blog" 
-                    className="relative font-orbitron font-medium text-white hover:text-white transition-all duration-300 group"
+                    className={`relative font-orbitron font-medium transition-all duration-300 group ${
+                      location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-white'
+                    }`}
                   >
                     <span className="relative z-10">Blog</span>
-                    <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div className={`absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-transform duration-300 ${
+                      location === '/blog' ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'
+                    }`}></div>
                   </Link>
                   <button 
                     onClick={() => scrollToSection('contact')} 
@@ -153,7 +158,9 @@ export default function FloatingNavigation() {
                 </button>
                 <Link 
                   href="/blog" 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50" 
+                  className={`block w-full text-left font-orbitron text-lg font-medium transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50 ${
+                    location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-white'
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
