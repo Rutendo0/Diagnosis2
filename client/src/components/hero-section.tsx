@@ -75,9 +75,8 @@ export default function HeroSection() {
 
               <Button 
                 onClick={() => window.open('tel:+263242770389', '_self')}
-                variant="outline"
                 size="lg"
-                className="group border-2 border-white/30 text-white hover:bg-white hover:text-black font-orbitron font-bold px-8 py-4 rounded-none transition-all duration-300"
+                className="group bg-[var(--brand-blue)] hover:bg-[var(--brand-blue)]/90 text-white font-orbitron font-bold px-8 py-4 rounded-none border-0 transition-all duration-300 transform hover:scale-105"
               >
                 <Phone className="mr-2" size={20} />
                 CONTACT US
@@ -107,6 +106,16 @@ export default function HeroSection() {
               {/* Geometric Frame */}
               <div className="absolute inset-0 border border-[var(--brand-orange)]/30 transform rotate-3"></div>
               <div className="absolute inset-0 border border-[var(--brand-blue)]/20 transform -rotate-3"></div>
+
+              {/* Hero Image */}
+              <div className="relative mb-8">
+                <img 
+                  src="/images/vehicle-servicing.jpg" 
+                  alt="Professional Vehicle Diagnostics" 
+                  className="w-full h-64 object-cover rounded-lg shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+              </div>
 
               {/* Content Box */}
               <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 p-8 space-y-6">
