@@ -36,10 +36,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 opacity-10 pattern-dots animate-pulse-slow"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen">
+        <div className="flex items-center justify-center min-h-screen">
 
-          {/* Left Side - Lamborghini-inspired Content */}
-          <div className="text-left space-y-8">
+          {/* Centered Content */}
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
             {/* Enhanced Premium Badge */}
             <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4 neon-glow animate-fade-in">
               <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse-slow shadow-lg shadow-orange-500/50"></div>
@@ -110,49 +110,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Side - Visual Element */}
-          <div className="relative hidden lg:block">
-            <div className="relative">
-              {/* Geometric Frame */}
-              <div className="absolute inset-0 border border-[var(--brand-orange)]/30 transform rotate-3"></div>
-              <div className="absolute inset-0 border border-[var(--brand-blue)]/20 transform -rotate-3"></div>
-
-              {/* Hero Image */}
-              <div className="relative mb-8">
-                <img 
-                  src="/images/vehicle-servicing.jpg" 
-                  alt="Professional Vehicle Diagnostics" 
-                  className="w-full h-64 object-cover rounded-lg shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
-              </div>
-
-              {/* Content Box */}
-              <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 p-8 space-y-6">
-                <div className="text-[var(--brand-orange)] font-orbitron font-semibold text-sm uppercase tracking-widest">
-                  Services Include
-                </div>
-                <ul className="space-y-4 text-white">
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full"></div>
-                    <span>Advanced Vehicle Diagnostics</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full"></div>
-                    <span>Hybrid Battery Solutions</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full"></div>
-                    <span>Sensor Replacement & Repair</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full"></div>
-                    <span>Diesel Injection Systems</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
