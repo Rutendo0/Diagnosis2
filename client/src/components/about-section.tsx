@@ -1,4 +1,4 @@
-import { Award, Users, Target } from "lucide-react";
+import { Award, Users, Target, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 const teamPhotoImg = "/images/about.jpg";
 
@@ -18,7 +18,7 @@ export default function AboutSection() {
             <p className="text-xl text-white/95 mb-8 leading-relaxed font-light">
               We are pioneers in automotive technology, specializing in advanced vehicle diagnostics, precision repairs, and premium automotive solutions. Our expertise spans across commercial and private automotive sectors, delivering unmatched service quality.
             </p>
-            
+
             {/* Enhanced Statistics */}
             <div className="grid grid-cols-3 gap-6 mb-8 p-6 glassmorphism rounded-2xl">
               <div className="text-center group hover:scale-110 transition-transform duration-300">
@@ -34,7 +34,7 @@ export default function AboutSection() {
                 <div className="text-xs text-white/80 uppercase tracking-wider font-semibold">Support</div>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               {[
                 'Medium & Large Enterprises', 
