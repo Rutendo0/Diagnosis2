@@ -105,6 +105,35 @@ export default function ContactSection() {
               </CardContent>
             </Card>
 
+            {/* Business Hours */}
+            <Card className="glassmorphism rounded-2xl border-none bg-transparent hover:transform hover:scale-105 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="bg-gradient-to-r from-[var(--brand-gold)] to-yellow-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-clock text-2xl text-white"></i>
+                </div>
+                <h3 className="font-semibold text-lg mb-4 text-[var(--brand-gold)] text-center">Business Hours</h3>
+                <div className="space-y-2 text-sm text-white">
+                  <div className="flex justify-between">
+                    <span>Monday - Friday:</span>
+                    <span className="text-[var(--brand-orange)]">8:00 AM - 5:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Saturday:</span>
+                    <span className="text-[var(--brand-orange)]">8:00 AM - 1:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Sunday:</span>
+                    <span className="text-gray-400">Closed</span>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/20">
+                    <div className="text-center">
+                      <span className="text-green-400 font-semibold">• Emergency Services Available</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Email & Social */}
             <Card className="glassmorphism rounded-2xl border-none bg-transparent hover:transform hover:scale-105 transition-all duration-300">
               <CardContent className="p-6 text-center">
@@ -223,6 +252,67 @@ export default function ContactSection() {
                 </form>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-20">
+          <div className="text-center mb-16">
+            <h3 className="font-orbitron font-black text-4xl md:text-5xl ultra-premium-text mb-6">Frequently Asked Questions</h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                question: "What types of vehicles do you service?",
+                answer: "We service all types of vehicles including cars, trucks, SUVs, and hybrid vehicles. We specialize in diesel engines, hybrid systems, and modern automotive electronics."
+              },
+              {
+                question: "Do you offer mobile diagnostic services?",
+                answer: "Yes! We have a mobile diagnostic unit equipped with the latest equipment. We can come to your location for convenient on-site diagnostics and minor repairs."
+              },
+              {
+                question: "What warranty do you provide on repairs?",
+                answer: "We provide comprehensive warranties on our work and parts. Hybrid battery packs come with a 3-month warranty, and all our diagnostic and repair services are guaranteed."
+              },
+              {
+                question: "How long does a typical diagnostic take?",
+                answer: "Most standard diagnostics take 30-60 minutes. Complex issues may require additional time, but we'll always provide an estimated timeframe before starting any work."
+              }
+            ].map((faq, index) => (
+              <Card key={index} className="glassmorphism border-none group hover:transform hover:scale-105 transition-all duration-300">
+                <CardContent className="p-8">
+                  <h4 className="font-orbitron font-bold text-lg text-[var(--brand-orange)] mb-4 group-hover:text-[var(--brand-gold)] transition-colors">
+                    {faq.question}
+                  </h4>
+                  <p className="text-white/90 leading-relaxed">{faq.answer}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Customer Testimonial */}
+        <div className="mt-20 text-center">
+          <div className="glassmorphism rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)]"></div>
+            <div className="text-6xl text-[var(--brand-orange)] mb-6">"</div>
+            <blockquote className="text-2xl text-white/95 font-light leading-relaxed mb-8 italic">
+              Exceptional service and expertise! The team at Diagnosis & Sensors solved a complex hybrid battery issue that other shops couldn't diagnose. Professional, reliable, and honest. Highly recommended for any automotive diagnostic needs.
+            </blockquote>
+            <div className="flex items-center justify-center space-x-4">
+              <div className="text-right">
+                <div className="font-orbitron font-bold text-[var(--brand-orange)]">Sarah M.</div>
+                <div className="text-sm text-white/70">Toyota Aqua Owner, Harare</div>
+              </div>
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-[var(--brand-gold)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
