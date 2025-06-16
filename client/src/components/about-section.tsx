@@ -1,6 +1,6 @@
+
 import { Award, Users, Target, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const teamPhotoImg = "/images/about.jpg";
 
 export default function AboutSection() {
   return (
@@ -10,14 +10,35 @@ export default function AboutSection() {
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center space-x-2 glassmorphism rounded-full px-6 py-3 mb-8 neon-glow">
               <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-              <p className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-wide uppercase">Automotive Excellence Since 2017</p>
+              <p className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-wide uppercase">About Our Company</p>
             </div>
+            
             <h2 className="font-orbitron font-black text-4xl md:text-6xl mb-8 ultra-premium-text text-glow leading-tight">
-              Zimbabwe's Leading Automotive Diagnostic Specialists
+              We are the leading service provider in vehicle diagnosis and supply of automotive sensors.
             </h2>
+            
             <p className="text-xl text-white/95 mb-8 leading-relaxed font-light">
-              We are pioneers in automotive technology, specializing in advanced vehicle diagnostics, precision repairs, and premium automotive solutions. Our expertise spans across commercial and private automotive sectors, delivering unmatched service quality.
+              We have been specializing in commercial and private automotive troubleshooting, auto repairs, selling parts and accessories, with extensive experience serving clients across a market including the following:
             </p>
+
+            {/* Client Categories */}
+            <div className="space-y-4 mb-8">
+              {[
+                'Based on medium enterprises', 
+                'Individual customers', 
+                'Service companies', 
+                'Other institutions'
+              ].map((item, index) => (
+                <div key={index} className="flex items-center space-x-4 group animate-fade-in hover:transform hover:translate-x-4 transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="relative flex-shrink-0">
+                    <div className="w-5 h-5 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-lg"></div>
+                    <div className="absolute inset-0 w-5 h-5 bg-[var(--brand-orange)] rounded-full animate-ping opacity-25"></div>
+                  </div>
+                  <span className="text-white text-lg group-hover:text-[var(--brand-orange)] transition-colors duration-300 font-medium">{item}</span>
+                  <div className="flex-1 h-px bg-gradient-to-r from-[var(--brand-orange)]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              ))}
+            </div>
 
             {/* Enhanced Statistics */}
             <div className="grid grid-cols-3 gap-6 mb-8 p-6 glassmorphism rounded-2xl">
@@ -34,31 +55,14 @@ export default function AboutSection() {
                 <div className="text-xs text-white/80 uppercase tracking-wider font-semibold">Support</div>
               </div>
             </div>
-
-            <div className="space-y-4">
-              {[
-                'Medium & Large Enterprises', 
-                'Individual Vehicle Owners', 
-                'Auto Service Companies', 
-                'Government Institutions'
-              ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-4 group animate-fade-in hover:transform hover:translate-x-4 transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="relative flex-shrink-0">
-                    <div className="w-5 h-5 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-lg"></div>
-                    <div className="absolute inset-0 w-5 h-5 bg-[var(--brand-orange)] rounded-full animate-ping opacity-25"></div>
-                  </div>
-                  <span className="text-white text-lg group-hover:text-[var(--brand-orange)] transition-colors duration-300 font-medium">{item}</span>
-                  <div className="flex-1 h-px bg-gradient-to-r from-[var(--brand-orange)]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-              ))}
-            </div>
           </div>
+
           <div className="relative animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
               <img 
-                src={teamPhotoImg}
-                alt="Diagnosis & Sensors team at automotive expo" 
+                src="/images/about.jpg"
+                alt="Diagnosis & Sensors team at automotive expo showcasing our expertise" 
                 className="relative rounded-2xl shadow-2xl w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
