@@ -136,7 +136,7 @@ export default function BlogPage() {
       {/* Navigation */}
       <FloatingNavigation />
 
-      <div className="container mx-auto px-4 py-24
+      <div className="container mx-auto px-4 py-24">
 
         {/* Enhanced Services Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
