@@ -9,7 +9,7 @@ export default function ProductsShowcase() {
     <section id="products" className="py-32 px-6 bg-gradient-to-br from-[var(--dark-bg)] via-[var(--dark-surface)] to-[var(--dark-card)] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4  mb-8">
@@ -36,21 +36,21 @@ export default function ProductsShowcase() {
         {/* Product Categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] to-red-500 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] to-red-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Battery className="text-white group-hover:animate-pulse" size={36} />
             </div>
             <h3 className="font-orbitron font-bold text-2xl text-white mb-3 group-hover:text-[var(--brand-orange)] transition-colors">Hybrid Batteries</h3>
             <p className="text-white/80 text-lg">Complete battery solutions for hybrid vehicles</p>
           </div>
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-blue)] to-blue-500 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-blue)] to-blue-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Zap className="text-white group-hover:animate-pulse" size={36} />
             </div>
             <h3 className="font-orbitron font-bold text-2xl text-white mb-3 group-hover:text-[var(--brand-blue)] transition-colors">Cooling Systems</h3>
             <p className="text-white/80 text-lg">Advanced liquid cooling technology</p>
           </div>
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-gold)] to-yellow-500 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-gold)] to-yellow-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Check className="text-white group-hover:animate-pulse" size={36} />
             </div>
             <h3 className="font-orbitron font-bold text-2xl text-white mb-3 group-hover:text-[var(--brand-gold)] transition-colors">Quality Assured</h3>
@@ -118,7 +118,7 @@ export default function ProductsShowcase() {
           </div>
 
           <div className="relative space-y-4">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-2xl overflow-hidden">
               <img 
                 src={hybridBatteryPackImg}
                 alt="Complete battery packs for Toyota Aqua and Honda Fit Hybrid" 
@@ -126,14 +126,14 @@ export default function ProductsShowcase() {
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-lg">
+              <div className="rounded-xl overflow-hidden">
                 <img 
                   src={hybridBatteryImg}
                   alt="Hybrid battery systems" 
                   className="w-full h-32 object-cover" 
                 />
               </div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
+              <div className="rounded-xl overflow-hidden">
                 <img 
                   src={liquidCoolingImg}
                   alt="Liquid battery cooling systems" 
@@ -141,7 +141,7 @@ export default function ProductsShowcase() {
                 />
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-2xl p-6 shadow-xl animate-float">
+            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-2xl p-6 animate-float">
               <div className="text-center">
                 <div className="font-orbitron font-bold text-2xl">200+</div>
                 <div className="text-sm opacity-90">Products Available</div>

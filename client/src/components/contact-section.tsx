@@ -63,7 +63,7 @@ export default function ContactSection() {
             <span className="block">Connect</span>
             <span className="block text-gradient shimmer">With Us</span>
           </h2>
-          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl mb-8"></div>
+          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow mb-8"></div>
           <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-light px-4">
             Ready to elevate your automotive diagnostic capabilities? 
             <span className="block mt-3 text-gradient font-semibold text-lg">
@@ -150,7 +150,7 @@ export default function ContactSection() {
                 <div className="flex space-x-4 justify-center">
                   <a 
                     href="https://www.facebook.com/p/Diagnosis-and-Sensors-100063639080600/" 
-                    className="glassmorphism rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
+                    className="glassmorphism rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -160,7 +160,7 @@ export default function ContactSection() {
                   </a>
                   <a 
                     href="https://www.instagram.com/diagnosisandsensorszw/" 
-                    className="glassmorphism rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30"
+                    className="glassmorphism rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   </a>
                   <a 
                     href="https://wa.me/+263719974846" 
-                    className="glassmorphism rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/30"
+                    className="glassmorphism rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-110"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -244,7 +244,7 @@ export default function ContactSection() {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-[var(--brand-orange)] to-red-400 hover:from-red-500 hover:to-[var(--brand-orange)] py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="w-full bg-gradient-to-r from-[var(--brand-orange)] to-red-400 hover:from-red-500 hover:to-[var(--brand-orange)] py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
                     size="lg"
                   >
                     Send Message
