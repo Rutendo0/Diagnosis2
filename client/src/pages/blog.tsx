@@ -7,7 +7,7 @@ import Logo from "@/components/logo";
 import FloatingNavigation from "@/components/floating-navigation";
 
 // Image declarations
-const businessVehicleImg = "/images/bussinesvehicle.jpg";
+const businessVehicleImg = "/images/bussinesvehicle1.jpg";
 const vehicleServicingImg = "/images/vehicle-servicing.jpg";
 const coolentTemperitureSensorsImg = "/images/sensors.jpg";
 const sparkPlugImg = "/images/parts.jpg";

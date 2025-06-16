@@ -12,18 +12,20 @@ export default function ProductsShowcase() {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4 neon-glow mb-8">
-            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse-slow shadow-lg shadow-orange-500/50"></div>
-            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase text-glow">
+          <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4  mb-8">
+            <span className="text-white font-orbitron font-bold text-sm tracking-widest uppercase">
+              Explore Our
+            </span>
+            <span className="text-[var(--brand-orange)]  font-bold text-sm tracking-widest uppercase text-glow">
               Premium Products & Solutions
             </span>
           </div>
-          <h2 className="font-orbitron font-black text-6xl md:text-8xl mb-8 ultra-premium-text text-glow leading-tight">
+          <h2 className=" font-black text-6xl md:text-8xl mb-8 ultra-premium-text text-glow leading-tight">
             <span className="block">Advanced</span>
             <span className="block text-gradient shimmer">Products</span>
           </h2>
           <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl mb-8"></div>
-          <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-light">
             Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair
             <span className="block mt-3 text-gradient font-semibold text-lg">
               Engineered for precision, built for performance

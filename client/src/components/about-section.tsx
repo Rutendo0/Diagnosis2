@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white/5 to-[var(--dark-bg)] min-h-screen relative z-10">
+    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white to-[var(--dark-bg)] min-h-screen relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-fade-in-up">
