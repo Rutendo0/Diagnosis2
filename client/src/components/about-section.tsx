@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-white to-[var(--dark-bg)] min-h-screen relative z-10">
+    <section id="about" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-[var(--dark-bg)] min-h-screen relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="animate-fade-in-up">
@@ -13,11 +13,11 @@ export default function AboutSection() {
               <p className="text-[var(--brand-orange)] font-orbitron font-bold text-xs md:text-sm tracking-wide uppercase">About Our Company</p>
             </div>
             
-            <h2 className="font-orbitron font-black text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 md:mb-6 lg:mb-8 ultra-premium-text text-glow leading-tight">
-              We are the leading service provider in vehicle diagnosis and supply of automotive sensors.
+            <h2 className="font-orbitron font-black text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 md:mb-6 lg:mb-8 text-gray-900 leading-tight">
+              <span className="text-[var(--brand-orange)]">We are the leading</span> service provider in vehicle diagnosis and supply of automotive sensors.
             </h2>
             
-            <p className="text-base md:text-lg lg:text-xl text-white/95 mb-6 md:mb-8 leading-relaxed font-light">
+            <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed font-medium">
               We have been specializing in commercial and private automotive troubleshooting, auto repairs, selling parts and accessories, with extensive experience serving clients across a market including the following:
             </p>
 
@@ -34,7 +34,7 @@ export default function AboutSection() {
                     <div className="w-4 h-4 md:w-5 md:h-5 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <div className="absolute inset-0 w-4 h-4 md:w-5 md:h-5 bg-[var(--brand-orange)] rounded-full animate-ping opacity-25"></div>
                   </div>
-                  <span className="text-white text-sm md:text-base lg:text-lg group-hover:text-[var(--brand-orange)] transition-colors duration-300 font-medium">{item}</span>
+                  <span className="text-gray-700 text-sm md:text-base lg:text-lg group-hover:text-[var(--brand-orange)] transition-colors duration-300 font-medium">{item}</span>
                   <div className="flex-1 h-px bg-gradient-to-r from-[var(--brand-orange)]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               ))}
@@ -44,15 +44,15 @@ export default function AboutSection() {
             <div className="grid grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-8 p-3 md:p-4 lg:p-6 glassmorphism rounded-2xl">
               <div className="text-center group hover:scale-110 transition-transform duration-300">
                 <div className="text-lg md:text-2xl lg:text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-1 md:mb-2 group-hover:text-[var(--brand-gold)] transition-colors">7+</div>
-                <div className="text-xs md:text-sm text-white/80 uppercase tracking-wider font-semibold">Years Experience</div>
+                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-semibold">Years Experience</div>
               </div>
               <div className="text-center group hover:scale-110 transition-transform duration-300">
                 <div className="text-lg md:text-2xl lg:text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-1 md:mb-2 group-hover:text-[var(--brand-gold)] transition-colors">1000+</div>
-                <div className="text-xs md:text-sm text-white/80 uppercase tracking-wider font-semibold">Happy Clients</div>
+                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-semibold">Happy Clients</div>
               </div>
               <div className="text-center group hover:scale-110 transition-transform duration-300">
                 <div className="text-lg md:text-2xl lg:text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-1 md:mb-2 group-hover:text-[var(--brand-gold)] transition-colors">24/7</div>
-                <div className="text-xs md:text-sm text-white/80 uppercase tracking-wider font-semibold">Support</div>
+                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-semibold">Support</div>
               </div>
             </div>
           </div>
