@@ -142,11 +142,10 @@ export default function BlogPage() {
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
             backgroundImage: `url(${vehicleServicingImg})`,
-            filter: 'brightness(0.3)'
+            filter: 'brightness(0.4)'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/80 via-[var(--brand-orange)]/40 to-slate-900/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)] via-transparent to-[var(--dark-bg)]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/60 via-[var(--brand-orange)]/20 to-slate-900/70"></div>
         </div>
 
         {/* Floating Particles */}
