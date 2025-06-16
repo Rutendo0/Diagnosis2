@@ -1,10 +1,10 @@
-import { Award, Users, Target, Shield } from "lucide-react";
+import { Award, Users, Target, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 const teamPhotoImg = "/images/about.jpg";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white/100 to-[var(--dark-bg)]">
+    <section id="about" className="py-24 px-6 bg-gradient-to-b from-white/5 to-[var(--dark-bg)] min-h-screen relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-fade-in-up">
@@ -60,6 +60,10 @@ export default function AboutSection() {
                 src={teamPhotoImg}
                 alt="Diagnosis & Sensors team at automotive expo" 
                 className="relative rounded-2xl shadow-2xl w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/images/vehicle.jpg';
+                }}
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
@@ -108,7 +112,7 @@ export default function AboutSection() {
               { icon: Award, title: 'Excellence', description: 'Delivering superior automotive solutions with precision and expertise' },
               { icon: Users, title: 'Integrity', description: 'Building trust through honest service and transparent communication' },
               { icon: Target, title: 'Innovation', description: 'Embracing cutting-edge technology for advanced automotive diagnostics' },
-              { icon: Shield, title: 'Reliability', description: 'Consistent quality service you can depend on every time' }
+              { icon: CheckCircle, title: 'Reliability', description: 'Consistent quality service you can depend on every time' }
             ].map((value, index) => (
               <Card key={index} className="glassmorphism border-none group hover:transform hover:scale-105 transition-all duration-500">
                 <CardContent className="p-8 text-center">
