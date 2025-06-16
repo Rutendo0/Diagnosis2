@@ -48,16 +48,16 @@ export default function FloatingNavigation() {
           <div className="max-w-7xl mx-auto px-4 py-2">
             <div className="flex items-center justify-between">
                 <Logo className="h-12 w-auto" />
-                <div className="hidden lg:flex items-center space-x-8">
+                <div className="hidden lg:flex items-center space-x-10">
                   <Link 
                     href="/" 
-                    className={`relative font-orbitron font-semibold transition-all duration-300 group ${
+                    className={`relative font-orbitron font-semibold transition-all duration-500 group hover:scale-110 ${
                       location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
                     }`}
                   >
-                    <span className="relative z-10">Home</span>
-                    <div className={`absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-transform duration-300 ${
-                      location === '/' ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'
+                    <span className="relative z-10 text-lg">Home</span>
+                    <div className={`absolute inset-x-0 -bottom-2 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-all duration-500 rounded-full ${
+                      location === '/' ? 'transform scale-x-100 shadow-lg shadow-orange-500/50' : 'transform scale-x-0 group-hover:scale-x-100 group-hover:shadow-lg group-hover:shadow-orange-500/50'
                     }`}></div>
                   </Link>
                   <button 

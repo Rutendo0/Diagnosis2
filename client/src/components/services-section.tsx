@@ -59,48 +59,44 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div key={index} className="card-enhanced hover-lift animate-fade-in-up group" style={{animationDelay: `${index * 0.2}s`}}>
-                <div className="image-overlay h-64 relative overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/20 to-[var(--brand-blue)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                    <div className="flex items-center space-x-3">
-                      <div className={`p-3 rounded-2xl ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent 
-                          className="text-white" 
-                          size={28} 
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <div className={`h-1 w-16 rounded-full ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:w-24 transition-all duration-500`}></div>
-                      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
+          {services.map((service, index) => (
+            <Card 
+              key={index} 
+              className="premium-card border-none group hover:transform hover:scale-105 transition-all duration-500 animate-fade-in"
+              style={{animationDelay: `${index * 0.2}s`}}
+            >
+              <div className="image-overlay h-64 relative overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/20 to-[var(--brand-blue)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                  <div className="flex items-center space-x-3">
+                    <div className={`p-3 rounded-2xl ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:scale-110 transition-transform duration-300`}>
+                      <service.icon 
+                        className="text-white" 
+                        size={28} 
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <div className={`h-1 w-16 rounded-full ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:w-24 transition-all duration-500`}></div>
                     </div>
                   </div>
                 </div>
-                <div className="p-8 bg-gradient-to-br from-[var(--dark-surface)] to-[var(--dark-card)]">
-                  <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 group-hover:text-glow transition-all duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                    {service.description}
-                  </p>
-                  <div className="mt-6 flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-[var(--brand-orange)] text-sm font-semibold">Learn More</span>
-                    <div className="w-4 h-0.5 bg-[var(--brand-orange)] group-hover:w-8 transition-all duration-300"></div>
-                  </div>
-                </div>
               </div>
-            );
-          })}
+              <CardContent className="p-10">
+                <div className="w-20 h-20 mx-auto mb-8 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                  <service.icon className="text-white group-hover:animate-pulse" size={36} />
+                </div>
+                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-6 text-center group-hover:text-[var(--brand-gold)] transition-colors duration-300">{service.title}</h3>
+                <p className="text-white/90 mb-8 text-center leading-relaxed text-lg">{service.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
