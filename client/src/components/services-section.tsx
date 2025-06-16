@@ -10,38 +10,43 @@ export default function ServicesSection() {
   const services = [
     {
       title: "Injector Pressure Test",
-      description: "Diesel injection diagnosis, Petrol Injector Testing & Diagnosis, uniformity & sprayability test, injection flow test & Ultrasonic Cleaning",
+      description: "Advanced diesel injection diagnosis, Petrol Injector Testing & Diagnosis, uniformity & sprayability test, injection flow test & Ultrasonic Cleaning with state-of-the-art equipment",
       icon: Search,
       color: "brand-orange",
-      image: dieselInjectorsImg
+      image: dieselInjectorsImg,
+      features: ["Pressure Testing", "Flow Analysis", "Ultrasonic Cleaning", "Performance Report"]
     },
     {
       title: "Vehicle Diagnostics & Troubleshooting",
-      description: "Expert vehicle diagnostics and troubleshooting services, identifying issues quickly and accurately to ensure optimal performance",
+      description: "Expert vehicle diagnostics and troubleshooting services, identifying issues quickly and accurately to ensure optimal performance with cutting-edge diagnostic tools",
       icon: Cpu,
       color: "brand-blue",
-      image: servicePromoImg
+      image: servicePromoImg,
+      features: ["OBD-II Scanning", "Real-time Data", "Error Code Analysis", "Performance Metrics"]
     },
     {
       title: "Vehicle Automotive Repair",
-      description: "Diesel Repairs, Service Replacement, Automotive Repair, Multi-Point Inspection, Filters, Checking Leak, Checking the sensor",
+      description: "Comprehensive automotive repair services including diesel repairs, service replacement, multi-point inspection, filter maintenance, leak detection, and sensor diagnostics",
       icon: Wrench,
       color: "brand-orange",
-      image: vehicleServicingImg
+      image: vehicleServicingImg,
+      features: ["Engine Repair", "Service Replacement", "Leak Detection", "Multi-Point Inspection"]
     },
     {
       title: "Vehicle Parts & Accessories",
-      description: "Parts and diesel supplies, Petrol and aftermarket / premium automotive housing, diesel injection, automotive electronics, Commrail fuel, Diesel fuel connection, Abs sensors, Industrial valves, Air control system",
+      description: "Premium automotive parts and accessories including diesel supplies, aftermarket components, automotive electronics, common rail fuel systems, ABS sensors, and industrial valves",
       icon: Settings,
       color: "brand-blue",
-      image: sparkPlugImg
+      image: sparkPlugImg,
+      features: ["OEM Parts", "Aftermarket Options", "Electronics", "Industrial Components"]
     },
     {
       title: "Automotive Sensors Supply & Fitting",
-      description: "Supply and fitting of automotive sensors such as Airflow direction, car fuel system, water temperature, speed sensor, position sensor, exhaust gas sensor as well as related system vehicle air con repairer",
+      description: "Professional supply and fitting of automotive sensors including airflow direction, fuel system sensors, temperature sensors, speed sensors, position sensors, and exhaust gas sensors",
       icon: LifeBuoy,
       color: "brand-orange",
-      image: coolantSensorsImg
+      image: coolantSensorsImg,
+      features: ["Temperature Sensors", "Speed Sensors", "Position Sensors", "Exhaust Gas Sensors"]
     }
   ];
 
@@ -93,7 +98,20 @@ export default function ServicesSection() {
                   <service.icon className="text-white group-hover:animate-pulse" size={36} />
                 </div>
                 <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-6 text-center group-hover:text-[var(--brand-gold)] transition-colors duration-300">{service.title}</h3>
-                <p className="text-white/90 mb-8 text-center leading-relaxed text-lg">{service.description}</p>
+                <p className="text-white/90 mb-6 text-center leading-relaxed text-lg">{service.description}</p>
+                
+                {/* Service Features */}
+                <div className="mb-8">
+                  <h4 className="text-[var(--brand-orange)] font-orbitron font-semibold text-sm mb-4 text-center uppercase tracking-wider">Key Features:</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-white/80 group/feature hover:text-[var(--brand-orange)] transition-colors duration-300">
+                        <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full group-hover/feature:scale-150 transition-transform duration-300"></div>
+                        <span className="font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}

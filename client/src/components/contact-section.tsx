@@ -52,15 +52,23 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 px-6 bg-gradient-to-br from-[var(--dark-surface)] via-[var(--dark-card)] to-[var(--brand-blue)]/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block mb-6">
-            <span className="text-[var(--brand-orange)] font-orbitron font-semibold text-lg tracking-wide">Contact Us</span>
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4 neon-glow mb-8">
+            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse-slow shadow-lg shadow-orange-500/50"></div>
+            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase text-glow">
+              Professional Support & Service
+            </span>
           </div>
-          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 ultra-premium-text text-glow">Get In Touch</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6 animate-glow"></div>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="font-orbitron font-black text-6xl md:text-8xl mb-8 ultra-premium-text text-glow leading-tight">
+            <span className="block">Connect</span>
+            <span className="block text-gradient shimmer">With Us</span>
+          </h2>
+          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl mb-8"></div>
+          <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-light">
             Ready to elevate your automotive diagnostic capabilities? 
-            <span className="text-gradient font-semibold"> Connect with our experts today.</span>
+            <span className="block mt-3 text-gradient font-semibold text-lg">
+              Connect with Zimbabwe's leading automotive specialists today
+            </span>
           </p>
         </div>
 
@@ -146,57 +154,62 @@ export default function ContactSection() {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Enhanced Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="glassmorphism rounded-2xl border-none bg-transparent">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <Label className="block text-sm font-medium mb-2 text-white">Name</Label>
+            <Card className="glassmorphism-premium rounded-3xl border-none bg-transparent hover:transform hover:scale-105 transition-all duration-500 overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)]"></div>
+              <CardContent className="p-10">
+                <div className="text-center mb-8">
+                  <h3 className="font-orbitron font-bold text-2xl ultra-premium-text mb-3">Send Us a Message</h3>
+                  <p className="text-white/80 text-lg">Get professional automotive solutions tailored to your needs</p>
+                </div>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="group">
+                      <Label className="block text-sm font-orbitron font-semibold mb-3 text-[var(--brand-orange)] uppercase tracking-wider">Full Name</Label>
                       <Input 
                         type="text" 
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
-                        placeholder="Your Name"
+                        className="w-full bg-[var(--dark-bg)]/80 border-2 border-white/20 rounded-xl px-6 py-4 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-all duration-300 hover:border-[var(--brand-orange)]/50 group-hover:scale-105" 
+                        placeholder="Enter your full name"
                         required
                       />
                     </div>
-                    <div>
-                      <Label className="block text-sm font-medium mb-2 text-white">Email</Label>
+                    <div className="group">
+                      <Label className="block text-sm font-orbitron font-semibold mb-3 text-[var(--brand-orange)] uppercase tracking-wider">Email Address</Label>
                       <Input 
                         type="email" 
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
-                        placeholder="your@email.com"
+                        className="w-full bg-[var(--dark-bg)]/80 border-2 border-white/20 rounded-xl px-6 py-4 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-all duration-300 hover:border-[var(--brand-orange)]/50 group-hover:scale-105" 
+                        placeholder="your.email@example.com"
                         required
                       />
                     </div>
                   </div>
-                  <div>
-                    <Label className="block text-sm font-medium mb-2 text-white">Subject</Label>
+                  <div className="group">
+                    <Label className="block text-sm font-orbitron font-semibold mb-3 text-[var(--brand-orange)] uppercase tracking-wider">Subject</Label>
                     <Input 
                       type="text" 
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
-                      placeholder="How can we help?"
+                      className="w-full bg-[var(--dark-bg)]/80 border-2 border-white/20 rounded-xl px-6 py-4 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-all duration-300 hover:border-[var(--brand-orange)]/50 group-hover:scale-105" 
+                      placeholder="What can we help you with?"
                     />
                   </div>
-                  <div>
-                    <Label className="block text-sm font-medium mb-2 text-white">Message</Label>
+                  <div className="group">
+                    <Label className="block text-sm font-orbitron font-semibold mb-3 text-[var(--brand-orange)] uppercase tracking-wider">Your Message</Label>
                     <Textarea 
                       rows={6} 
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300 resize-none" 
-                      placeholder="Tell us about your diagnostic needs..."
+                      className="w-full bg-[var(--dark-bg)]/80 border-2 border-white/20 rounded-xl px-6 py-4 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-all duration-300 hover:border-[var(--brand-orange)]/50 resize-none group-hover:scale-105" 
+                      placeholder="Tell us about your automotive diagnostic needs, vehicle concerns, or any questions you may have..."
                       required
                     />
                   </div>

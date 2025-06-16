@@ -1,4 +1,3 @@
-
 import { ChevronDown, Phone, MessageSquare, MapPin, Wrench, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const bussinesvehicleImg = "/images/bussinesvehicle.jpg";
@@ -81,7 +80,7 @@ export default function HeroSection() {
                     Technology Meets Excellence
                   </span>
                 </p>
-                
+
                 {/* Trust Indicators */}
                 <div className="flex items-center justify-center space-x-8 text-white/80 animate-fade-in" style={{animationDelay: '0.9s'}}>
                   <div className="flex items-center space-x-2">
@@ -141,21 +140,18 @@ export default function HeroSection() {
       </div>
 
       {/* Enhanced Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-fade-in" onClick={scrollToServices} style={{animationDelay: '2s'}}>
-        <div className="relative">
-          <div className="glassmorphism rounded-full p-6 hover:bg-[var(--brand-orange)]/30 transition-all duration-500 neon-glow group-hover:scale-125 animate-bounce">
-            <ChevronDown 
-              size={32} 
-              className="text-[var(--brand-orange)] group-hover:text-white transition-all duration-300 group-hover:animate-pulse"
-            />
-          </div>
-          <div className="absolute inset-0 rounded-full border-2 border-[var(--brand-orange)]/20 animate-ping opacity-75"></div>
-        </div>
-        <div className="text-white/60 text-sm mt-3 font-medium text-center group-hover:text-white transition-colors font-orbitron">
-          Scroll Down
-        </div>
-        <div className="w-px h-8 bg-gradient-to-b from-[var(--brand-orange)] to-transparent mx-auto mt-2 opacity-60"></div>
-      </div>
+      <div 
+              onClick={scrollToServices}
+              className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group hover:scale-110 transition-all duration-300" 
+              style={{animationDelay: '2s'}}
+            >
+              <div className="glassmorphism rounded-full p-4 group-hover:scale-125 transition-all duration-300 neon-glow group-hover:shadow-2xl">
+                <ChevronDown className="text-[var(--brand-orange)] group-hover:text-[var(--brand-gold)] transition-colors duration-300 animate-pulse-slow" size={32} />
+              </div>
+              <div className="text-center mt-3">
+                <span className="text-white/60 text-xs font-orbitron font-semibold tracking-wider uppercase group-hover:text-[var(--brand-orange)] transition-colors duration-300">Explore Services</span>
+              </div>
+            </div>
 
       {/* Enhanced Floating WhatsApp Button */}
       <div className="fixed bottom-8 right-8 z-50">
