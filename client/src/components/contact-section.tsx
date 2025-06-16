@@ -52,10 +52,15 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 px-6 bg-gradient-to-br from-[var(--dark-surface)] via-[var(--dark-card)] to-[var(--brand-blue)]/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-white">Get In Touch</h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
-            Ready to elevate your automotive diagnostic capabilities? Connect with our experts today.
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block mb-6">
+            <span className="text-[var(--brand-orange)] font-orbitron font-semibold text-lg tracking-wide">Contact Us</span>
+          </div>
+          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 ultra-premium-text text-glow">Get In Touch</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6 animate-glow"></div>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Ready to elevate your automotive diagnostic capabilities? 
+            <span className="text-gradient font-semibold"> Connect with our experts today.</span>
           </p>
         </div>
 

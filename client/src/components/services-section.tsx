@@ -63,29 +63,40 @@ export default function ServicesSection() {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div key={index} className="card-enhanced hover-lift animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
-                <div className="image-overlay h-64">
+              <div key={index} className="card-enhanced hover-lift animate-fade-in-up group" style={{animationDelay: `${index * 0.2}s`}}>
+                <div className="image-overlay h-64 relative overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end z-10">
-                    <div className="p-6">
-                      <IconComponent 
-                        className={`${service.color === 'brand-orange' ? 'text-[var(--brand-orange)]' : 'text-[var(--brand-blue)]'} mb-2 animate-pulse-slow`} 
-                        size={36} 
-                      />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/20 to-[var(--brand-blue)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <div className="flex items-center space-x-3">
+                      <div className={`p-3 rounded-2xl ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent 
+                          className="text-white" 
+                          size={28} 
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <div className={`h-1 w-16 rounded-full ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:w-24 transition-all duration-500`}></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-gradient font-orbitron font-bold text-2xl mb-4 transition-all duration-300 hover:text-glow">
+                <div className="p-8 bg-gradient-to-br from-[var(--dark-surface)] to-[var(--dark-card)]">
+                  <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 group-hover:text-glow transition-all duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
                     {service.description}
                   </p>
+                  <div className="mt-6 flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[var(--brand-orange)] text-sm font-semibold">Learn More</span>
+                    <div className="w-4 h-0.5 bg-[var(--brand-orange)] group-hover:w-8 transition-all duration-300"></div>
+                  </div>
                 </div>
               </div>
             );
