@@ -51,15 +51,20 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-gradient-to-b from-[var(--dark-bg)] to-[var(--dark-surface)]">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-block mb-4">
-            <span className="text-[var(--brand-orange)] font-orbitron font-semibold text-lg tracking-wide">Professional Services</span>
+          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg border border-[var(--brand-orange)]/20">
+            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
+            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-wide uppercase">Professional Services</span>
           </div>
-          <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-7xl mb-6 md:mb-8 ultra-premium-text text-glow">Our Expertise</h2>
+          <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-7xl mb-6 md:mb-8 text-gray-900">Our Expertise</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
             Comprehensive automotive diagnostic solutions engineered for precision and performance
           </p>
         </div>
@@ -68,7 +73,7 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="premium-card border-none group hover:transform hover:scale-105 transition-all duration-500 animate-fade-in"
+              className="bg-white/80 backdrop-blur-sm border border-gray-200 hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 group hover:transform hover:scale-105 transition-all duration-500 animate-fade-in shadow-lg"
               style={{animationDelay: `${index * 0.2}s`}}
             >
               <div className="image-overlay h-64 relative overflow-hidden">
@@ -97,15 +102,15 @@ export default function ServicesSection() {
                 <div className="w-20 h-20 mx-auto mb-8 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                   <service.icon className="text-white group-hover:animate-pulse" size={36} />
                 </div>
-                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-6 text-center group-hover:text-[var(--brand-gold)] transition-colors duration-300">{service.title}</h3>
-                <p className="text-white/90 mb-6 text-center leading-relaxed text-lg">{service.description}</p>
+                <h3 className="font-orbitron font-bold text-2xl mb-6 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>
+                <p className="text-gray-700 mb-6 text-center leading-relaxed text-lg">{service.description}</p>
                 
                 {/* Service Features */}
                 <div className="mb-8">
                   <h4 className="text-[var(--brand-orange)] font-orbitron font-semibold text-sm mb-4 text-center uppercase tracking-wider">Key Features:</h4>
                   <div className="grid grid-cols-2 gap-3">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-white/80 group/feature hover:text-[var(--brand-orange)] transition-colors duration-300">
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-700 group/feature hover:text-[var(--brand-orange)] transition-colors duration-300">
                         <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full group-hover/feature:scale-150 transition-transform duration-300"></div>
                         <span className="font-medium">{feature}</span>
                       </div>
@@ -119,12 +124,12 @@ export default function ServicesSection() {
 
         {/* Enhanced Call-to-Action Section */}
         <div className="text-center mt-20 animate-fade-in">
-          <div className="glassmorphism rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden shadow-lg border border-gray-200">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)]"></div>
-            <h3 className="font-orbitron font-black text-4xl md:text-5xl ultra-premium-text mb-6">
+            <h3 className="font-orbitron font-black text-4xl md:text-5xl text-gray-900 mb-6">
               Ready for Professional Service?
             </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
               Experience the difference of working with Zimbabwe's premier automotive diagnostic specialists. 
               Book your service appointment today.
             </p>

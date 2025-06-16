@@ -6,26 +6,26 @@ const liquidCoolingImg = "/images/battery.jpg";
 
 export default function ProductsShowcase() {
   return (
-    <section id="products" className="py-32 px-6 bg-gradient-to-br from-[var(--dark-bg)] via-[var(--dark-surface)] to-[var(--dark-card)] text-white relative overflow-hidden">
+    <section id="products" className="py-32 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4  mb-8">
-            <span className="text-white font-orbitron font-bold text-sm tracking-widest uppercase">
+          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-orange)]/20">
+            <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
               Explore Our
             </span>
-            <span className="text-[var(--brand-orange)]  font-bold text-sm tracking-widest uppercase text-glow">
+            <span className="text-[var(--brand-orange)] font-bold text-sm tracking-widest uppercase">
               Premium Products & Solutions
             </span>
           </div>
-          <h2 className=" font-black text-6xl md:text-8xl mb-8 ultra-premium-text text-glow leading-tight">
+          <h2 className="font-orbitron font-black text-6xl md:text-8xl mb-8 text-gray-900 leading-tight">
             <span className="block">Advanced</span>
-            <span className="block text-gradient shimmer">Products</span>
+            <span className="block text-gradient">Products</span>
           </h2>
-          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl mb-8"></div>
-          <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-light">
+          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full shadow-2xl mb-8"></div>
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
             Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair
             <span className="block mt-3 text-gradient font-semibold text-lg">
               Engineered for precision, built for performance
@@ -39,37 +39,37 @@ export default function ProductsShowcase() {
             <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] to-red-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Battery className="text-white group-hover:animate-pulse" size={36} />
             </div>
-            <h3 className="font-orbitron font-bold text-2xl text-white mb-3 group-hover:text-[var(--brand-orange)] transition-colors">Hybrid Batteries</h3>
-            <p className="text-white/80 text-lg">Complete battery solutions for hybrid vehicles</p>
+            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-orange)] transition-colors">Hybrid Batteries</h3>
+            <p className="text-gray-700 text-lg">Complete battery solutions for hybrid vehicles</p>
           </div>
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
             <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-blue)] to-blue-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Zap className="text-white group-hover:animate-pulse" size={36} />
             </div>
-            <h3 className="font-orbitron font-bold text-2xl text-white mb-3 group-hover:text-[var(--brand-blue)] transition-colors">Cooling Systems</h3>
-            <p className="text-white/80 text-lg">Advanced liquid cooling technology</p>
+            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-blue)] transition-colors">Cooling Systems</h3>
+            <p className="text-gray-700 text-lg">Advanced liquid cooling technology</p>
           </div>
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
             <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-gold)] to-yellow-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Check className="text-white group-hover:animate-pulse" size={36} />
             </div>
-            <h3 className="font-orbitron font-bold text-2xl text-white mb-3 group-hover:text-[var(--brand-gold)] transition-colors">Quality Assured</h3>
-            <p className="text-white/80 text-lg">3 months warranty on all products</p>
+            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-gold)] transition-colors">Quality Assured</h3>
+            <p className="text-gray-700 text-lg">3 months warranty on all products</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <Card className="premium-card border-l-4 border-[var(--brand-orange)] bg-transparent border-none">
+            <Card className="bg-white/80 backdrop-blur-sm border-l-4 border-[var(--brand-orange)] shadow-lg">
               <CardContent className="p-8">
-                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 flex items-center">
+                <h3 className="font-orbitron font-bold text-2xl mb-4 flex items-center text-gray-900">
                   <Battery className="mr-3" size={24} />
                   Hybrid Battery Packs
                 </h3>
-                <p className="text-white mb-4">
+                <p className="text-gray-700 mb-4">
                   Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.
                 </p>
-                <ul className="space-y-2 text-white">
+                <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
                     Low mileage batteries
@@ -90,16 +90,16 @@ export default function ProductsShowcase() {
               </CardContent>
             </Card>
 
-            <Card className="premium-card border-l-4 border-[var(--brand-blue)] bg-transparent border-none">
+            <Card className="bg-white/80 backdrop-blur-sm border-l-4 border-[var(--brand-blue)] shadow-lg">
               <CardContent className="p-8">
-                <h3 className="ultra-premium-text font-orbitron font-bold text-2xl mb-4 flex items-center">
+                <h3 className="font-orbitron font-bold text-2xl mb-4 flex items-center text-gray-900">
                   <Zap className="mr-3" size={24} />
                   Liquid Battery Cooling Systems
                 </h3>
-                <p className="text-white mb-4">
+                <p className="text-gray-700 mb-4">
                   Specialized liquid battery cooling systems for hybrid vehicles ensuring optimal battery performance and longevity.
                 </p>
-                <ul className="space-y-2 text-white">
+                <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
                     Hybrid vehicle cooling
@@ -152,34 +152,34 @@ export default function ProductsShowcase() {
 
         {/* Product Inquiry Section */}
         <div className="mt-20 text-center">
-          <div className="glassmorphism rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden shadow-lg border border-gray-200">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)]"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="text-left">
-                <h3 className="font-orbitron font-black text-3xl md:text-4xl ultra-premium-text mb-6">
+                <h3 className="font-orbitron font-black text-3xl md:text-4xl text-gray-900 mb-6">
                   Need Custom Solutions?
                 </h3>
-                <p className="text-xl text-white/90 mb-6 leading-relaxed">
+                <p className="text-xl text-gray-700 mb-6 leading-relaxed">
                   Our extensive inventory includes specialized parts for various vehicle models. 
                   Contact us for custom orders and bulk purchases.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-                    <span className="text-white/90">Custom battery pack configurations</span>
+                    <span className="text-gray-700">Custom battery pack configurations</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-                    <span className="text-white/90">Bulk pricing available</span>
+                    <span className="text-gray-700">Bulk pricing available</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-                    <span className="text-white/90">Professional installation service</span>
+                    <span className="text-gray-700">Professional installation service</span>
                   </div>
                 </div>
               </div>
               <div className="space-y-6">
-                <div className="bg-[var(--dark-bg)]/50 rounded-2xl p-6 border border-[var(--brand-orange)]/30">
+                <div className="bg-gray-100 rounded-2xl p-6 border border-[var(--brand-orange)]/30">
                   <h4 className="font-orbitron font-bold text-xl text-[var(--brand-orange)] mb-4">Quick Quote Request</h4>
                   <div className="space-y-4">
                     <a 

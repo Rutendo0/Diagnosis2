@@ -132,7 +132,7 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--dark-bg)]">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Navigation */}
       <FloatingNavigation />
 
@@ -177,7 +177,7 @@ export default function BlogPage() {
           <div className="space-y-8 animate-fade-in-up">
             <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl leading-none">
               <span className="block text-white text-shadow drop-shadow-2xl animate-slide-in-left">Our</span>
-              <span className="block ultra-premium-text shimmer drop-shadow-2xl animate-slide-in-right" style={{animationDelay: '0.3s'}}>
+              <span className="block text-gradient shimmer drop-shadow-2xl animate-slide-in-right" style={{animationDelay: '0.3s'}}>
                 Services
               </span>
             </h1>
@@ -223,7 +223,7 @@ export default function BlogPage() {
           {services.map((service, index) => (
             <Card 
               key={service.id} 
-              className="group premium-card overflow-hidden hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+              className="group bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 transform hover:scale-105 animate-fade-in"
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <CardHeader className="p-0">
@@ -257,12 +257,12 @@ export default function BlogPage() {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 
                 {/* Title with enhanced styling */}
-                <h2 className="ultra-premium-text font-orbitron text-2xl font-bold mb-4 transition-all duration-300 group-hover:text-[var(--brand-gold)]">
+                <h2 className="font-orbitron text-2xl font-bold mb-4 transition-all duration-300 text-gray-900 group-hover:text-[var(--brand-orange)]">
                   {service.title}
                 </h2>
                 
                 {/* Enhanced excerpt */}
-                <p className="text-white/90 mb-6 leading-relaxed text-lg font-light group-hover:text-white transition-colors duration-300">
+                <p className="text-gray-700 mb-6 leading-relaxed text-lg font-light transition-colors duration-300">
                   {service.excerpt}
                 </p>
                 
@@ -272,7 +272,7 @@ export default function BlogPage() {
                     <div className="w-3 h-3 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full mr-3 animate-pulse-slow"></div>
                     What's Included:
                   </h4>
-                  <ul className="text-sm text-white space-y-3">
+                  <ul className="text-sm text-gray-700 space-y-3">
                     {service.services.slice(0, 4).map((item, index) => (
                       <li key={index} className="flex items-center space-x-4 group/item hover:text-[var(--brand-orange)] transition-all duration-300 hover:translate-x-2">
                         <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full group-hover/item:scale-150 group-hover/item:bg-[var(--brand-gold)] transition-all duration-300"></div>
@@ -289,8 +289,8 @@ export default function BlogPage() {
                 </div>
                 
                 {/* Enhanced Footer */}
-                <div className="flex items-center justify-between pt-6 border-t border-gradient-to-r from-[var(--brand-orange)]/30 to-[var(--brand-blue)]/30">
-                  <div className="flex items-center space-x-6 text-xs text-white/80">
+                <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+                  <div className="flex items-center space-x-6 text-xs text-gray-600">
                     <div className="flex items-center space-x-2 hover:text-[var(--brand-orange)] transition-all duration-300 cursor-pointer group/badge">
                       <Calendar className="w-4 h-4 group-hover/badge:animate-pulse" />
                       <span className="font-semibold">Available Now</span>
