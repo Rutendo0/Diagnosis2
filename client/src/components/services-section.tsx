@@ -57,9 +57,9 @@ export default function ServicesSection() {
           <div className="inline-block mb-4">
             <span className="text-[var(--brand-orange)] font-orbitron font-semibold text-lg tracking-wide">Professional Services</span>
           </div>
-          <h2 className="font-orbitron font-black text-5xl md:text-7xl mb-8 ultra-premium-text text-glow">Our Expertise</h2>
+          <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-7xl mb-6 md:mb-8 ultra-premium-text text-glow">Our Expertise</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
             Comprehensive automotive diagnostic solutions engineered for precision and performance
           </p>
         </div>

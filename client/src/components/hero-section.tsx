@@ -59,7 +59,7 @@ export default function HeroSection() {
 
             {/* Enhanced Main Headline with Better Typography */}
             <div className="space-y-10 animate-fade-in-up">
-              <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl leading-none">
+              <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-8xl xl:text-9xl leading-none">
                 <span className="block text-white text-shadow animate-slide-in-left drop-shadow-2xl">Precision</span>
                 <span className="block ultra-premium-text animate-slide-in-right shimmer drop-shadow-2xl" style={{animationDelay: '0.3s'}}>
                   Diagnostics
@@ -74,7 +74,7 @@ export default function HeroSection() {
 
               {/* Enhanced Description */}
               <div className="space-y-6">
-                <p className="text-2xl md:text-3xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.6s'}}>
+                <p className="text-lg md:text-2xl lg:text-3xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in px-4" style={{animationDelay: '0.6s'}}>
                   Advanced automotive solutions where 
                   <span className="text-gradient font-semibold text-glow block mt-2">
                     Technology Meets Excellence

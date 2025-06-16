@@ -23,7 +23,7 @@ export default function FloatingNavigation() {
       window.location.href = `/#${sectionId}`;
       return;
     }
-    
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -40,7 +40,7 @@ export default function FloatingNavigation() {
       isScrolled ? "nav-background glassmorphism-premium" : "lambo-glass"
     }`}
   ></div>
-        
+
         {/* Accent Line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
 
@@ -122,7 +122,7 @@ export default function FloatingNavigation() {
             </div>
           </div>
         </nav>
-        
+
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <>

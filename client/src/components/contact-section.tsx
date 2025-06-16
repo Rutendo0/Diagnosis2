@@ -59,12 +59,12 @@ export default function ContactSection() {
               Professional Support & Service
             </span>
           </div>
-          <h2 className="font-orbitron font-black text-6xl md:text-8xl mb-8 ultra-premium-text text-glow leading-tight">
+          <h2 className="font-orbitron font-black text-4xl md:text-6xl lg:text-8xl mb-6 md:mb-8 ultra-premium-text text-glow leading-tight">
             <span className="block">Connect</span>
             <span className="block text-gradient shimmer">With Us</span>
           </h2>
           <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl mb-8"></div>
-          <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-light px-4">
             Ready to elevate your automotive diagnostic capabilities? 
             <span className="block mt-3 text-gradient font-semibold text-lg">
               Connect with Zimbabwe's leading automotive specialists today
