@@ -5,12 +5,13 @@ interface LogoProps {
   className?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ className = "h-8 w-auto" }) => {
+const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
     <img 
       src="/images/logo.png" 
       alt="Logo" 
       className={className}
+      style={{ height: "100px", width: "auto" }}
     />
   );
 };

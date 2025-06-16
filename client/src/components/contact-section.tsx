@@ -69,8 +69,8 @@ export default function ContactSection() {
                   <i className="fas fa-map-marker-alt text-2xl text-white"></i>
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-[var(--brand-orange)]">Harare Branch</h3>
-                <p className="text-gray-300 mb-2">03 Robert Mugabe Way</p>
-                <div className="space-y-1 text-sm text-gray-400">
+                <p className="text-white mb-2">03 Robert Mugabe Way</p>
+                <div className="space-y-1 text-sm text-white">
                   <a href="tel:+263242770389" className="block hover:text-[var(--brand-orange)]">+263 242 77 0389</a>
                   <a href="https://wa.me/263772974846" className="block hover:text-[var(--brand-orange)]">+263 772 974 846</a>
                 </div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-[var(--brand-blue)]">Bulawayo Branch</h3>
                 <p className="text-white mb-2">114 George Silundika St.</p>
-                <div className="space-y-1 text-sm text-gray-400">
+                <div className="space-y-1 text-sm text-white">
                   <a href="tel:+263292883884" className="block hover:text-[var(--brand-blue)]">+263 292 88 3884</a>
                   <a href="https://wa.me/263778633785" className="block hover:text-[var(--brand-blue)]">+263 779 298 117</a>
                 </div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <svg className="w-6 h-6 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                   </a>
@@ -122,7 +122,7 @@ export default function ContactSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <svg className="w-6 h-6 text-orange-300" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-orange-200" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.324-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.417-3.324c.876-.807 2.027-1.297 3.324-1.297s2.448.49 3.324 1.297c.927.876 1.417 2.027 1.417 3.324s-.49 2.448-1.417 3.324c-.876.807-2.027 1.297-3.324 1.297zm7.83-7.296c-.245 0-.49-.098-.653-.261-.163-.163-.261-.408-.261-.653s.098-.49.261-.653c.163-.163.408-.261.653-.261s.49.098.653.261c.163.163.261.408.261.653s-.098.49-.261.653c-.163.163-.408.261-.653.261zm-3.832 3.159c-.817 0-1.479-.662-1.479-1.479s.662-1.479 1.479-1.479 1.479.662 1.479 1.479-.662 1.479-1.479 1.479z"/>
                     </svg>
                   </a>
@@ -148,56 +148,56 @@ export default function ContactSection() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label className="block text-sm font-medium mb-2 text-gray-300">Name</Label>
+                      <Label className="block text-sm font-medium mb-2 text-white">Name</Label>
                       <Input 
                         type="text" 
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full bg-[var(--dark-bg)] border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
+                        className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
                         placeholder="Your Name"
                         required
                       />
                     </div>
                     <div>
-                      <Label className="block text-sm font-medium mb-2 text-gray-300">Email</Label>
+                      <Label className="block text-sm font-medium mb-2 text-white">Email</Label>
                       <Input 
                         type="email" 
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full bg-[var(--dark-bg)] border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
+                        className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
                         placeholder="your@email.com"
                         required
                       />
                     </div>
                   </div>
                   <div>
-                    <Label className="block text-sm font-medium mb-2 text-gray-300">Subject</Label>
+                    <Label className="block text-sm font-medium mb-2 text-white">Subject</Label>
                     <Input 
                       type="text" 
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full bg-[var(--dark-bg)] border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
+                      className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300" 
                       placeholder="How can we help?"
                     />
                   </div>
                   <div>
-                    <Label className="block text-sm font-medium mb-2 text-gray-300">Message</Label>
+                    <Label className="block text-sm font-medium mb-2 text-white">Message</Label>
                     <Textarea 
                       rows={6} 
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full bg-[var(--dark-bg)] border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300 resize-none" 
+                      className="w-full bg-[var(--dark-bg)] border border-gray-400 rounded-lg px-4 py-3 text-white focus:border-[var(--brand-orange)] focus:outline-none transition-colors duration-300 resize-none" 
                       placeholder="Tell us about your diagnostic needs..."
                       required
                     />
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-red-500 hover:to-[var(--brand-orange)] py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="w-full bg-gradient-to-r from-[var(--brand-orange)] to-red-400 hover:from-red-500 hover:to-[var(--brand-orange)] py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                     size="lg"
                   >
                     Send Message

@@ -33,23 +33,26 @@ export default function FloatingNavigation() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 relative">
+      <nav className="fixed top-0 left-0 right-0 z-50">
         {/* Lamborghini-inspired Glass Panel */}
-        <div className="absolute inset-0 lambo-glass"></div>
+       <div
+    className={`absolute inset-0 ${
+      isScrolled ? "nav-background glassmorphism-premium" : "lambo-glass"
+    }`}
+  ></div>
         
         {/* Accent Line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
 
-        <div className="relative z-10 bg-transparent">
-          <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="relative z-10 ">
+          <div className="max-w-7xl mx-auto px-4 py-2">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-12">
-                <Logo className="h-10 w-auto" />
+                <Logo className="h-12 w-auto" />
                 <div className="hidden lg:flex items-center space-x-8">
                   <Link 
                     href="/" 
                     className={`relative font-orbitron font-semibold transition-all duration-300 group ${
-                      location === '/' ? 'text-[var(--brand-orange)]' : 'text-gray-700 hover:text-[var(--brand-orange)]'
+                      location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
                     }`}
                   >
                     <span className="relative z-10">Home</span>
@@ -59,21 +62,21 @@ export default function FloatingNavigation() {
                   </Link>
                   <button 
                     onClick={() => scrollToSection('services')} 
-                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-white hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Services</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('products')} 
-                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-white hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Products</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('about')} 
-                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-white hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">About</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -81,7 +84,7 @@ export default function FloatingNavigation() {
                   <Link 
                     href="/blog" 
                     className={`relative font-orbitron font-semibold transition-all duration-300 group ${
-                      location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-gray-700 hover:text-[var(--brand-orange)]'
+                      location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
                     }`}
                   >
                     <span className="relative z-10">Blog</span>
@@ -91,12 +94,11 @@ export default function FloatingNavigation() {
                   </Link>
                   <button 
                     onClick={() => scrollToSection('contact')} 
-                    className="relative font-orbitron font-semibold text-gray-700 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+                    className="relative font-orbitron font-semibold text-white hover:text-[var(--brand-orange)] transition-all duration-300 group"
                   >
                     <span className="relative z-10">Contact</span>
                     <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   </button>
-                </div>
               </div>
 
               <div className="hidden lg:flex items-center space-x-4">
@@ -111,19 +113,19 @@ export default function FloatingNavigation() {
               <div className="lg:hidden">
                 <button 
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-gray-700 hover:text-[var(--brand-orange)] transition-colors"
+                  className="text-white hover:text-[var(--brand-orange)] transition-colors"
                 >
                   {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
               </div>
             </div>
+            </div>
           </div>
-        </div>
-      </nav>
-
+        </nav>
+        
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <>
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
           <div className="fixed top-0 right-0 h-full w-80 bg-[var(--dark-bg)]/95 backdrop-blur-xl border-l border-white/10">
             <div className="p-8">
@@ -195,8 +197,8 @@ export default function FloatingNavigation() {
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </>
-  );
-}
+          </>
+        )}
+      </>
+    );
+  }

@@ -7,7 +7,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-6 border-t border-gray-800">
+    <footer className="py-12 px-6 border-t border-orange-300">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <div className="font-orbitron font-bold text-3xl gradient-text mb-4">DIAGNOSIS & SENSORS</div>
@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex justify-center space-x-6 mb-6 flex-wrap">
             <button 
               onClick={() => scrollToSection('home')} 
-              className="text-gray-400 hover:text-[var(--brand-orange)] transition-colors duration-300"
+              className="text-white hover:text-[var(--brand-orange)] transition-colors duration-300"
             >
               Home
             </button>
@@ -27,24 +27,37 @@ export default function Footer() {
             </button>
             <button 
               onClick={() => scrollToSection('products')} 
-              className="text-gray-400 hover:text-[var(--brand-orange)] transition-colors duration-300"
+              className="text-white hover:text-[var(--brand-orange)] transition-colors duration-300"
             >
               Products
             </button>
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-gray-400 hover:text-[var(--brand-orange)] transition-colors duration-300"
+              className="text-white hover:text-[var(--brand-orange)] transition-colors duration-300"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="text-gray-400 hover:text-[var(--brand-orange)] transition-colors duration-300"
+              className="text-white hover:text-[var(--brand-orange)] transition-colors duration-300"
             >
               Contact
             </button>
+            
+            <div className="text-white text-sm">
+        Designed by{" "}
+        <a
+          href="https://niakazi.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--brand-orange)] hover:underline"
+        >
+          Niakazi
+        </a>
+      </div>
+            
           </div>
-          <div className="text-gray-500 text-sm">
+          <div className="text-white text-sm">
             &copy; 2024 Diagnosis & Sensors. All rights reserved. | Engineered for Excellence
           </div>
         </div>
