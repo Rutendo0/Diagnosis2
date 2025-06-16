@@ -138,8 +138,43 @@ export default function BlogPage() {
 
       <div className="container mx-auto px-4 py-24">
 
+        {/* Learn More About Us Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-orange)]/20">
+            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
+            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase">
+              Discover Our Story
+            </span>
+          </div>
+          
+          <h2 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-gray-900 leading-tight">
+            <span className="text-[var(--brand-orange)]">Learn More</span>
+            <br />
+            <span className="text-[var(--brand-blue)]">About Us</span>
+          </h2>
+          
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">
+            Discover our journey, values, and commitment to automotive excellence. 
+            <span className="block mt-3 text-gradient font-semibold">
+              Get to know the team behind Zimbabwe's premier diagnostic services
+            </span>
+          </p>
+          
+          <Button 
+            size="lg"
+            className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-[var(--brand-orange)] text-black font-orbitron font-bold px-12 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40"
+            onClick={() => window.open('https://sites.google.com/d/1KKFaXr6fxUDk93lgw8I7eOOTKB4kmIyK/p/1LEAHvzUj7nTZkEPKphu14A_q57guBDpH/edit', '_blank')}
+          >
+            <span className="relative z-10 flex items-center text-lg">
+              LEARN MORE ABOUT US
+              <User className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
+          </Button>
+        </div>
+
         {/* Enhanced Services Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8"></div>
           {services.map((service, index) => (
             <Card 
               key={service.id} 
