@@ -8,6 +8,9 @@ export default function HeroSection() {
     const element = document.getElementById('services');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // Fallback scroll to next section
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
     }
   };
 
@@ -138,14 +141,20 @@ export default function HeroSection() {
       </div>
 
       {/* Enhanced Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group" onClick={scrollToServices}>
-        <div className="glassmorphism rounded-full p-6 hover:bg-[var(--brand-orange)]/30 transition-all duration-500 neon-glow group-hover:scale-125">
-          <ChevronDown 
-            size={32} 
-            className="text-[var(--brand-orange)] group-hover:text-white transition-colors duration-300"
-          />
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-fade-in" onClick={scrollToServices} style={{animationDelay: '2s'}}>
+        <div className="relative">
+          <div className="glassmorphism rounded-full p-6 hover:bg-[var(--brand-orange)]/30 transition-all duration-500 neon-glow group-hover:scale-125 animate-bounce">
+            <ChevronDown 
+              size={32} 
+              className="text-[var(--brand-orange)] group-hover:text-white transition-all duration-300 group-hover:animate-pulse"
+            />
+          </div>
+          <div className="absolute inset-0 rounded-full border-2 border-[var(--brand-orange)]/20 animate-ping opacity-75"></div>
         </div>
-        <div className="text-white/60 text-sm mt-2 font-medium">Scroll Down</div>
+        <div className="text-white/60 text-sm mt-3 font-medium text-center group-hover:text-white transition-colors font-orbitron">
+          Scroll Down
+        </div>
+        <div className="w-px h-8 bg-gradient-to-b from-[var(--brand-orange)] to-transparent mx-auto mt-2 opacity-60"></div>
       </div>
 
       {/* Enhanced Floating WhatsApp Button */}

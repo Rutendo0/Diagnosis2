@@ -136,102 +136,177 @@ export default function BlogPage() {
       {/* Navigation */}
       <FloatingNavigation />
 
-      {/* Hero Header Section */}
-      <section className="relative pt-32 pb-24 px-6 bg-gradient-to-b from-white to-[var(--dark-bg)]">
+      {/* Enhanced Hero Header Section */}
+      <section className="relative pt-32 pb-32 px-6 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url(${vehicleServicingImg})`
+            backgroundImage: `url(${vehicleServicingImg})`,
+            filter: 'brightness(0.3)'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--dark-bg)]/70 via-[var(--dark-bg)]/50 to-[var(--dark-bg)]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/80 via-[var(--brand-orange)]/40 to-slate-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)] via-transparent to-[var(--dark-bg)]/60"></div>
+        </div>
+
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute w-2 h-2 bg-[var(--brand-${i % 2 === 0 ? 'orange' : 'blue'})] rounded-full animate-float opacity-40 blur-sm`}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${4 + Math.random() * 4}s`
+              }}
+            />
+          ))}
         </div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <h1 className="font-orbitron font-bold text-5xl md:text-7xl mb-8 text-white">
-            Our Services
-          </h1>
-          <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-light">
-            Professional automotive solutions with premium quality and exceptional service
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto"></div>
+          {/* Premium Badge */}
+          <div className="inline-flex items-center space-x-3 glassmorphism rounded-full px-8 py-4 neon-glow animate-fade-in mb-8">
+            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse-slow shadow-lg shadow-orange-500/50"></div>
+            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase text-glow">
+              Professional Services Portfolio
+            </span>
+          </div>
+
+          <div className="space-y-8 animate-fade-in-up">
+            <h1 className="font-orbitron font-black text-6xl md:text-8xl lg:text-9xl leading-none">
+              <span className="block text-white text-shadow drop-shadow-2xl animate-slide-in-left">Our</span>
+              <span className="block ultra-premium-text shimmer drop-shadow-2xl animate-slide-in-right" style={{animationDelay: '0.3s'}}>
+                Services
+              </span>
+            </h1>
+
+            <div className="relative w-32 h-2 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl"></div>
+            </div>
+
+            <p className="text-xl md:text-2xl text-white/95 font-light max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.6s'}}>
+              Professional automotive solutions with premium quality and exceptional service.
+              <span className="block mt-3 text-gradient font-semibold">
+                Discover our comprehensive range of specialized services
+              </span>
+            </p>
+          </div>
+
+          {/* Service Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 animate-fade-in" style={{animationDelay: '0.9s'}}>
+            <div className="text-center group hover:scale-110 transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">8+</div>
+              <div className="text-xs text-white/80 uppercase tracking-wider font-semibold">Service Types</div>
+            </div>
+            <div className="text-center group hover:scale-110 transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">24/7</div>
+              <div className="text-xs text-white/80 uppercase tracking-wider font-semibold">Availability</div>
+            </div>
+            <div className="text-center group hover:scale-110 transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">Pro</div>
+              <div className="text-xs text-white/80 uppercase tracking-wider font-semibold">Quality</div>
+            </div>
+            <div className="text-center group hover:scale-110 transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">Fast</div>
+              <div className="text-xs text-white/80 uppercase tracking-wider font-semibold">Service</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-8">
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <Card key={service.id} className="group premium-card overflow-hidden">
+        {/* Enhanced Services Grid */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <Card 
+              key={service.id} 
+              className="group premium-card overflow-hidden hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+              style={{animationDelay: `${index * 0.1}s`}}
+            >
               <CardHeader className="p-0">
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden h-56">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-1000"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/90 via-[var(--dark-bg)]/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                  
+                  {/* Service Number Badge */}
+                  <div className="absolute top-4 left-4 glassmorphism rounded-full w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-[var(--brand-orange)] font-orbitron font-bold text-lg">{service.id}</span>
                   </div>
-                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-8 h-8 bg-[var(--brand-orange)] rounded-full flex items-center justify-center">
-                      <MapPin size={16} className="text-white" />
+                  
+                  {/* Hover Icon */}
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
+                      <Wrench size={20} className="text-white" />
                     </div>
                   </div>
+
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/20 to-[var(--brand-blue)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </CardHeader>
-              <CardContent className="p-6 relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <CardContent className="p-8 relative">
+                {/* Top gradient line */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 
-                <h2 className="ultra-premium-text font-orbitron text-xl font-bold mb-3 transition-all duration-300">
+                {/* Title with enhanced styling */}
+                <h2 className="ultra-premium-text font-orbitron text-2xl font-bold mb-4 transition-all duration-300 group-hover:text-[var(--brand-gold)]">
                   {service.title}
                 </h2>
-                <p className="text-white mb-4 leading-relaxed">
+                
+                {/* Enhanced excerpt */}
+                <p className="text-white/90 mb-6 leading-relaxed text-lg font-light group-hover:text-white transition-colors duration-300">
                   {service.excerpt}
                 </p>
                 
-                {/* Services List */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-[var(--brand-orange)] mb-3 font-orbitron flex items-center">
-                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full mr-2"></div>
-                    Services Include:
+                {/* Enhanced Services List */}
+                <div className="mb-8">
+                  <h4 className="text-sm font-bold text-[var(--brand-orange)] mb-4 font-orbitron flex items-center uppercase tracking-wider">
+                    <div className="w-3 h-3 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full mr-3 animate-pulse-slow"></div>
+                    What's Included:
                   </h4>
-                  <ul className="text-sm text-white space-y-2">
+                  <ul className="text-sm text-white space-y-3">
                     {service.services.slice(0, 4).map((item, index) => (
-                      <li key={index} className="flex items-center space-x-3 group/item hover:text-gray-300 transition-colors">
-                        <div className="w-1.5 h-1.5 bg-[var(--brand-orange)] rounded-full group-hover/item:scale-125 transition-transform"></div>
-                        <span>{item}</span>
+                      <li key={index} className="flex items-center space-x-4 group/item hover:text-[var(--brand-orange)] transition-all duration-300 hover:translate-x-2">
+                        <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full group-hover/item:scale-150 group-hover/item:bg-[var(--brand-gold)] transition-all duration-300"></div>
+                        <span className="font-medium">{item}</span>
                       </li>
                     ))}
                     {service.services.length > 4 && (
-                      <li className="text-[var(--brand-orange)] font-medium flex items-center space-x-2">
-                        <Settings size={12} />
-                        <span>+ {service.services.length - 4} more services</span>
+                      <li className="text-[var(--brand-orange)] font-bold flex items-center space-x-3 pt-2 border-t border-[var(--brand-orange)]/20 group-hover:text-[var(--brand-gold)] transition-colors">
+                        <Settings size={14} className="animate-spin-slow" />
+                        <span>+ {service.services.length - 4} additional services</span>
                       </li>
                     )}
                   </ul>
                 </div>
                 
-                <div className="flex items-center justify-between pt-4 border-t border-[var(--brand-blue)]/20">
-                  <div className="flex items-center space-x-4 text-xs text-white">
-                    <div className="flex items-center space-x-1 hover:text-[var(--brand-blue)] transition-colors">
-                      <Calendar className="w-3 h-3" />
-                      <span>Available</span>
+                {/* Enhanced Footer */}
+                <div className="flex items-center justify-between pt-6 border-t border-gradient-to-r from-[var(--brand-orange)]/30 to-[var(--brand-blue)]/30">
+                  <div className="flex items-center space-x-6 text-xs text-white/80">
+                    <div className="flex items-center space-x-2 hover:text-[var(--brand-orange)] transition-all duration-300 cursor-pointer group/badge">
+                      <Calendar className="w-4 h-4 group-hover/badge:animate-pulse" />
+                      <span className="font-semibold">Available Now</span>
                     </div>
-                    <div className="flex items-center space-x-1 hover:text-[var(--brand-blue)] transition-colors">
-                      <Clock className="w-3 h-3" />
-                      <span>Professional</span>
+                    <div className="flex items-center space-x-2 hover:text-[var(--brand-blue)] transition-all duration-300 cursor-pointer group/badge">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="font-semibold">Expert Service</span>
                     </div>
                   </div>
                   
                   <Button 
                     size="sm" 
-                    className="luxury-button font-orbitron text-xs px-4 py-2"
+                    className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-red-500 text-black font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-orange-500/40"
                     onClick={() => window.open('tel:+263242770389', '_self')}
                   >
-                    <Phone className="w-3 h-3 mr-1" />
+                    <Phone className="w-4 h-4 mr-2 group-hover/btn:animate-pulse" />
                     Call Now
                   </Button>
                 </div>
