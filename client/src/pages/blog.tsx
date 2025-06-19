@@ -142,23 +142,20 @@ export default function BlogPage() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-blue)]/20">
             <div className="w-3 h-3 bg-[var(--brand-blue)] rounded-full animate-pulse"></div>
-            <span className="text-[var(--brand-blue)] font-orbitron font-bold text-sm tracking-widest uppercase">
+            <span className="text-gray-300 font-orbitron font-bold text-sm tracking-widest uppercase">
               Discover Our Story
             </span>
           </div>
           
           <h2 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-gray-900 leading-tight">
-            <span className="text-[var(--brand-blue)]">Learn More</span>
+            <span className="text-gray-500">Learn More</span>
             <br />
-            <span className="text-[var(--brand-orange)]">About Us</span>
+            <span className="text-[var(--brand-blue)]">About Us</span>
           </h2>
           
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">
             Discover our journey, values, and commitment to automotive excellence. 
-            <span className="block mt-3 text-gradient font-semibold">
-              Get to know the team behind Zimbabwe's premier diagnostic services
-            </span>
-          </p>
+             </p>
           
           <Button 
             size="lg"
@@ -166,7 +163,7 @@ export default function BlogPage() {
             onClick={() => window.open('https://sites.google.com/d/1KKFaXr6fxUDk93lgw8I7eOOTKB4kmIyK/p/1LEAHvzUj7nTZkEPKphu14A_q57guBDpH/edit', '_blank')}
           >
             <span className="relative z-10 flex items-center text-lg">
-              LEARN MORE ABOUT US
+              LEARN ABOUT US
               <User className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
@@ -176,8 +173,7 @@ export default function BlogPage() {
         {/* Enhanced Services Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card 
-              key={service.id} 
+            <Card  
               className="group bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 transform hover:scale-105 animate-fade-in"
               style={{animationDelay: `${index * 0.1}s`}}
             >
@@ -190,12 +186,7 @@ export default function BlogPage() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
-                  
-                  {/* Service Number Badge */}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-[var(--brand-orange)] font-orbitron font-bold text-lg">{service.id}</span>
-                  </div>
-                  
+                
                   {/* Hover Icon */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-xl">
