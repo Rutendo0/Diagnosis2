@@ -51,10 +51,9 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <section id="services" className="py-24 px-6 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/3 via-transparent to-[var(--brand-blue)]/3"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">

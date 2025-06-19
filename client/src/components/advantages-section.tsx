@@ -42,7 +42,8 @@ export default function AdvantagesSection() {
   ];
 
   return (
-    <section id="advantages" className="py-24 px-6 bg-gradient-to-b from-[var(--dark-bg)] to-white">
+    <section id="advantages" className="py-24 px-6 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/2 via-transparent to-[var(--brand-blue)]/2"></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-[var(--brand-orange)] font-semibold text-lg mb-4 italic">Why Choose Us</p>

@@ -6,9 +6,8 @@ const liquidCoolingImg = "/images/battery.jpg";
 
 export default function ProductsShowcase() {
   return (
-    <section id="products" className="py-32 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>
+    <section id="products" className="py-32 px-6 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/2 via-transparent to-[var(--brand-blue)]/2"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in">

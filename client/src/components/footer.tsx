@@ -7,7 +7,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-6 border-t border-orange-300">
+    <footer className="py-12 px-6 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/10 via-transparent to-[var(--brand-blue)]/10"></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <div className="font-orbitron font-bold text-3xl gradient-text mb-4">DIAGNOSIS & SENSORS</div>
