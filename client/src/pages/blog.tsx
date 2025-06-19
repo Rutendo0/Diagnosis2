@@ -174,7 +174,7 @@ export default function BlogPage() {
         </div>
 
         {/* Enhanced Services Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8"></div>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card 
               key={service.id} 
