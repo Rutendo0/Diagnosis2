@@ -122,14 +122,14 @@ export default function FloatingNavigation() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <>
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="fixed top-0 right-0 h-full w-80 bg-[var(--dark-bg)]/95 backdrop-blur-xl border-l border-white/10">
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60]" onClick={() => setIsMobileMenuOpen(false)} />
+          <div className="fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-xl border-l border-gray-200 z-[70]">
             <div className="p-8">
               <div className="flex justify-between items-center mb-12">
                 <Logo className="h-8 w-auto" />
                 <button 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-white hover:text-white"
+                  className="text-gray-800 hover:text-[var(--brand-orange)]"
                 >
                   <X size={24} />
                 </button>
@@ -138,8 +138,8 @@ export default function FloatingNavigation() {
               <div className="space-y-8">
                 <Link 
                   href="/" 
-                  className={`block w-full text-left font-orbitron text-lg font-medium transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50 ${
-                    location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-white'
+                  className={`block w-full text-left font-inter text-lg font-medium transition-all duration-300 py-3 border-b border-gray-200 hover:border-[var(--brand-orange)]/50 ${
+                    location === '/' ? 'text-[var(--brand-orange)]' : 'text-gray-800 hover:text-[var(--brand-orange)]'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -147,26 +147,26 @@ export default function FloatingNavigation() {
                 </Link>
                 <button 
                   onClick={() => scrollToSection('services')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-inter text-lg font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-3 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
                 >
                   Services
                 </button>
                 <button 
                   onClick={() => scrollToSection('products')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-inter text-lg font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-3 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
                 >
                   Products
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-inter text-lg font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-3 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
                 >
                   About
                 </button>
                 <Link 
                   href="/blog" 
-                  className={`block w-full text-left font-orbitron text-lg font-medium transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50 ${
-                    location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-white'
+                  className={`block w-full text-left font-inter text-lg font-medium transition-all duration-300 py-3 border-b border-gray-200 hover:border-[var(--brand-orange)]/50 ${
+                    location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-gray-800 hover:text-[var(--brand-orange)]'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -174,7 +174,7 @@ export default function FloatingNavigation() {
                 </Link>
                 <button 
                   onClick={() => scrollToSection('contact')} 
-                  className="block w-full text-left font-orbitron text-lg font-medium text-white hover:text-white transition-all duration-300 py-3 border-b border-white/10 hover:border-[var(--brand-orange)]/50"
+                  className="block w-full text-left font-inter text-lg font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-3 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
                 >
                   Contact
                 </button>

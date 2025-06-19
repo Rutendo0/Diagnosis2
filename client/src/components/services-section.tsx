@@ -62,7 +62,7 @@ export default function ServicesSection() {
             <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
             <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-wide uppercase">Professional Services</span>
           </div>
-          <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-7xl mb-6 md:mb-8 text-gray-900">Our Expertise</h2>
+          <h2 className="font-inter font-bold text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8 text-gray-900">Our Expertise</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6"></div>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
             Comprehensive automotive diagnostic solutions engineered for precision and performance
@@ -71,13 +71,25 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
           {services.map((service, index) => (
-            <Card key={index} className="group premium-card border border-gray-200 bg-white">
-              <CardContent className="p-6 md:p-8 text-center relative z-10">
-                <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-2xl bg-gray-100 flex items-center justify-center shadow-sm">
-                  <service.icon className="text-gray-600" size={24} />
+            <Card key={index} className="group premium-card border border-gray-200 bg-white overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/images/vehicle.jpg';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <service.icon className="text-white" size={20} />
                 </div>
-                <h3 className="font-orbitron font-bold text-xl md:text-2xl mb-4 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>
-                <p className="text-gray-600 md:text-gray-700 mb-4 md:mb-6 text-center leading-relaxed text-sm md:text-lg">{service.description}</p>
+              </div>
+              <CardContent className="p-6 md:p-8 text-center relative z-10">
+                <h3 className="font-inter font-bold text-xl md:text-2xl mb-4 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>
+                <p className="text-gray-600 md:text-gray-700 mb-4 md:mb-6 text-center leading-relaxed text-sm md:text-base">{service.description}</p>
 
                 {/* Service Features */}
                 <div className="mb-6 md:mb-8">
@@ -100,7 +112,7 @@ export default function ServicesSection() {
         <div className="text-center mt-20 animate-fade-in">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden shadow-lg border border-gray-200">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)]"></div>
-            <h3 className="font-orbitron font-black text-4xl md:text-5xl text-gray-900 mb-6">
+            <h3 className="font-inter font-bold text-4xl md:text-5xl text-gray-900 mb-6">
               Ready for Professional Service?
             </h3>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">

@@ -106,6 +106,10 @@ body {
   font-family: 'Orbitron', monospace;
 }
 
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
 .ultra-premium-text {
   background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue), var(--brand-gold));
   -webkit-background-clip: text;
