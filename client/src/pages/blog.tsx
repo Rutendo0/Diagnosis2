@@ -186,25 +186,25 @@ export default function BlogPage() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-1000"
+                    className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/90 via-[var(--dark-bg)]/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
                   
                   {/* Service Number Badge */}
-                  <div className="absolute top-4 left-4 glassmorphism rounded-full w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <span className="text-[var(--brand-orange)] font-orbitron font-bold text-lg">{service.id}</span>
                   </div>
                   
                   {/* Hover Icon */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-xl">
                       <Wrench size={20} className="text-white" />
                     </div>
                   </div>
 
-                  {/* Gradient Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/20 to-[var(--brand-blue)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Improved Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/10 to-[var(--brand-blue)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </CardHeader>
               <CardContent className="p-8 relative">
