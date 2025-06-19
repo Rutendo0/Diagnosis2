@@ -58,10 +58,10 @@ export default function HeroSection() {
             </div>
 
             {/* Enhanced Main Headline with Better Typography */}
-            <div className="space-y-10 animate-fade-in-up">
+            <div className="space-y-10 animate-fade-in">
               <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-8xl xl:text-9xl leading-none">
-                <span className="block text-white text-shadow animate-slide-in-left drop-shadow-2xl">Precision</span>
-                <span className="block ultra-premium-text animate-slide-in-right shimmer drop-shadow-2xl" style={{animationDelay: '0.3s'}}>
+                <span className="block text-white text-shadow drop-shadow-2xl">Precision</span>
+                <span className="block ultra-premium-text shimmer drop-shadow-2xl">
                   Diagnostics
                 </span>
               </h1>
@@ -73,7 +73,7 @@ export default function HeroSection() {
 
               {/* Enhanced Description */}
               <div className="space-y-6">
-                <p className="text-lg md:text-2xl lg:text-3xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in px-4" style={{animationDelay: '0.6s'}}>
+                <p className="text-lg md:text-2xl lg:text-3xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in px-4">
                   Advanced automotive solutions where 
                   <span className="text-gradient font-semibold block mt-2">
                     Technology Meets Excellence
@@ -81,7 +81,7 @@ export default function HeroSection() {
                 </p>
 
                 {/* Trust Indicators */}
-                <div className="flex items-center justify-center space-x-8 text-white/80 animate-fade-in" style={{animationDelay: '0.9s'}}>
+                <div className="flex items-center justify-center space-x-8 text-white/80 animate-fade-in">
                   <div className="flex items-center space-x-2">
                     <Star className="text-[var(--brand-gold)]" size={20} />
                     <span className="font-semibold">Certified Experts</span>
@@ -96,7 +96,7 @@ export default function HeroSection() {
             </div>
 
             {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-12 animate-fade-in" style={{animationDelay: '1.2s'}}>
+            <div className="flex flex-col sm:flex-row gap-6 pt-12 animate-fade-in">
               <Button 
                 onClick={scrollToServices}
                 size="lg"

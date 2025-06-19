@@ -502,8 +502,6 @@ input:focus, textarea:focus {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out;
-  opacity: 0;
-  animation-fill-mode: forwards;
 }
 
 /* Enhanced Hover Effects */
@@ -788,6 +786,7 @@ input:focus, textarea:focus {
 
 .animate-fade-in-up {
   animation: fadeInUp 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 1;
 }
 
 .animate-spin-slow {
