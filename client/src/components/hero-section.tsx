@@ -67,16 +67,15 @@ export default function HeroSection() {
               </h1>
 
               {/* Enhanced Divider */}
-              <div className="relative w-40 h-3 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full animate-glow shadow-2xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] rounded-full blur-md opacity-70"></div>
+              <div className="relative w-40 h-1 mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] rounded-full"></div>
               </div>
 
               {/* Enhanced Description */}
               <div className="space-y-6">
                 <p className="text-lg md:text-2xl lg:text-3xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in px-4" style={{animationDelay: '0.6s'}}>
                   Advanced automotive solutions where 
-                  <span className="text-gradient font-semibold text-glow block mt-2">
+                  <span className="text-gradient font-semibold block mt-2">
                     Technology Meets Excellence
                   </span>
                 </p>
