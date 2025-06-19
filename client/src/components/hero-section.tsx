@@ -1,6 +1,6 @@
 import { ChevronDown, Phone, MessageSquare, MapPin, Wrench, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const bussinesvehicleImg = "/images/bussinesvehicle.jpg";
+const bussinesvehicleImg = "/images/background.jpg";
 
 export default function HeroSection() {
   const scrollToServices = () => {
