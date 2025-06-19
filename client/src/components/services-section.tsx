@@ -71,46 +71,20 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="bg-white/80 backdrop-blur-sm border border-gray-200 hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 group hover:transform hover:scale-105 transition-all duration-500 animate-fade-in shadow-lg"
-              style={{animationDelay: `${index * 0.2}s`}}
-            >
-              <div className="image-overlay h-64 relative overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/20 to-[var(--brand-blue)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <div className="flex items-center space-x-3">
-                    <div className={`p-3 rounded-2xl ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:scale-110 transition-transform duration-300`}>
-                      <service.icon 
-                        className="text-white" 
-                        size={28} 
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className={`h-1 w-16 rounded-full ${service.color === 'brand-orange' ? 'bg-[var(--brand-orange)]' : 'bg-[var(--brand-blue)]'} group-hover:w-24 transition-all duration-500`}></div>
-                    </div>
-                  </div>
+            <Card key={index} className="group premium-card border border-gray-200 bg-white">
+              <CardContent className="p-6 md:p-8 text-center relative z-10">
+                <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-2xl bg-gray-100 flex items-center justify-center shadow-sm">
+                  <service.icon className="text-gray-600" size={24} />
                 </div>
-              </div>
-              <CardContent className="p-10">
-                <div className="w-20 h-20 mx-auto mb-8 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
-                  <service.icon className="text-white group-hover:animate-pulse" size={36} />
-                </div>
-                <h3 className="font-orbitron font-bold text-2xl mb-6 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>
-                <p className="text-gray-700 mb-6 text-center leading-relaxed text-lg">{service.description}</p>
-                
+                <h3 className="font-orbitron font-bold text-xl md:text-2xl mb-4 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>
+                <p className="text-gray-600 md:text-gray-700 mb-4 md:mb-6 text-center leading-relaxed text-sm md:text-lg">{service.description}</p>
+
                 {/* Service Features */}
-                <div className="mb-8">
-                  <h4 className="text-[var(--brand-orange)] font-orbitron font-semibold text-sm mb-4 text-center uppercase tracking-wider">Key Features:</h4>
-                  <div className="grid grid-cols-2 gap-3">
+                <div className="mb-6 md:mb-8">
+                  <h4 className="text-[var(--brand-orange)] font-orbitron font-semibold text-sm mb-3 text-center uppercase tracking-wider">Key Features:</h4>
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-700 group/feature hover:text-[var(--brand-orange)] transition-colors duration-300">
+                      <div key={idx} className="flex items-center space-x-2 text-xs md:text-sm text-gray-600 group/feature hover:text-[var(--brand-orange)] transition-colors duration-300">
                         <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full group-hover/feature:scale-150 transition-transform duration-300"></div>
                         <span className="font-medium">{feature}</span>
                       </div>

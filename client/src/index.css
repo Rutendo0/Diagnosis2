@@ -275,56 +275,35 @@ body {
 
 /* Enhanced Buttons */
 .btn-premium {
-  background: linear-gradient(135deg, var(--brand-orange), #ff8c42);
+  background: var(--brand-orange);
   border: none;
-  border-radius: 50px;
-  padding: 16px 32px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 
-    0 8px 25px rgba(255, 107, 53, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+  color: white;
 }
 
 .btn-premium:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 
-    0 15px 35px rgba(255, 107, 53, 0.4),
-    0 0 30px rgba(255, 107, 53, 0.3);
+  background: #e55a30;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
 
 /* Luxury Button */
 .luxury-button {
-  background: linear-gradient(135deg, var(--brand-orange), #ff6b35);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-}
-
-.luxury-button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.luxury-button:hover::before {
-  opacity: 1;
+  background: var(--brand-orange);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  color: white;
+  font-weight: 600;
 }
 
 .luxury-button:hover {
-  transform: scale(1.05);
-  box-shadow: 
-    0 10px 30px rgba(255, 107, 53, 0.4),
-    0 0 25px rgba(255, 107, 53, 0.3);
+  background: #e55a30;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
 
 /* Enhanced Navigation Styles */

@@ -89,14 +89,14 @@ export default function AboutSection() {
         </div>
 
         {/* Mission and Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
-          <Card className="bg-gradient-to-br from-[var(--brand-orange)] to-orange-600 border-none text-white hover:scale-105 transition-transform duration-300">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <Target className="text-white" size={32} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12 md:mb-16">
+          <Card className="bg-gradient-to-br from-[var(--brand-orange)] to-orange-600 border-none text-white transition-all duration-200">
+            <CardContent className="p-6 md:p-8 text-center">
+              <div className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <Target className="text-white" size={28} />
               </div>
-              <h3 className="font-orbitron font-bold text-2xl mb-4">Our Mission</h3>
-              <p className="text-white/95 leading-relaxed">
+              <h3 className="font-orbitron font-bold text-xl md:text-2xl mb-3 md:mb-4">Our Mission</h3>
+              <p className="text-white/95 leading-relaxed text-sm md:text-base">
                 To provide efficient and effective solutions to all automotive challenges at the most convenient and practical time, ensuring guaranteed customer satisfaction through cutting-edge technology and expert service.
               </p>
             </CardContent>
@@ -121,20 +121,20 @@ export default function AboutSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {[
             { icon: Award, title: 'Excellence', description: 'Delivering superior automotive solutions with precision and expertise' },
             { icon: Users, title: 'Integrity', description: 'Building trust through honest service and transparent communication' },
             { icon: Target, title: 'Innovation', description: 'Embracing cutting-edge technology for advanced automotive diagnostics' },
             { icon: CheckCircle, title: 'Reliability', description: 'Consistent quality service you can depend on every time' }
           ].map((value, index) => (
-            <Card key={index} className="bg-white/80 backdrop-blur-sm border border-gray-200 hover:scale-105 transition-transform duration-300 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] flex items-center justify-center shadow-lg">
-                  <value.icon className="text-white" size={24} />
+            <Card key={index} className="bg-white border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md">
+              <CardContent className="p-4 md:p-6 text-center">
+                <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 rounded-xl bg-gray-100 flex items-center justify-center">
+                  <value.icon className="text-gray-600" size={20} />
                 </div>
-                <h4 className="font-orbitron font-bold text-lg text-gray-900 mb-3">{value.title}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                <h4 className="font-orbitron font-bold text-base md:text-lg text-gray-900 mb-2 md:mb-3">{value.title}</h4>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{value.description}</p>
               </CardContent>
             </Card>
           ))}
