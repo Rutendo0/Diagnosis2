@@ -13,16 +13,9 @@ export default function AboutSection() {
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg border border-[var(--brand-orange)]/20">
             <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-wide uppercase">About Our Company</span>
+            <span className="text-gray-300 font-orbitron font-bold text-sm tracking-wide uppercase">About Our Company</span>
+            </div>
           </div>
-          
-          <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl mb-6 text-gray-900 leading-tight">
-            <span className="text-[var(--brand-orange)]">We are the leading</span>
-            <br className="hidden md:block" />
-            <span className="text-gray-800"> service provider in</span>
-            <br className="hidden md:block" />
-            <span className="text-[var(--brand-blue)]">vehicle diagnosis</span>
-          </h2>
         </div>
 
         {/* Main Content Grid */}
@@ -51,22 +44,6 @@ export default function AboutSection() {
                   </div>
                 ))}
               </div>
-
-              {/* Statistics */}
-              <div className="grid grid-cols-3 gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200">
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-2">7+</div>
-                  <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-semibold">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-2">1000+</div>
-                  <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-semibold">Happy Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-2">24/7</div>
-                  <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider font-semibold">Support</div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -86,6 +63,7 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
+        {/* <-- This closing div properly closes the main content grid */}
 
         {/* Mission and Vision Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12 md:mb-16">
@@ -151,24 +129,8 @@ export default function AboutSection() {
               With deep expertise in vehicle diagnostics, hybrid systems, and automotive electronics, we guide our company's mission 
               to deliver exceptional service to every customer.
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-2">15+</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider font-semibold">Years Combined Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-2">100+</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider font-semibold">Training Certifications</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-orbitron font-black text-[var(--brand-orange)] mb-2">2</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider font-semibold">Branch Locations</div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

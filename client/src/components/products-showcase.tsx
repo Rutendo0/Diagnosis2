@@ -15,14 +15,10 @@ export default function ProductsShowcase() {
             <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
               Explore Our
             </span>
-            <span className="text-[var(--brand-orange)] font-bold text-sm tracking-widest uppercase">
+            <span className="text-gray-300 font-bold text-sm tracking-widest uppercase">
               Premium Products & Solutions
             </span>
           </div>
-          <h2 className="font-orbitron font-black text-6xl md:text-8xl mb-8 text-gray-900 leading-tight">
-            <span className="block">Advanced</span>
-            <span className="block text-gradient">Products</span>
-          </h2>
           <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full shadow-2xl mb-8"></div>
           <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
             Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair

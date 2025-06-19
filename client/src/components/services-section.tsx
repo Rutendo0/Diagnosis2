@@ -11,7 +11,6 @@ export default function ServicesSection() {
     {
       title: "Injector Pressure Test",
       description: "Advanced diesel injection diagnosis, Petrol Injector Testing & Diagnosis, uniformity & sprayability test, injection flow test & Ultrasonic Cleaning with state-of-the-art equipment",
-      icon: Search,
       color: "brand-orange",
       image: dieselInjectorsImg,
       features: ["Pressure Testing", "Flow Analysis", "Ultrasonic Cleaning", "Performance Report"]
@@ -19,23 +18,20 @@ export default function ServicesSection() {
     {
       title: "Vehicle Diagnostics & Troubleshooting",
       description: "Expert vehicle diagnostics and troubleshooting services, identifying issues quickly and accurately to ensure optimal performance with cutting-edge diagnostic tools",
-      icon: Cpu,
-      color: "brand-blue",
+    color: "brand-blue",
       image: servicePromoImg,
       features: ["OBD-II Scanning", "Real-time Data", "Error Code Analysis", "Performance Metrics"]
     },
     {
       title: "Vehicle Automotive Repair",
       description: "Comprehensive automotive repair services including diesel repairs, service replacement, multi-point inspection, filter maintenance, leak detection, and sensor diagnostics",
-      icon: Wrench,
-      color: "brand-orange",
+       color: "brand-orange",
       image: vehicleServicingImg,
       features: ["Engine Repair", "Service Replacement", "Leak Detection", "Multi-Point Inspection"]
     },
     {
       title: "Vehicle Parts & Accessories",
       description: "Premium automotive parts and accessories including diesel supplies, aftermarket components, automotive electronics, common rail fuel systems, ABS sensors, and industrial valves",
-      icon: Settings,
       color: "brand-blue",
       image: sparkPlugImg,
       features: ["OEM Parts", "Aftermarket Options", "Electronics", "Industrial Components"]
@@ -43,7 +39,6 @@ export default function ServicesSection() {
     {
       title: "Automotive Sensors Supply & Fitting",
       description: "Professional supply and fitting of automotive sensors including airflow direction, fuel system sensors, temperature sensors, speed sensors, position sensors, and exhaust gas sensors",
-      icon: LifeBuoy,
       color: "brand-orange",
       image: coolantSensorsImg,
       features: ["Temperature Sensors", "Speed Sensors", "Position Sensors", "Exhaust Gas Sensors"]
@@ -82,9 +77,6 @@ export default function ServicesSection() {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <service.icon className="text-white" size={20} />
-                </div>
               </div>
               <CardContent className="p-6 md:p-8 text-center relative z-10">
                 <h3 className="font-inter font-bold text-xl md:text-2xl mb-4 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>

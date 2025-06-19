@@ -46,8 +46,8 @@ export default function AdvantagesSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/2 via-transparent to-[var(--brand-blue)]/2"></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-[var(--brand-orange)] font-semibold text-lg mb-4 italic">Why Choose Us</p>
-          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-[var(--brand-orange)]">Our Advantages</h2>
+          <p className="text-gray-400 font-semibold text-lg mb-4 italic">Why Choose Us</p>
+          <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-6 text-gray-700">Our Advantages</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

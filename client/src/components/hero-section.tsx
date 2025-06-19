@@ -47,22 +47,12 @@ export default function HeroSection() {
         <div className="flex items-center justify-center min-h-screen">
           {/* Enhanced Centered Content */}
           <div className="text-center space-y-10 max-w-5xl mx-auto">
-            {/* Premium Badge with Better Animation */}
-            <div className="inline-flex items-center space-x-4 glassmorphism rounded-full px-10 py-5 neon-glow animate-fade-in group hover:scale-105 transition-all duration-300">
-              <div className="w-3 h-3 bg-[var(--brand-blue)] rounded-full animate-pulse-slow shadow-lg shadow-blue-500/50"></div>
-              <Star className="text-[var(--brand-gold)] animate-spin-slow" size={16} />
-              <span className="text-[var(--brand-blue)] font-orbitron font-bold text-sm tracking-widest uppercase text-glow">
-                Premium Automotive Diagnostics
-              </span>
-              <div className="w-1 h-1 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-            </div>
-
             {/* Enhanced Main Headline with Better Typography */}
             <div className="space-y-10 animate-fade-in">
-              <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-8xl xl:text-9xl leading-none">
-                <span className="block text-white text-shadow drop-shadow-2xl">Precision</span>
+              <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-5xl xl:text-5xl leading-none">
+                <span className="block text-white ">Diagnosis</span>
                 <span className="block ultra-premium-text shimmer drop-shadow-2xl">
-                  Diagnostics
+                  & Solutions
                 </span>
               </h1>
 
@@ -74,10 +64,7 @@ export default function HeroSection() {
               {/* Enhanced Description */}
               <div className="space-y-6">
                 <p className="text-lg md:text-2xl lg:text-3xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed animate-fade-in px-4">
-                  Advanced automotive solutions where 
-                  <span className="text-gradient font-semibold block mt-2">
-                    Technology Meets Excellence
-                  </span>
+                  Advanced automotive solutions where  
                 </p>
 
                 {/* Trust Indicators */}
@@ -100,7 +87,7 @@ export default function HeroSection() {
               <Button 
                 onClick={scrollToServices}
                 size="lg"
-                className="group relative bg-gradient-to-r from-[var(--brand-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--brand-blue)] text-white font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/40"
+                className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-blue-600 hover:from-blue-600 hover:to-[var(--brand-blue)] text-black font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/40"
               >
                 <span className="relative z-10 flex items-center text-lg">
                   EXPLORE SERVICES
@@ -110,13 +97,13 @@ export default function HeroSection() {
               </Button>
 
               <Button 
-                onClick={() => window.open('tel:+263242770389', '_self')}
-                size="lg"
-                className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40"
-              >
-                <Phone className="mr-3 group-hover:animate-pulse" size={24} />
-                <span className="text-lg">CONTACT US</span>
-              </Button>
+                         onClick={() => window.open('tel:+263242770389', '_self')}
+                              size="lg"
+                     className="group relative bg-transparent text-white font-orbitron font-bold px-10 py-6 rounded-2xl border border-white hover:border-orange-500 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40"
+                       >
+                 <Phone className="mr-3 group-hover:animate-pulse" size={24} />
+                    <span className="text-lg">CONTACT US</span>
+                   </Button>
             </div>
 
 

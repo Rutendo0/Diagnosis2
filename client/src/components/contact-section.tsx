@@ -59,21 +59,18 @@ export default function ContactSection() {
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-orange)]/20">
             <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase">
+            <span className="text-gray-300 font-orbitron font-bold text-sm tracking-widest uppercase">
               Professional Support & Service
             </span>
           </div>
-          <h2 className="font-orbitron font-black text-4xl md:text-6xl lg:text-8xl mb-6 md:mb-8 text-gray-900 leading-tight">
+          <h2 className="font-orbitron font-black text-4xl md:text-6xl lg:text-8xl mb-6 md:mb-8 text-gray-700 leading-tight">
             <span className="block">Connect</span>
-            <span className="block text-gradient">With Us</span>
+            <span className="block text-gray-700">With Us</span>
           </h2>
           <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full mb-8"></div>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light px-4">
+          <p className="block mt-3 text-gradient font-semibold text-lg">
             Ready to elevate your automotive diagnostic capabilities? 
-            <span className="block mt-3 text-gradient font-semibold text-lg">
-              Connect with Zimbabwe's leading automotive specialists today
-            </span>
-          </p>
+           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
