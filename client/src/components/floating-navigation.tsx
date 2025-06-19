@@ -34,12 +34,8 @@ export default function FloatingNavigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50">
-        {/* Lamborghini-inspired Glass Panel */}
-       <div
-    className={`absolute inset-0 ${
-      isScrolled ? "nav-background glassmorphism-premium" : "lambo-glass"
-    }`}
-  ></div>
+        {/* Transparent Background */}
+        <div className="absolute inset-0 bg-transparent backdrop-blur-sm"></div>
 
         {/* Accent Line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>

@@ -119,38 +119,12 @@ export default function HeroSection() {
               </Button>
             </div>
 
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-3 gap-12 pt-16 animate-fade-in" style={{animationDelay: '1.5s'}}>
-              <div className="text-center group hover:scale-110 transition-all duration-300">
-                <div className="text-4xl md:text-5xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">7+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wider font-semibold">Years Experience</div>
-              </div>
-              <div className="text-center group hover:scale-110 transition-all duration-300">
-                <div className="text-4xl md:text-5xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">500+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wider font-semibold">Vehicles Serviced</div>
-              </div>
-              <div className="text-center group hover:scale-110 transition-all duration-300">
-                <div className="text-4xl md:text-5xl font-orbitron font-black text-[var(--brand-orange)] mb-2 group-hover:text-[var(--brand-gold)] transition-colors">2</div>
-                <div className="text-sm text-white/80 uppercase tracking-wider font-semibold">Cities Served</div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <div 
-              onClick={scrollToServices}
-              className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group hover:scale-110 transition-all duration-300" 
-              style={{animationDelay: '2s'}}
-            >
-              <div className="glassmorphism rounded-full p-4 group-hover:scale-125 transition-all duration-300 neon-glow group-hover:shadow-2xl">
-                <ChevronDown className="text-[var(--brand-orange)] group-hover:text-[var(--brand-gold)] transition-colors duration-300 animate-pulse-slow" size={32} />
-              </div>
-              <div className="text-center mt-3">
-                <span className="text-white/60 text-xs font-orbitron font-semibold tracking-wider uppercase group-hover:text-[var(--brand-orange)] transition-colors duration-300">Explore Services</span>
-              </div>
-            </div>
+      
 
       {/* Enhanced Floating WhatsApp Button */}
       <div className="fixed bottom-8 right-8 z-50">
