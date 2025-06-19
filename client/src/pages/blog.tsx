@@ -140,17 +140,17 @@ export default function BlogPage() {
 
         {/* Learn More About Us Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-orange)]/20">
-            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-            <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase">
+          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-blue)]/20">
+            <div className="w-3 h-3 bg-[var(--brand-blue)] rounded-full animate-pulse"></div>
+            <span className="text-[var(--brand-blue)] font-orbitron font-bold text-sm tracking-widest uppercase">
               Discover Our Story
             </span>
           </div>
           
           <h2 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-gray-900 leading-tight">
-            <span className="text-[var(--brand-orange)]">Learn More</span>
+            <span className="text-[var(--brand-blue)]">Learn More</span>
             <br />
-            <span className="text-[var(--brand-blue)]">About Us</span>
+            <span className="text-[var(--brand-orange)]">About Us</span>
           </h2>
           
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">

@@ -49,12 +49,12 @@ export default function HeroSection() {
           <div className="text-center space-y-10 max-w-5xl mx-auto">
             {/* Premium Badge with Better Animation */}
             <div className="inline-flex items-center space-x-4 glassmorphism rounded-full px-10 py-5 neon-glow animate-fade-in group hover:scale-105 transition-all duration-300">
-              <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse-slow shadow-lg shadow-orange-500/50"></div>
+              <div className="w-3 h-3 bg-[var(--brand-blue)] rounded-full animate-pulse-slow shadow-lg shadow-blue-500/50"></div>
               <Star className="text-[var(--brand-gold)] animate-spin-slow" size={16} />
-              <span className="text-[var(--brand-orange)] font-orbitron font-bold text-sm tracking-widest uppercase text-glow">
+              <span className="text-[var(--brand-blue)] font-orbitron font-bold text-sm tracking-widest uppercase text-glow">
                 Premium Automotive Diagnostics
               </span>
-              <div className="w-1 h-1 bg-[var(--brand-blue)] rounded-full animate-pulse"></div>
+              <div className="w-1 h-1 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
             </div>
 
             {/* Enhanced Main Headline with Better Typography */}
@@ -100,19 +100,19 @@ export default function HeroSection() {
               <Button 
                 onClick={scrollToServices}
                 size="lg"
-                className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-[var(--brand-orange)] text-black font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40"
+                className="group relative bg-gradient-to-r from-[var(--brand-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--brand-blue)] text-white font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/40"
               >
                 <span className="relative z-10 flex items-center text-lg">
                   EXPLORE SERVICES
                   <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
               </Button>
 
               <Button 
                 onClick={() => window.open('tel:+263242770389', '_self')}
                 size="lg"
-                className="group relative bg-gradient-to-r from-[var(--brand-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--brand-blue)] text-white font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/40"
+                className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-10 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40"
               >
                 <Phone className="mr-3 group-hover:animate-pulse" size={24} />
                 <span className="text-lg">CONTACT US</span>
