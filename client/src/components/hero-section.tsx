@@ -52,7 +52,7 @@ export default function HeroSection() {
               <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-5xl xl:text-5xl leading-none">
                 <span className="block text-white ">Diagnosis</span>
                 <span className="block ultra-premium-text shimmer drop-shadow-2xl">
-                  & Solutions
+                  & Sensors
                 </span>
               </h1>
 
