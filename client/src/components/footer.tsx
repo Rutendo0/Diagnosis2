@@ -42,15 +42,28 @@ export default function Footer() {
          
           {/* Social/Contact Info */}
           <div className="flex justify-center gap-6 mb-8">
-            <a href="mailto:info@diagnosis.com" className="text-gray-400 hover:text-white transition-colors">
+            <a href="mailto:info@diagnosis.com" className="text-gray-400 hover:text-orange-600 transition-colors">
               <Mail size={20} />
             </a>
-            <a href="https://wa.me/263242770389" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://wa.me/263242770389" className="text-gray-400 hover:text-orange-600 transition-colors">
               <MessageSquare size={20} />
             </a>
-            <a href="https://facebook.com/diagnosis" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://facebook.com/diagnosis" className="text-gray-400 hover:text-orange-600 transition-colors">
               <Facebook size={20} />
             </a>
+            <div className="mt-4 md:mt-0">
+              <p className="text-center md:text-right text-sm sm:text-base">
+                Designed & Developed by{" "}
+                <a 
+                  href="https://niakazi.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-800 hover:text-orange-600 font-bold transition-colors text-base sm:text-lg"
+                >
+                  Niakazi Technology Solutions
+                </a>
+              </p>
+            </div>
           </div>
           
           {/* Copyright and Credits */}
@@ -58,18 +71,7 @@ export default function Footer() {
             <span>&copy; {new Date().getFullYear()} Diagnosis & Sensors. All rights reserved.</span>
             <span className="hidden md:block">|</span>
             <span>Engineered for Excellence</span>
-            <span className="hidden md:block">|</span>
-            <span>
-              Designed by{' '}
-              <a
-                href="https://niakazi.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--brand-orange)] hover:underline hover:text-white transition-colors"
-              >
-                Niakazi
-              </a>
-            </span>
+            <span className="hidden md:block">|</span>   
           </div>
         </div>
       </div>
