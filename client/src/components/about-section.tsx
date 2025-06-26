@@ -36,10 +36,7 @@ export default function AboutSection() {
                   'Other institutions'
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-4 group hover:transform hover:translate-x-2 transition-all duration-300">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-5 h-5 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full shadow-lg"></div>
-                      <div className="absolute inset-0 w-5 h-5 bg-[var(--brand-orange)] rounded-full animate-ping opacity-25"></div>
-                    </div>
+                    <div className="w-5 h-5 bg-[var(--brand-orange)] rounded-full shadow-md flex-shrink-0"></div>
                     <span className="text-gray-700 text-base md:text-lg group-hover:text-[var(--brand-orange)] transition-colors duration-300 font-medium">{item}</span>
                   </div>
                 ))}
@@ -49,12 +46,11 @@ export default function AboutSection() {
 
           {/* Right Image */}
           <div className="relative">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] rounded-3xl blur opacity-20"></div>
+            <div className="relative bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/images/about.jpg"
                 alt="Diagnosis & Sensors team showcasing automotive expertise" 
-                className="relative rounded-2xl shadow-2xl w-full h-auto max-h-96 object-cover"
+                className="w-full h-auto max-h-96 object-contain p-4"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = '/images/vehicle.jpg';

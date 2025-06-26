@@ -65,18 +65,17 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
           {services.map((service, index) => (
-            <Card key={index} className="group premium-card border border-gray-200 bg-white overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Card key={index} className="group border border-gray-200 bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-48 overflow-hidden bg-gray-100">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = '/images/vehicle.jpg';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <CardContent className="p-6 md:p-8 text-center relative z-10">
                 <h3 className="font-inter font-bold text-xl md:text-2xl mb-4 text-center text-gray-900 group-hover:text-[var(--brand-orange)] transition-colors duration-300">{service.title}</h3>

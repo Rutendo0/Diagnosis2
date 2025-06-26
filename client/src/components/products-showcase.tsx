@@ -79,7 +79,7 @@ export default function ProductsShowcase() {
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Professional installation - $120
+                    Professional installation available
                   </li>
                 </ul>
               </CardContent>
@@ -113,30 +113,30 @@ export default function ProductsShowcase() {
           </div>
 
           <div className="relative space-y-4">
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src={hybridBatteryPackImg}
                 alt="Complete battery packs for Toyota Aqua and Honda Fit Hybrid" 
-                className="w-full h-64 object-cover" 
+                className="w-full h-64 object-contain bg-gray-100 p-4" 
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden">
+              <div className="rounded-xl overflow-hidden shadow-md">
                 <img 
                   src={hybridBatteryImg}
                   alt="Hybrid battery systems" 
-                  className="w-full h-32 object-cover" 
+                  className="w-full h-32 object-contain bg-gray-100 p-2" 
                 />
               </div>
-              <div className="rounded-xl overflow-hidden">
+              <div className="rounded-xl overflow-hidden shadow-md">
                 <img 
                   src={liquidCoolingImg}
                   alt="Liquid battery cooling systems" 
-                  className="w-full h-32 object-cover" 
+                  className="w-full h-32 object-contain bg-gray-100 p-2" 
                 />
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-2xl p-6 animate-float">
+            <div className="bg-[var(--brand-orange)] text-white rounded-2xl p-6 shadow-lg">
               <div className="text-center">
                 <div className="font-orbitron font-bold text-2xl">200+</div>
                 <div className="text-sm opacity-90">Products Available</div>

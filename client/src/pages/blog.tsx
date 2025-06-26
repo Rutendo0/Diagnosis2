@@ -1,3 +1,4 @@
+
 import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -82,15 +83,15 @@ export default function BlogPage() {
     {
       id: 5,
       title: "Complete Battery Packs - Toyota Aqua & Honda Fit Hybrid",
-      excerpt: "Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.",
+      excerpt: "Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with warranty on quality cells.",
       image: hybridBatteryImg,
       services: [
         "Low mileage batteries",
-        "3 months warranty",
+        "Quality warranty",
         "2012-2016 cells",
         "Trade-in options available",
-        "Professional installation - $120",
-        "Battery pack replacement - $580"
+        "Professional installation",
+        "Battery pack replacement"
       ]
     },
     {
@@ -138,121 +139,145 @@ export default function BlogPage() {
 
       <div className="container mx-auto px-4 py-24">
 
-        {/* Learn More About Us Section */}
+        {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-blue)]/20">
-            <div className="w-3 h-3 bg-[var(--brand-blue)] rounded-full animate-pulse"></div>
-            <span className="text-gray-300 font-orbitron font-bold text-sm tracking-widest uppercase">
-              Discover Our Story
+          <div className="inline-flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-md border border-[var(--brand-blue)]/20">
+            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full"></div>
+            <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
+              Our Services & Solutions
             </span>
           </div>
           
-          <h2 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-gray-900 leading-tight">
-            <span className="text-gray-500">Learn More</span>
+          <h1 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-gray-900 leading-tight">
+            <span className="text-[var(--brand-blue)]">Automotive</span>
             <br />
-            <span className="text-[var(--brand-blue)]">About Us</span>
-          </h2>
+            <span className="text-[var(--brand-orange)]">Excellence</span>
+          </h1>
+          
+          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full mb-8"></div>
           
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">
-            Discover our journey, values, and commitment to automotive excellence. 
-             </p>
-          
-          <Button 
-            size="lg"
-            className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-[var(--brand-orange)] text-black font-orbitron font-bold px-12 py-6 rounded-2xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40"
-            onClick={() => window.open('https://sites.google.com/d/1KKFaXr6fxUDk93lgw8I7eOOTKB4kmIyK/p/1LEAHvzUj7nTZkEPKphu14A_q57guBDpH/edit', '_blank')}
-          >
-            <span className="relative z-10 flex items-center text-lg">
-              LEARN ABOUT US
-              <User className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
-          </Button>
+            Comprehensive automotive diagnostic solutions and professional vehicle services. 
+            Discover our expertise in vehicle diagnosis, sensor technology, and electrical systems.
+          </p>
         </div>
 
-        {/* Enhanced Services Grid */}
+        {/* Learn More About Us Section */}
+        <div className="text-center mb-16">
+          <div className="bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
+            <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-md border border-[var(--brand-blue)]/20">
+              <User className="w-4 h-4 text-[var(--brand-orange)]" />
+              <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
+                Our Story
+              </span>
+            </div>
+            
+            <h2 className="font-orbitron font-black text-3xl md:text-4xl mb-6 text-gray-900">
+              Learn More About <span className="text-[var(--brand-orange)]">Diagnosis & Sensors</span>
+            </h2>
+            
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">
+              Discover our journey, values, and commitment to automotive excellence. Learn about our team, 
+              our mission, and why we're the leading brand in automotive vehicle diagnosis.
+            </p>
+            
+            <Button 
+              size="lg"
+              className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-12 py-6 rounded-2xl border-0 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              onClick={() => window.open('https://sites.google.com/d/1KKFaXr6fxUDk93lgw8I7eOOTKB4kmIyK/p/1LEAHvzUj7nTZkEPKphu14A_q57guBDpH/edit', '_blank')}
+            >
+              <span className="relative z-10 flex items-center text-lg">
+                LEARN ABOUT US
+                <User className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
+              </span>
+            </Button>
+          </div>
+        </div>
+
+        {/* Services Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card  
-              className="group bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-[var(--brand-orange)]/20 transition-all duration-500 transform hover:scale-105 animate-fade-in"
-              style={{animationDelay: `${index * 0.1}s`}}
+              key={service.id}
+              className="group bg-white backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden hover:shadow-xl hover:shadow-[var(--brand-orange)]/10 transition-all duration-300 transform hover:scale-102"
             >
               <CardHeader className="p-0">
-                <div className="relative overflow-hidden h-56">
+                <div className="relative overflow-hidden h-64">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-500"
                     loading="lazy"
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                 
-                  {/* Hover Icon */}
-                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-xl">
+                  {/* Service Icon */}
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                       <Wrench size={20} className="text-white" />
                     </div>
                   </div>
 
-                  {/* Improved Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/10 to-[var(--brand-blue)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Professional Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/5 to-[var(--brand-orange)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </CardHeader>
-              <CardContent className="p-8 relative">
-                {/* Top gradient line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+              <CardContent className="p-6 relative">
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 
-                {/* Title with enhanced styling */}
-                <h2 className="font-orbitron text-2xl font-bold mb-4 transition-all duration-300 text-gray-900 group-hover:text-[var(--brand-orange)]">
+                {/* Title */}
+                <h2 className="font-orbitron text-xl font-bold mb-4 transition-all duration-300 text-gray-900 group-hover:text-[var(--brand-orange)]">
                   {service.title}
                 </h2>
                 
-                {/* Enhanced excerpt */}
-                <p className="text-gray-700 mb-6 leading-relaxed text-lg font-light transition-colors duration-300">
+                {/* Description */}
+                <p className="text-gray-700 mb-6 leading-relaxed font-light transition-colors duration-300">
                   {service.excerpt}
                 </p>
                 
-                {/* Enhanced Services List */}
-                <div className="mb-8">
+                {/* Services List */}
+                <div className="mb-6">
                   <h4 className="text-sm font-bold text-[var(--brand-orange)] mb-4 font-orbitron flex items-center uppercase tracking-wider">
-                    <div className="w-3 h-3 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full mr-3 animate-pulse-slow"></div>
-                    What's Included:
+                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full mr-3"></div>
+                    Services Included:
                   </h4>
-                  <ul className="text-sm text-gray-700 space-y-3">
-                    {service.services.slice(0, 4).map((item, index) => (
-                      <li key={index} className="flex items-center space-x-4 group/item hover:text-[var(--brand-orange)] transition-all duration-300 hover:translate-x-2">
-                        <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full group-hover/item:scale-150 group-hover/item:bg-[var(--brand-gold)] transition-all duration-300"></div>
+                  <ul className="text-sm text-gray-700 space-y-2">
+                    {service.services.slice(0, 4).map((item, idx) => (
+                      <li key={idx} className="flex items-center space-x-3 group/item hover:text-[var(--brand-orange)] transition-all duration-300">
+                        <div className="w-1.5 h-1.5 bg-[var(--brand-blue)] rounded-full group-hover/item:bg-[var(--brand-orange)] transition-all duration-300"></div>
                         <span className="font-medium">{item}</span>
                       </li>
                     ))}
                     {service.services.length > 4 && (
-                      <li className="text-[var(--brand-orange)] font-bold flex items-center space-x-3 pt-2 border-t border-[var(--brand-orange)]/20 group-hover:text-[var(--brand-gold)] transition-colors">
-                        <Settings size={14} className="animate-spin-slow" />
-                        <span>+ {service.services.length - 4} additional services</span>
+                      <li className="text-[var(--brand-orange)] font-bold flex items-center space-x-2 pt-2 border-t border-gray-200">
+                        <Settings size={12} />
+                        <span>+ {service.services.length - 4} more services</span>
                       </li>
                     )}
                   </ul>
                 </div>
                 
-                {/* Enhanced Footer */}
-                <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                  <div className="flex items-center space-x-6 text-xs text-gray-600">
-                    <div className="flex items-center space-x-2 hover:text-[var(--brand-orange)] transition-all duration-300 cursor-pointer group/badge">
-                      <Calendar className="w-4 h-4 group-hover/badge:animate-pulse" />
+                {/* Footer */}
+                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div className="flex items-center space-x-4 text-xs text-gray-600">
+                    <div className="flex items-center space-x-2 hover:text-[var(--brand-orange)] transition-all duration-300 cursor-pointer">
+                      <Calendar className="w-4 h-4" />
                       <span className="font-semibold">Available Now</span>
                     </div>
-                    <div className="flex items-center space-x-2 hover:text-[var(--brand-blue)] transition-all duration-300 cursor-pointer group/badge">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="flex items-center space-x-2 hover:text-[var(--brand-blue)] transition-all duration-300 cursor-pointer">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       <span className="font-semibold">Expert Service</span>
                     </div>
                   </div>
                   
                   <Button 
                     size="sm" 
-                    className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-500 hover:to-red-500 text-black font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-500 transform hover:scale-110 hover:shadow-lg hover:shadow-orange-500/40"
+                    className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-red-500 text-white font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-300 transform hover:scale-105 shadow-md"
                     onClick={() => window.open('tel:+263242770389', '_self')}
                   >
-                    <Phone className="w-4 h-4 mr-2 group-hover/btn:animate-pulse" />
+                    <Phone className="w-4 h-4 mr-2" />
                     Call Now
                   </Button>
                 </div>
@@ -261,26 +286,45 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Floating Action Section */}
+        {/* Contact Information */}
+        <div className="mt-16 bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
+          <h3 className="text-2xl font-bold text-[var(--brand-blue)] mb-6 font-orbitron text-center">Get Professional Help</h3>
+          <p className="text-lg text-gray-700 mb-6 text-center max-w-3xl mx-auto">
+            Our expert technicians are ready to help with all your automotive diagnostic needs. Contact us today for professional service.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 text-center">
+            <div className="bg-white/80 rounded-2xl p-6 shadow-md border border-gray-200">
+              <h4 className="font-bold text-[var(--brand-orange)] mb-2 font-orbitron">Harare Office</h4>
+              <p className="text-gray-700">+263 242 770 389</p>
+              <p className="text-gray-700">+263 772 974 846</p>
+            </div>
+            <div className="bg-white/80 rounded-2xl p-6 shadow-md border border-gray-200">
+              <h4 className="font-bold text-[var(--brand-orange)] mb-2 font-orbitron">Bulawayo Office</h4>
+              <p className="text-gray-700">+263 292 883 884</p>
+              <p className="text-gray-700">+263 779 298 117</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Action Buttons */}
         <div className="fixed bottom-8 right-8 z-40">
           <div className="flex flex-col space-y-4">
             <Button 
               size="lg"
-              className="rounded-full w-16 h-16 bg-[var(--brand-orange)] hover:bg-[var(--brand-orange)]/80 shadow-2xl hover:shadow-[var(--brand-orange)]/40 transition-all duration-300 transform hover:scale-110"
+              className="rounded-full w-16 h-16 bg-[var(--brand-orange)] hover:bg-orange-600 shadow-xl transition-all duration-300 transform hover:scale-110"
               onClick={() => window.open('tel:+263242770389', '_self')}
             >
-              <Phone size={24} />
+              <Phone size={24} className="text-white" />
             </Button>
             <Button 
               size="lg"
-              className="rounded-full w-16 h-16 bg-[var(--brand-blue)] hover:bg-[var(--brand-blue)]/80 shadow-2xl hover:shadow-[var(--brand-blue)]/40 transition-all duration-300 transform hover:scale-110"
+              className="rounded-full w-16 h-16 bg-[var(--brand-blue)] hover:bg-blue-700 shadow-xl transition-all duration-300 transform hover:scale-110"
               onClick={() => window.open('https://wa.me/+263719974846', '_blank')}
             >
-              <MessageSquare size={24} />
+              <MessageSquare size={24} className="text-white" />
             </Button>
           </div>
         </div>
-
 
       </div>
     </div>
