@@ -45,7 +45,7 @@ export default function Footer() {
             <a href="mailto:info@diagnosis.com" className="text-gray-400 hover:text-orange-600 transition-colors">
               <Mail size={20} />
             </a>
-            <a href="https://wa.me/263242770389" className="text-gray-400 hover:text-orange-600 transition-colors">
+            <a href="https://wa.me/+263719974846" className="text-gray-400 hover:text-orange-600 transition-colors">
               <MessageSquare size={20} />
             </a>
             <a href="https://facebook.com/diagnosis" className="text-gray-400 hover:text-orange-600 transition-colors">
