@@ -48,7 +48,7 @@ export default function Footer() {
             <a href="https://wa.me/+263719974846" className="text-gray-400 hover:text-orange-600 transition-colors">
               <MessageSquare size={20} />
             </a>
-            <a href="https://facebook.com/diagnosis" className="text-gray-400 hover:text-orange-600 transition-colors">
+            <a href="https://www.facebook.com/p/Diagnosis-and-Sensors-100063639080600/" className="text-gray-400 hover:text-orange-600 transition-colors">
               <Facebook size={20} />
             </a>
             <div className="mt-4 md:mt-0">
