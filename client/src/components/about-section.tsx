@@ -30,7 +30,7 @@ export default function AboutSection() {
               {/* Client Categories */}
               <div className="space-y-4 mb-8">
                 {[
-                  'Based on medium enterprises', 
+                  'Based on small and medium enterprises', 
                   'Individual customers', 
                   'Service companies', 
                   'Other institutions'
