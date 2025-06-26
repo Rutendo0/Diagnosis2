@@ -115,16 +115,12 @@ export default function ContactSection() {
                 <h3 className="font-semibold text-lg mb-4 text-[var(--brand-gold)] text-center">Business Hours</h3>
                 <div className="space-y-2 text-sm text-gray-700">
                   <div className="flex justify-between">
-                    <span>Monday - Friday:</span>
+                    <span>Monday - Saturday:</span>
                     <span className="text-[var(--brand-orange)]">8:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span className="text-[var(--brand-orange)]">8:00 AM - 1:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
                     <span>Sunday:</span>
-                    <span className="text-gray-500">Closed</span>
+                    <span className="text-[var(--brand-orange)]">9:00 AM - 5:00 PM</span>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-200">
                     <div className="text-center">
