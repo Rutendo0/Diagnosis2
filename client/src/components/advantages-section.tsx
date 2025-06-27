@@ -1,55 +1,34 @@
-import { Shield, Wrench, DollarSign, Award, Clock, Users, CheckCircle, Star } from "lucide-react";
+import { Wrench, Zap, Cog, Shield, CheckCircle, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function AdvantagesSection() {
-  const advantages = [
+  const services = [
     {
-      title: "Certified Excellence",
-      description: "ISO-certified processes and industry-leading quality standards ensure exceptional service delivery",
-      icon: Shield,
-      color: "from-orange-500 to-orange-600",
-      stats: "ISO Certified",
-      image: "/images/image2.jpg"
+
+      title: "Car Servicing & Repairs",
+      description: "Comprehensive automotive servicing including diagnostics, repairs, and maintenance.",
+      features: ["Wiring repairs", "Sensor replacement","Common rail injector fitments", "Changing Oil",
+        "Checking idle position", " Changing filters","Checking leaks", "High pressure pump fitment"],
+      
     },
     {
-      title: "Expert Technicians",
-      description: "Our team consists of certified automotive specialists with decades of combined experience",
-      icon: Wrench,
-      color: "from-blue-500 to-blue-600",
-      stats: "15+ Years Exp",
-      image: "/images/image3.jpg"
+      
+      title: "Diesel Injector Services", 
+      description: "Specialized diesel injector diagnostics, cleaning, and replacement services.",
+      features: ["Uniformity/Sprayability test", "Leakage test", "Injecting flow test","Auto test", "Ultrasonic cleaning"],
     },
     {
-      title: "Competitive Pricing",
-      description: "Transparent pricing with no hidden fees, offering the best value for premium automotive services",
-      icon: DollarSign,
-      color: "from-orange-500 to-orange-600",
-      stats: "Best Prices",
-      image: "/images/image4.jpg"
+      title: "Our advance services",
+      description: "We offer top-notch servicing and repair for hybrid vehicles.",
+      features: ["Routine Maintenance", "Extensive Repairs", "Oil changes",
+        "Battery replacements","Electrical Sytem Repairs", "Brake inspection"],
     },
     {
-      title: "Quality Guarantee",
-      description: "Every service comes with our comprehensive warranty and satisfaction guarantee",
-      icon: Award,
-      color: "from-blue-500 to-blue-600",
-      stats: "100% Guaranteed",
-      image: "/images/image5.jpg"
-    },
-    {
-      title: "Rapid Service",
-      description: "Efficient diagnostics and quick turnaround times without compromising on quality",
-      icon: Clock,
-      color: "from-orange-500 to-orange-600",
-      stats: "Same Day Service",
-      image: "/images/image6.jpg"
-    },
-    {
-      title: "Customer Focus",
-      description: "Dedicated customer service team providing personalized support and expert guidance",
-      icon: Users,
-      color: "from-blue-500 to-blue-600",
-      stats: "5000+ Happy Clients",
-      image: "/images/image7.jpg"
+      
+      title: "Premium Parts Supply",
+      description: "High-quality automotive parts and sensors from trusted manufacturers.",
+      features: ["EGR Valve, Injector drive, Pedal sensor, Speedo sensor, OC V/VVT sensors", "Gear Box connectors, Abs Sensors, Indicator Switch, Idle Control Switch", "Spiral cables, Valve board, Computer box", "Petrol & Diesel high pressure pump, Pump housing, Booster pump"],
+      
     }
   ];
 
@@ -79,51 +58,36 @@ export default function AdvantagesSection() {
           </p>
         </div>
 
-        {/* Enhanced Advantages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {advantages.map((advantage, index) => (
-            <Card key={index} className="group relative bg-white border-0 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
-              {/* Background Image */}
-              <div className="relative h-48 overflow-hidden rounded-t-2xl">
-                <img 
-                  src={advantage.image} 
-                  alt={advantage.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/5"></div>
-              </div>
+        {/* Modern Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-20">
+          {services.map((service, index) => {
+            return (
+              <Card key={index} className="modern-card group overflow-hidden border-0 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2">
+                <CardContent className="p-8">
+                  <div className="relative">
+                    {/* Content */}
+                    <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">
+                      {service.title}
+                    </h3>
 
-              {/* Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${advantage.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                    <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
 
-              <CardContent className="relative p-8 text-center">
-                {/* Icon Container */}
-                <div className="relative mb-6">
-                  <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${advantage.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <advantage.icon className="text-white" size={36} />
+                    {/* Features */}
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center space-x-3">
+                          <CheckCircle className="text-green-500 flex-shrink-0" size={18} />
+                          <span className="text-gray-700 font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-
-                  {/* Stats Badge */}
-                  <div className="absolute -top-2 -right-2 bg-white shadow-lg rounded-full px-3 py-1 border-2 border-gray-100">
-                    <span className="text-xs font-bold text-gray-600">{advantage.stats}</span>
-                  </div>
-                </div>
-
-                <h3 className="font-orbitron font-black text-xl md:text-2xl text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-blue-600 group-hover:bg-clip-text transition-all duration-300">
-                  {advantage.title}
-                </h3>
-
-                <p className="text-gray-600 leading-relaxed text-lg">
-                  {advantage.description}
-                </p>
-
-                {/* Check Mark */}
-                <div className="mt-6 flex justify-center">
-                  <CheckCircle className="text-green-500" size={24} />
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
       </div>

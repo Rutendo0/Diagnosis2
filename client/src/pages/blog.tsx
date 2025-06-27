@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare, Plus, Edit3, Trash2, Eye, EyeOff } from "lucide-react";
@@ -116,12 +115,12 @@ export default function BlogPage() {
 
   const handleAdminLogin = () => {
     // Simple password protection - in production, use proper authentication
-    if (adminPassword === "diagnosis2024") {
+    if (adminPassword === "admin123") {
       setIsAdminMode(true);
       setShowPasswordDialog(false);
       setAdminPassword("");
     } else {
-      alert("Incorrect password");
+      alert("Incorrect password. Please contact administrator.");
     }
   };
 
@@ -188,148 +187,281 @@ export default function BlogPage() {
             </span>
           </div> 
         </div>
+        
         {/* Admin Controls */}
         {isAdminMode && (
-          <div className="mb-8 bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-6 border border-gray-200 shadow-lg">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="font-orbitron font-bold text-xl text-gray-900">Content Management</h3>
+          <div className="mb-8 bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-8 border-2 border-gray-200 shadow-xl">
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-6 space-y-4 lg:space-y-0">
+              <div>
+                <h3 className="font-orbitron font-bold text-2xl text-gray-900 flex items-center">
+                  ⚡ Content Management Dashboard
+                </h3>
+                <p className="text-gray-600 mt-2">Create, edit, and manage your blog posts with ease</p>
+              </div>
               <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold">
-                    <Plus className="w-4 h-4 mr-2" />
-                    Add New Post
+                  <Button className="bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-red-500 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-8 py-4 text-lg rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200">
+                    <Plus className="w-5 h-5 mr-3" />
+                    ✨ Create New Post
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                  <DialogHeader>
-                    <DialogTitle className="font-orbitron text-xl">
-                      {editingPost ? "Edit Blog Post" : "Create New Blog Post"}
+                <DialogContent className="max-w-4xl max-h-[95vh] overflow-y-auto bg-white">
+                  <DialogHeader className="pb-6 border-b border-gray-200">
+                    <DialogTitle className="font-orbitron text-2xl text-center bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-orange)] bg-clip-text text-transparent">
+                      {editingPost ? "✏️ Edit Blog Post" : "✨ Create New Blog Post"}
                     </DialogTitle>
+                    <p className="text-center text-gray-600 mt-2">
+                      {editingPost ? "Update your existing blog post" : "Add a new blog post to share with your audience"}
+                    </p>
                   </DialogHeader>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="title">Post Title *</Label>
-                        <Input
-                          id="title"
-                          value={formData.title}
-                          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                          required
-                          placeholder="Enter a compelling title"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="category">Category *</Label>
-                        <Input
-                          id="category"
-                          value={formData.category}
-                          onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                          required
-                          placeholder="e.g., Diagnostic Tools, Vehicle Maintenance"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="excerpt">Short Description *</Label>
-                      <Textarea
-                        id="excerpt"
-                        value={formData.excerpt}
-                        onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                        required
-                        rows={3}
-                        placeholder="Write a brief summary that will appear on the blog page"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="content">Full Content *</Label>
-                      <Textarea
-                        id="content"
-                        value={formData.content}
-                        onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                        required
-                        rows={10}
-                        placeholder="Write the full blog post content here..."
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="image">Post Image</Label>
-                      <div className="space-y-4">
-                        <div className="flex flex-col space-y-2">
+                  
+                  <form onSubmit={handleSubmit} className="space-y-8 pt-6">
+                    {/* Basic Information Section */}
+                    <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-6 rounded-xl border border-gray-200">
+                      <h3 className="font-orbitron font-bold text-lg mb-4 text-gray-800 flex items-center">
+                        📝 Basic Information
+                      </h3>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="title" className="text-sm font-semibold text-gray-700">
+                            Post Title *
+                          </Label>
                           <Input
-                            id="image"
-                            type="file"
-                            accept="image/*"
-                            onChange={handleImageUpload}
-                            className="cursor-pointer"
+                            id="title"
+                            value={formData.title || ""}
+                            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                            required
+                            placeholder="Enter a compelling and descriptive title"
+                            className="h-12 text-base border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors"
                           />
-                          <p className="text-sm text-gray-500">Upload an image from your device</p>
+                          <p className="text-xs text-gray-500">This will be the main headline of your blog post</p>
                         </div>
-                        
-                        {imagePreview && (
-                          <div className="mt-4">
-                            <p className="text-sm font-medium mb-2">Image Preview:</p>
-                            <img 
-                              src={imagePreview} 
-                              alt="Preview" 
-                              className="w-full h-48 object-cover rounded-lg border border-gray-200"
-                            />
-                          </div>
-                        )}
-                        
-                        <div className="relative">
-                          <div className="absolute inset-0 flex items-center">
-                            <span className="w-full border-t border-gray-200" />
-                          </div>
-                          <div className="relative flex justify-center text-xs uppercase">
-                            <span className="bg-white px-2 text-gray-500">Or</span>
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <Label htmlFor="imageUrl">Image URL</Label>
+                        <div className="space-y-2">
+                          <Label htmlFor="category" className="text-sm font-semibold text-gray-700">
+                            Category *
+                          </Label>
                           <Input
-                            id="imageUrl"
-                            value={formData.imageUrl ?? ""}
-                            onChange={(e) => {
-                              setFormData({ ...formData, imageUrl: e.target.value });
-                              setImagePreview(e.target.value);
-                            }}
-                            placeholder="https://images.unsplash.com/..."
+                            id="category"
+                            value={formData.category || ""}
+                            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                            required
+                            placeholder="e.g., Hybrid Technology, Diesel Systems"
+                            className="h-12 text-base border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors"
                           />
+                          <p className="text-xs text-gray-500">Choose a relevant category for better organization</p>
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Switch
-                        id="published"
-                        checked={formData.published ?? false}
-                        onCheckedChange={(checked) => setFormData({ ...formData, published: checked })}
-                      />
-                      <Label htmlFor="published">Published</Label>
+
+                    {/* Content Section */}
+                    <div className="bg-gradient-to-r from-orange-50 to-blue-50 p-6 rounded-xl border border-gray-200">
+                      <h3 className="font-orbitron font-bold text-lg mb-4 text-gray-800 flex items-center">
+                        📄 Content
+                      </h3>
+                      <div className="space-y-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="excerpt" className="text-sm font-semibold text-gray-700">
+                            Short Description (Excerpt) *
+                          </Label>
+                          <Textarea
+                            id="excerpt"
+                            value={formData.excerpt || ""}
+                            onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
+                            required
+                            rows={4}
+                            placeholder="Write a brief, engaging summary (2-3 sentences) that will appear on the blog listing page"
+                            className="text-base border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors resize-none"
+                          />
+                          <p className="text-xs text-gray-500">This summary helps readers decide if they want to read the full post</p>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="content" className="text-sm font-semibold text-gray-700">
+                            Full Article Content *
+                          </Label>
+                          <Textarea
+                            id="content"
+                            value={formData.content || ""}
+                            onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                            required
+                            rows={12}
+                            placeholder="Write your complete blog post content here. Include detailed information, tips, and insights that will be valuable to your readers..."
+                            className="text-base border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors resize-none"
+                          />
+                          <p className="text-xs text-gray-500">Write detailed, informative content that provides value to your readers</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-end space-x-4">
-                      <Button type="button" variant="outline" onClick={() => {
-                        setIsCreateDialogOpen(false);
-                        setEditingPost(null);
-                        resetForm();
-                      }}>
+
+                    {/* Image Section */}
+                    <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-gray-200">
+                      <h3 className="font-orbitron font-bold text-lg mb-4 text-gray-800 flex items-center">
+                        🖼️ Featured Image
+                      </h3>
+                      <div className="space-y-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                          <div className="space-y-4">
+                            <div className="space-y-2">
+                              <Label className="text-sm font-semibold text-gray-700">
+                                Upload Image File
+                              </Label>
+                              <Input
+                                id="image"
+                                type="file"
+                                accept="image/*"
+                                onChange={handleImageUpload}
+                                className="cursor-pointer h-12 border-2 border-dashed border-gray-300 hover:border-[var(--brand-orange)] transition-colors"
+                              />
+                              <p className="text-xs text-gray-500">Upload JPG, PNG, or WEBP images (recommended size: 800x600px)</p>
+                            </div>
+
+                            <div className="text-center text-gray-400 font-semibold">OR</div>
+
+                            <div className="space-y-2">
+                              <Label htmlFor="imageUrl" className="text-sm font-semibold text-gray-700">
+                                Image URL
+                              </Label>
+                              <Input
+                                id="imageUrl"
+                                value={formData.imageUrl || ""}
+                                onChange={(e) => {
+                                  setFormData({ ...formData, imageUrl: e.target.value });
+                                  setImagePreview(e.target.value);
+                                }}
+                                placeholder="https://images.unsplash.com/photo-..."
+                                className="h-12 text-base border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors"
+                              />
+                              <p className="text-xs text-gray-500">Paste a direct link to an image from the web</p>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label className="text-sm font-semibold text-gray-700">
+                              Image Preview
+                            </Label>
+                            <div className="border-2 border-gray-200 rounded-lg h-48 flex items-center justify-center bg-gray-50">
+                              {imagePreview ? (
+                                <img 
+                                  src={imagePreview} 
+                                  alt="Preview" 
+                                  className="w-full h-full object-cover rounded-lg"
+                                  onError={(e) => {
+                                    e.currentTarget.src = "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800";
+                                  }}
+                                />
+                              ) : (
+                                <div className="text-center text-gray-400">
+                                  <div className="text-4xl mb-2">🖼️</div>
+                                  <p className="text-sm">No image selected</p>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Publishing Options */}
+                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-gray-200">
+                      <h3 className="font-orbitron font-bold text-lg mb-4 text-gray-800 flex items-center">
+                        🚀 Publishing Options
+                      </h3>
+                      <div className="flex items-center space-x-3 p-4 bg-white rounded-lg border border-gray-200">
+                        <Switch
+                          id="published"
+                          checked={formData.published ?? true}
+                          onCheckedChange={(checked) => setFormData({ ...formData, published: checked })}
+                          className="data-[state=checked]:bg-[var(--brand-orange)]"
+                        />
+                        <div className="flex-1">
+                          <Label htmlFor="published" className="text-base font-semibold text-gray-700 cursor-pointer">
+                            {formData.published ? "✅ Published (Visible to visitors)" : "📝 Draft (Hidden from visitors)"}
+                          </Label>
+                          <p className="text-sm text-gray-500 mt-1">
+                            {formData.published 
+                              ? "This post will be visible on your blog page" 
+                              : "This post will be saved as a draft and won't be visible to visitors"
+                            }
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+                      <Button 
+                        type="button" 
+                        variant="outline" 
+                        onClick={() => {
+                          setIsCreateDialogOpen(false);
+                          setEditingPost(null);
+                          resetForm();
+                        }}
+                        className="px-8 py-3 text-base border-2 hover:bg-gray-50"
+                      >
                         Cancel
                       </Button>
                       <Button 
                         type="submit" 
-                        className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white"
+                        className="px-8 py-3 text-base bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-red-500 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold shadow-lg transform hover:scale-105 transition-all duration-200"
                         disabled={createPostMutation.isPending || updatePostMutation.isPending}
                       >
-                        {editingPost ? "Update" : "Create"} Post
+                        {createPostMutation.isPending || updatePostMutation.isPending ? (
+                          <div className="flex items-center space-x-2">
+                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            <span>{editingPost ? "Updating..." : "Creating..."}</span>
+                          </div>
+                        ) : (
+                          <>
+                            {editingPost ? "💾 Update Post" : "✨ Create Post"}
+                          </>
+                        )}
                       </Button>
                     </div>
                   </form>
                 </DialogContent>
               </Dialog>
             </div>
-            <p className="text-gray-600">You can add, edit, or delete blog posts. Changes are saved immediately.</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <Plus className="w-5 h-5 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Create Posts</h4>
+                </div>
+                <p className="text-sm text-gray-600">Add new blog posts with rich content and images</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Edit3 className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Edit Existing</h4>
+                </div>
+                <p className="text-sm text-gray-600">Click the edit button on any post to modify it</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <Trash2 className="w-5 h-5 text-red-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Delete Posts</h4>
+                </div>
+                <p className="text-sm text-gray-600">Remove unwanted posts with confirmation dialog</p>
+              </div>
+            </div>
+            
+            <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+              <div className="flex items-center space-x-2 text-amber-800">
+                <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                <span className="text-sm font-medium">Important Note</span>
+              </div>
+              <p className="text-xs text-amber-700 mt-1">All changes are saved immediately. There's no undo function, so please review carefully before saving.</p>
+            </div>
           </div>
         )}
 
@@ -363,37 +495,60 @@ export default function BlogPage() {
 
         {/* Admin Password Dialog */}
         <Dialog open={showPasswordDialog} onOpenChange={setShowPasswordDialog}>
-          <DialogContent className="max-w-md">
-            <DialogHeader>
-              <DialogTitle className="font-orbitron text-xl">Admin Access</DialogTitle>
+          <DialogContent className="sm:max-w-md bg-gradient-to-br from-white to-gray-50 border-2 border-[var(--brand-blue)]/20">
+            <DialogHeader className="text-center pb-6">
+              <DialogTitle className="font-orbitron text-2xl bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-orange)] bg-clip-text text-transparent">
+                🔐 Admin Access Required
+              </DialogTitle>
+              <p className="text-gray-600 mt-2">Enter your administrator credentials to manage blog content</p>
             </DialogHeader>
-            <div className="space-y-4">
-              <div>
-                <Label htmlFor="password">Enter Admin Password</Label>
+            <div className="space-y-6 py-4">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-center space-x-2 text-blue-800">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm font-medium">Administrative privileges required</span>
+                </div>
+                <p className="text-xs text-blue-600 mt-1">You need admin access to create, edit, or delete blog posts</p>
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="admin-password" className="text-sm font-semibold text-gray-700">
+                  Admin Password
+                </Label>
                 <Input
-                  id="password"
+                  id="admin-password"
                   type="password"
+                  placeholder="Enter your admin password here"
                   value={adminPassword}
                   onChange={(e) => setAdminPassword(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleAdminLogin()}
-                  placeholder="Enter password"
+                  className="h-12 text-base text-center border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors"
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                      handleAdminLogin();
+                    }
+                  }}
                 />
+                <p className="text-xs text-gray-500 text-center">
+                  Contact the system administrator if you've forgotten your password
+                </p>
               </div>
-              <div className="flex justify-end space-x-4">
-                <Button 
-                  variant="outline" 
+              
+              <div className="flex justify-center space-x-4 pt-4">
+                <Button
+                  variant="outline"
                   onClick={() => {
                     setShowPasswordDialog(false);
                     setAdminPassword("");
                   }}
+                  className="px-8 py-3 border-2 hover:bg-gray-50"
                 >
                   Cancel
                 </Button>
-                <Button 
+                <Button
                   onClick={handleAdminLogin}
-                  className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white"
+                  className="px-8 py-3 bg-gradient-to-r from-[var(--brand-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--brand-blue)] text-white font-orbitron font-bold transform hover:scale-105 transition-all duration-200"
                 >
-                  Login
+                  🚀 Login
                 </Button>
               </div>
             </div>
@@ -405,21 +560,21 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <Card  
               key={post.id}
-              className="group bg-white backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden hover:shadow-xl hover:shadow-[var(--brand-orange)]/10 transition-all duration-300 transform hover:scale-102"
+              className="group bg-white backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden transition-all duration-300 transform"
             >
               <CardHeader className="p-0">
-                <div className="relative overflow-hidden h-64">
+                <div className="relative aspect-card overflow-hidden">
                   <img
                     src={post.imageUrl || "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"}
                     alt={post.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-500"
+                    className="responsive-image group-hover:scale-105 transition-all duration-500"
                     loading="lazy"
                     onError={(e) => {
                       e.currentTarget.src = "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-                
+
                   {/* Admin Controls */}
                   {isAdminMode && (
                     <div className="absolute top-4 right-4 flex space-x-2">
@@ -467,17 +622,17 @@ export default function BlogPage() {
               <CardContent className="p-6 relative">
                 {/* Top accent line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                
+
                 {/* Title */}
                 <h2 className="font-orbitron text-xl font-bold mb-4 transition-all duration-300 text-gray-900 group-hover:text-[var(--brand-orange)] line-clamp-2">
                   {post.title}
                 </h2>
-                
+
                 {/* Description */}
                 <p className="text-gray-700 mb-6 leading-relaxed font-light transition-colors duration-300 line-clamp-3">
                   {post.excerpt}
                 </p>
-                
+
                 {/* Date */}
                 <div className="mb-6">
                   <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -487,7 +642,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-4 text-xs text-gray-600">
@@ -500,7 +655,7 @@ export default function BlogPage() {
                       <span className="font-semibold">Expert Content</span>
                     </div>
                   </div>
-                  
+
                   <Link href={`/blog/${post.id}`}>
                     <Button 
                       size="sm" 

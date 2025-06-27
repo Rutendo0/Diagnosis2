@@ -1,5 +1,4 @@
-
-import { Wrench, Zap, Cog, Users, Clock, Shield, Star, CheckCircle } from "lucide-react";
+import { Shield, Wrench, DollarSign, Award, Clock, Users, CheckCircle, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
@@ -31,35 +30,53 @@ export default function ServicesSection() {
     return () => observer.disconnect();
   }, []);
 
-  const services = [
+  const advantages = [
     {
-      icon: Wrench,
-      title: "Complete Vehicle Servicing",
-      description: "Comprehensive automotive servicing including diagnostics, repairs, and maintenance.",
-      features: ["Wiring repairs", "Sensor replacement", "Oil changes", "Filter replacement"],
-      gradient: "from-orange-500 to-red-500"
+      title: "Injector Pressure Testing",
+      description: "We also do diagnosis on 24 volts trucks e.g Hino Dutro, IVECO, Ben Atego, Isuzu Elf and many more. It is essential that injectors are tested as part of the diagnostic procedure on all petrol vehicles especially when faced with combustion related problems",
+     color: "from-orange-500 to-orange-600",
+      image: "/images/injector.jpg"
     },
     {
-      icon: Zap,
-      title: "Diesel Injector Services", 
-      description: "Specialized diesel injector diagnostics, cleaning, and replacement services.",
-      features: ["Toyota D4D 1KD", "Land Rover TDV6", "Mercedes Benz", "Complete testing"],
-      gradient: "from-blue-500 to-cyan-500"
+      title: "Vehicle Diagnostics and Troubleshooting",
+      description: "We use state of the art equipment and diagnostic tools to ensure that every aspect of your hybrid vehicle is fuctioning at its best.",
+      color: "from-blue-500 to-blue-600",
+      image: "/images/image15.png"
     },
     {
-      icon: Cog,
-      title: "Spark Plug Diagnostics",
-      description: "Professional spark plug analysis and replacement for optimal engine performance.",
-      features: ["Misfire diagnosis", "Performance optimization", "Fuel efficiency", "Engine analysis"],
-      gradient: "from-purple-500 to-pink-500"
+      title: "Vehicle Automative Repair",
+      description: "We take pride in offering top-notch servicing and repair for hybrid vehicles.We are dedicated to keeping your vehicle in top condition so that you can enjoy its many benefits for years to come",
+      color: "from-orange-500 to-orange-600",
+      image: "/images/image4.jpg"
     },
     {
-      icon: Shield,
-      title: "Premium Parts Supply",
-      description: "High-quality automotive parts and sensors from trusted manufacturers.",
-      features: ["OEM quality parts", "Sensor technology", "Diagnostic equipment", "Professional tools"],
-      gradient: "from-green-500 to-emerald-500"
+      title: "Supply and fitting of automotive sensors and common rail injectors",
+      description: "We provide cutting-edge vehicle diagnosis and sensor solutions to help clients optimize their vehicle perfomance.",
+      color: "from-blue-500 to-blue-600",
+      image: "/images/vehicle-servicing.jpg"
+    },
+        {
+      
+      title: "Sensors",
+      description: "High-precision sensors for modern engine management systems",
+      color:"from-orange-500 to-orange-600",
+      image: "/images/sensors.jpg",
+    },
+    
+    {
+      title: "Diagnostic Equipment",
+      description: "Professional automotive diagnostic tools and scanners",
+      color:"from-orange-500 to-orange-600",
+      image: "/images/parts.jpg",
+    },
+    {
+      title: "Low mileage batteries",
+      description: "For your toyota Aqua Hybrid",
+      color:"from-orange-500 to-orange-600",
+      image: "/images/image13.jpg",
+      
     }
+   
   ];
 
   return (
@@ -85,50 +102,62 @@ export default function ServicesSection() {
 
           <div className="w-32 h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 mx-auto rounded-full mb-8 shadow-lg"></div>
 
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-1xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
             Diagnosis and Sensors is a specialist in motor vehicle diagnosis, troubleshooting, auto repairs, selling parts and accessories.
           </p>
         </div>
 
-        {/* Modern Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <Card key={index} className="modern-card scroll-reveal group overflow-hidden border-0">
-                <CardContent className="p-8">
-                  <div className="relative">
-                    {/* Gradient Background */}
-                    <div className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r ${service.gradient} rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                    
-                    {/* Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <IconComponent className="text-white" size={28} />
-                    </div>
+        {/* Enhanced Advantages Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+          {advantages.map((service, index) => (
+            <Card key={index} className="group relative bg-white border-0 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 overflow-hidden scroll-reveal">
+              {/* Service Image */}
+                <div className="relative aspect-card overflow-hidden bg-gray-100">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="image-full-cover group-hover:scale-110 transition-all duration-500"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/images/vehicle.jpg';
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      display: 'block',
+                      margin: 0,
+                      padding: 0,
+                      border: 'none',
+                      background: 'transparent'
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
 
-                    {/* Content */}
-                    <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
+              {/* Gradient Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
-                    {/* Features */}
-                    <div className="space-y-3 mb-6">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-3">
-                          <CheckCircle className="text-green-500 flex-shrink-0" size={18} />
-                          <span className="text-gray-700 font-medium">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+              <CardContent className="relative p-8 text-center">
+                {/* Icon Container */}
+                
+                <h3 className="font-orbitron font-black text-xl md:text-2xl text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-blue-600 group-hover:bg-clip-text transition-all duration-300">
+                  {service.title}
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  {service.description}
+                </p>
+
+                {/* Check Mark */}
+                <div className="mt-6 flex justify-center">
+                  <CheckCircle className="text-green-500" size={24} />
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Call to Action */}

@@ -10,7 +10,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-10 px-6 bg-gradient-to-t from-gray-900 to-gray-800 relative overflow-hidden border-t border-gray-700">
+    <footer className="py-10 px-6 bg-gradient-to-t from-gray-900 to-gray-900 relative overflow-hidden border-t border-gray-700">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5 opacity-50"></div>
 

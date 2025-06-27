@@ -1,208 +1,147 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "wouter";
-import Logo from "@/components/logo";
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Phone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Logo from './logo';
 
 export default function FloatingNavigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    // If we're not on the home page, navigate to home first
-    if (location !== '/') {
-      window.location.href = `/#${sectionId}`;
-      return;
-    }
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Services', href: '#services' },
+    { name: 'About', href: '#about' },
+    { name: 'Blog', href: '#blog' },
+    { name: 'Contact', href: '#contact' }
+  ];
 
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
+      window.location.href = href;
     }
-    setIsMobileMenuOpen(false);
   };
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out">
-      <div className={`transition-all duration-500 ease-in-out ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50' 
-          : 'bg-black/20 backdrop-blur-sm border-b border-white/10'
-      }`}>
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Navigation Content */}
-          <div className="flex items-center justify-between h-20">
+  function scrollToSection(_arg0: string): void {
+    throw new Error('Function not implemented.');
+  }
 
-            {/* Enhanced Logo */}
-            <div className="flex items-center space-x-3">
-              <Logo className="h-12 w-auto" />
-              <div className="text-xl font-orbitron font-black bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] bg-clip-text text-transparent">
-                Diagnosis & Sensors
+  return (
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-md border-b border-gray-200/20' 
+          : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <div className="flex items-center backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg ">
+                <Logo className="h-10 w-auto" />
               </div>
             </div>
 
-            {/* Navigation Links */}
-            <div className="hidden lg:flex items-center space-x-10">
-              <Link 
-                href="/" 
-                className={`relative font-orbitron font-semibold transition-all duration-500 group hover:scale-110 text-shadow-sm ${
-                  location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
-                }`}
-              >
-                <span className="relative z-10 text-lg">Home</span>
-                <div className={`absolute inset-x-0 -bottom-2 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-all duration-500 rounded-full ${
-                  location === '/' ? 'transform scale-x-100 shadow-lg shadow-orange-500/50' : 'transform scale-x-0 group-hover:scale-x-100 group-hover:shadow-lg group-hover:shadow-orange-500/50'
-                }`}></div>
-              </Link>
-              <button 
-                onClick={() => scrollToSection('services')} 
-                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-              >
-                <span className="relative z-10">Services</span>
-                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              </button>
-              <button 
-                onClick={() => scrollToSection('products')} 
-                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-              >
-                <span className="relative z-10">Products</span>
-                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')} 
-                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-              >
-                <span className="relative z-10">About</span>
-                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              </button>
-              <Link 
-                href="/blog" 
-                className={`relative font-orbitron font-semibold transition-all duration-300 group text-shadow-sm ${
-                  location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
-                }`}
-              >
-                <span className="relative z-10">Blog</span>
-                <div className={`absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-transform duration-300 ${
-                  location === '/blog' ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'
-                }`}></div>
-              </Link>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-              >
-                <span className="relative z-10">Contact</span>
-                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              </button>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavigation(item.href)}
+                  className={`font-orbitron font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 ${
+                    isScrolled 
+                      ? 'text-gray-800 hover:text-orange-600' 
+                      : 'text-white hover:text-orange-400 text-shadow-sm'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
             </div>
 
-            {/* Call Now Button */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button 
-                onClick={() => window.open('tel:+263242770389', '_self')}
-                className="luxury-button px-6 py-2 text-sm font-orbitron font-semibold"
-              >
-                Call Now
-              </button>
-            </div>
+            {/* Contact Button & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Contact Button */}
+              <div className="hidden md:flex items-center space-x-3">
+                <Phone className={`${isScrolled ? 'text-orange-600' : 'text-orange-400'}`} size={18} />
+                <span className={`font-orbitron font-bold text-sm ${
+                  isScrolled ? 'text-gray-800' : 'text-white text-shadow-sm'
+                }`}>
+                  0772 974 846
+                </span>
+              </div>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden">
-              <button 
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white hover:text-[var(--brand-orange)] transition-colors"
+              <Button
+                onClick={() => scrollToSection('#contact')}
+                className={`hidden md:inline-flex bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2 font-orbitron font-bold text-sm tracking-wider uppercase shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 border-0 rounded-full`}
               >
-                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                Get Quote
+              </Button>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
+                  isScrolled 
+                    ? 'text-gray-800 hover:bg-gray-100' 
+                    : 'text-white hover:bg-white/10'
+                }`}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <>
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60]" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-xl border-l border-gray-200 z-[70]">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-8">
-                <Logo className="h-7 w-auto" />
-                <button 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-800 hover:text-[var(--brand-orange)]"
-                >
-                  <X size={22} />
-                </button>
+        {/* Mobile Navigation Menu */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen 
+            ? 'max-h-96 opacity-100' 
+            : 'max-h-0 opacity-0'
+        } overflow-hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/20`}>
+          <div className="px-4 py-6 space-y-4">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleNavigation(item.href)}
+                className="block w-full text-left px-4 py-3 font-orbitron font-semibold text-gray-800 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
+              >
+                {item.name}
+              </button>
+            ))}
+
+            {/* Mobile Contact Info */}
+            <div className="px-4 py-3 border-t border-gray-200">
+              <div className="flex items-center space-x-3 mb-3">
+                <Phone className="text-orange-600" size={18} />
+                <span className="font-orbitron font-bold text-sm text-gray-800">
+                  0772 974 846
+                </span>
               </div>
-
-              <div className="space-y-6">
-                <Link 
-                  href="/" 
-                  className={`block w-full text-left font-inter text-base font-medium transition-all duration-300 py-2.5 border-b border-gray-200 hover:border-[var(--brand-orange)]/50 ${
-                    location === '/' ? 'text-[var(--brand-orange)]' : 'text-gray-800 hover:text-[var(--brand-orange)]'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <button 
-                  onClick={() => scrollToSection('services')} 
-                  className="block w-full text-left font-inter text-base font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-2.5 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
-                >
-                  Services
-                </button>
-                <button 
-                  onClick={() => scrollToSection('products')} 
-                  className="block w-full text-left font-inter text-base font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-2.5 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
-                >
-                  Products
-                </button>
-                <button 
-                  onClick={() => scrollToSection('about')} 
-                  className="block w-full text-left font-inter text-base font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-2.5 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
-                >
-                  About
-                </button>
-                <Link 
-                  href="/blog" 
-                  className={`block w-full text-left font-inter text-base font-medium transition-all duration-300 py-2.5 border-b border-gray-200 hover:border-[var(--brand-orange)]/50 ${
-                    location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-gray-800 hover:text-[var(--brand-orange)]'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-                <button 
-                  onClick={() => scrollToSection('contact')} 
-                  className="block w-full text-left font-inter text-base font-medium text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 py-2.5 border-b border-gray-200 hover:border-[var(--brand-orange)]/50"
-                >
-                  Contact
-                </button>
-
-                <div className="pt-6">
-                  <button 
-                    onClick={() => {
-                      window.open('tel:+263242770389', '_self');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="luxury-button w-full px-4 py-3 text-sm font-orbitron font-semibold"
-                  >
-                    Call Now
-                  </button>
-                </div>
-              </div>
+              <Button
+                onClick={() => scrollToSection('#contact')}
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 font-orbitron font-bold text-sm tracking-wider uppercase shadow-lg hover:shadow-orange-500/25 transition-all duration-300 border-0 rounded-full"
+              >
+                Get Quote
+              </Button>
             </div>
           </div>
-          </>
-        )}
+        </div>
       </nav>
-    );
-  }
+    </>
+  );
+}

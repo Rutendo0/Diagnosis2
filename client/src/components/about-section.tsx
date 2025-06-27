@@ -90,12 +90,11 @@ export default function AboutSection() {
           {/* Right Image */}
           <div className="relative">
             <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50">
-              <div className="aspect-[4/3] p-6">
+              <div className="aspect-card p-6">
                 <img 
                   src="/images/about.jpg"
                   alt="Diagnosis & Sensors team showcasing automotive expertise" 
-                  className="w-full h-full object-cover object-center rounded-2xl filter brightness-105 contrast-110 shadow-lg image-enhanced"
-                  style={{ aspectRatio: '4/3', objectFit: 'cover', objectPosition: 'center' }}
+                  className="responsive-image rounded-2xl filter brightness-105 contrast-110 shadow-lg image-enhanced"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = '/images/vehicle.jpg';

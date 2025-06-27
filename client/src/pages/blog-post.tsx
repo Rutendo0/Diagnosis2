@@ -97,11 +97,11 @@ export default function BlogPostPage() {
 
           {/* Featured Image */}
           {post.imageUrl && (
-            <div className="relative overflow-hidden rounded-xl mb-8 shadow-lg">
+            <div className="relative aspect-hero overflow-hidden rounded-xl mb-8 shadow-lg">
               <img
                 src={post.imageUrl}
                 alt={post.title}
-                className="w-full h-64 md:h-96 object-cover"
+                className="responsive-image"
                 onError={(e) => {
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80';
                 }}

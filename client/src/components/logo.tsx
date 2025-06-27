@@ -11,12 +11,11 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
       <img 
         src="/images/logo.png" 
         alt="Diagnosis & Sensors Logo" 
-        className={`${className} object-contain h-12 w-auto filter drop-shadow-md`}
+        className={`${className} object-contain`}
         style={{ 
           maxHeight: "48px", 
           width: "auto",
-          objectFit: "contain",
-          objectPosition: "center"
+         
         }}
       />
     </div>
