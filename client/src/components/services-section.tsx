@@ -1,6 +1,5 @@
-import { Search, Cpu, Wrench, Settings, LifeBuoy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const vehicleServicingImg = "/images/vehicle.jpg";
+const vehicleServicingImg = "/images/image14.png";
 const dieselInjectorsImg = "/images/injector.jpg";
 const sparkPlugImg = "/images/parts.jpg";
 const coolantSensorsImg = "/images/sensors.jpg";
@@ -10,10 +9,10 @@ export default function ServicesSection() {
   const services = [
     {
       title: "Injector Pressure Test",
-      description: "Advanced diesel injection diagnosis, Petrol Injector Testing & Diagnosis, uniformity & sprayability test, injection flow test & Ultrasonic Cleaning with state-of-the-art equipment",
+      description: "We also do diagnosis on 24 volts trucks for example Hino Dutro, IVECO, Ben Atego, Isuzu Elf and many more. It is essential that injectors are tested as part of the diagnostic procedure on all petrol vehicles especially when faced with combustion related problems.",
       color: "brand-orange",
       image: dieselInjectorsImg,
-      features: ["Pressure Testing", "Flow Analysis", "Ultrasonic Cleaning", "Performance Report"]
+      features: ["Uniformity/Sprayability","Leakage test", "Injecting flow test", "Ultrasonic Cleaning", "Auto test"]
     },
     {
       title: "Vehicle Diagnostics & Troubleshooting",
@@ -27,7 +26,7 @@ export default function ServicesSection() {
       description: "Comprehensive automotive repair services including diesel repairs, service replacement, multi-point inspection, filter maintenance, leak detection, and sensor diagnostics",
        color: "brand-orange",
       image: vehicleServicingImg,
-      features: ["Engine Repair", "Service Replacement", "Leak Detection", "Multi-Point Inspection"]
+      features: ["Wiring Repairs", "Sensor Replacement", "Leak Detection", "Multi-Point Inspection"]
     },
     {
       title: "Vehicle Parts & Accessories",
@@ -58,19 +57,19 @@ export default function ServicesSection() {
           </div>
           <h2 className="font-inter font-bold text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8 text-gray-900">Our Expertise</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
-            Comprehensive automotive diagnostic solutions engineered for precision and performance
+          <p className="text-lg md:text-xl lg:text-1xl text-gray-700 max-w-2xl mx-auto leading-relaxed px-2">
+            Diagnosis and Sensors is a specialist in motor vehicle diagnosis, troubleshooting, auto repairs, selling parts and accessories.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-10">
           {services.map((service, index) => (
             <Card key={index} className="group border border-gray-200 bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-48 overflow-hidden bg-gray-100">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = '/images/vehicle.jpg';
@@ -122,7 +121,7 @@ export default function ServicesSection() {
                 <span>Book via WhatsApp</span>
               </a>
               <a 
-                href="tel:+263242770389" 
+                href="tel:0242770389" 
                 className="inline-flex items-center space-x-3 bg-gradient-to-r from-[var(--brand-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--brand-blue)] px-8 py-4 rounded-2xl font-orbitron font-bold text-white transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-blue-500/50"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

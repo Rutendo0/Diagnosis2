@@ -33,9 +33,9 @@ export default function FloatingNavigation() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50">
+      <nav className="fixed top-0 w-full z-50 transition-all duration-300">
         {/* Semi-transparent Background for visibility */}
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-md border-b border-white/10"></div>
+        <div className="absolute inset-0 bg-white/95 backdrop-blur-md border-b border-white/90"></div>
 
         {/* Accent Line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-orange)] to-transparent"></div>

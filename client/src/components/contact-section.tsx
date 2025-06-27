@@ -83,10 +83,10 @@ export default function ContactSection() {
                   <i className="fas fa-map-marker-alt text-2xl text-white"></i>
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-[var(--brand-orange)]">Harare Branch</h3>
-                <p className="text-gray-700 mb-2">03 Robert Mugabe Way</p>
+                <p className="text-gray-700 mb-2">03 Robert Mugabe Street</p>
                 <div className="space-y-1 text-sm text-gray-700">
-                  <a href="tel:+263242770389" className="block hover:text-[var(--brand-orange)]">+263 242 77 0389</a>
-                  <a href="https://wa.me/263772974846" className="block hover:text-[var(--brand-orange)]">+263 772 974 846</a>
+                  <a href="tel:0242770389" className="block hover:text-[var(--brand-orange)]">0242770389</a>
+                  <a href="https://wa.me/0772974846" className="block hover:text-[var(--brand-orange)]">0772 974 846</a>
                 </div>
               </CardContent>
             </Card>
@@ -98,10 +98,10 @@ export default function ContactSection() {
                   <i className="fas fa-map-marker-alt text-2xl text-white"></i>
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-[var(--brand-blue)]">Bulawayo Branch</h3>
-                <p className="text-gray-700 mb-2">114 George Silundika St.</p>
+                <p className="text-gray-700 mb-2">114 George Silundika Street.</p>
                 <div className="space-y-1 text-sm text-gray-700">
-                  <a href="tel:+263292883884" className="block hover:text-[var(--brand-blue)]">+263 292 88 3884</a>
-                  <a href="https://wa.me/263778633785" className="block hover:text-[var(--brand-blue)]">+263 779 298 117</a>
+                  <a href="tel:0292883884" className="block hover:text-[var(--brand-blue)]">0292883884</a>
+                  <a href="https://wa.me/0779298117" className="block hover:text-[var(--brand-blue)]">0779 298 117</a>
                 </div>
               </CardContent>
             </Card>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday:</span>
-                    <span className="text-[var(--brand-orange)]">9:00 AM - 5:00 PM</span>
+                    <span className="text-[var(--brand-orange)]">8:00 AM - 2:00 PM</span>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-200">
                     <div className="text-center">
@@ -299,7 +299,7 @@ export default function ContactSection() {
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
               <div className="text-right">
-                <div className="font-orbitron font-bold text-[var(--brand-orange)]">Sarah M.</div>
+                <div className="font-orbitron font-bold text-[var(--brand-orange)]">Nyasha M.</div>
                 <div className="text-sm text-gray-600">Toyota Aqua Owner, Harare</div>
               </div>
               <div className="flex space-x-1">

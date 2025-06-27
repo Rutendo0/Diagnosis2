@@ -1,6 +1,5 @@
-import { ChevronDown, Phone, MessageSquare, MapPin, Wrench, ArrowRight, Star } from "lucide-react";
+import { Phone, MessageSquare, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/logo";
 const hybridCarImg = "https://car-images.bauersecure.com/pagefiles/74108/1752x1168/toyota_hybrids_03.jpg?mode=max&quality=90&scale=down";
 
 export default function HeroSection() {
@@ -47,14 +46,14 @@ export default function HeroSection() {
             {/* Professional Description */}
             <div className="space-y-6">
               <p className="text-lg md:text-xl lg:text-2xl text-white font-light max-w-4xl mx-auto leading-relaxed px-4">
-                We are leading brand in Automotive vehicle diagnosis as well as vehicle sensor and electrical sales
+                The best solution to your automative.
               </p>
 
               {/* Professional Trust Indicators */}
               <div className="flex items-center justify-center space-x-8 text-white/90">
                 <div className="flex items-center space-x-2">
                   <Star className="text-blue-400" size={20} />
-                  <span className="font-medium">Certified Experts</span>
+                  <span className="font-medium">Premium Quality</span>
                 </div>
                 <div className="w-px h-6 bg-white/30"></div>
                 <div className="flex items-center space-x-2">

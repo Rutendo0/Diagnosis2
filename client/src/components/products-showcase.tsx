@@ -1,8 +1,8 @@
-import { Check, Battery, Zap } from "lucide-react";
+import { Check, Battery, Zap, Fuel, Car } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const hybridBatteryPackImg = "/images/battery3.jpg";
-const hybridBatteryImg = "/images/battery2.jpg";
-const liquidCoolingImg = "/images/battery.jpg";
+const hybridBatteryPackImg = "/images/image7.jpg";
+const hybridBatteryImg = "/images/image15.png";
+const liquidCoolingImg = "/images/image13.png";
 
 export default function ProductsShowcase() {
   return (
@@ -20,11 +20,8 @@ export default function ProductsShowcase() {
             </span>
           </div>
           <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full shadow-2xl mb-8"></div>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-            Professional automotive diagnostic equipment and high-quality sensors for comprehensive vehicle maintenance and repair
-            <span className="block mt-3 text-gradient font-semibold text-lg">
-              Engineered for precision, built for performance
-            </span>
+          <p className="text-xl md:text-1xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-light">
+            Our company specializes in providing cutting-edge vehicle diagnosis and sensor solutions to help our clients optimize their vehicle performance and ensure maximum safety on the road.
           </p>
         </div>
 
@@ -32,24 +29,24 @@ export default function ProductsShowcase() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
             <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] to-red-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-              <Battery className="text-white group-hover:animate-pulse" size={36} />
+              <Fuel className="text-white group-hover:animate-pulse" size={36} />
             </div>
-            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-orange)] transition-colors">Hybrid Batteries</h3>
-            <p className="text-gray-700 text-lg">Complete battery solutions for hybrid vehicles</p>
+            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-orange)] transition-colors">Injectors</h3>
+            <p className="text-gray-700 text-lg">Petrol and Diesel Injectors</p>
           </div>
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
             <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-blue)] to-blue-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Zap className="text-white group-hover:animate-pulse" size={36} />
             </div>
-            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-blue)] transition-colors">Cooling Systems</h3>
-            <p className="text-gray-700 text-lg">Advanced liquid cooling technology</p>
+            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-blue)] transition-colors">Hybrid Batteries</h3>
+            <p className="text-gray-700 text-lg">Toyota Aqua Hybrid Battery</p>
           </div>
           <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
             <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-gold)] to-yellow-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
               <Check className="text-white group-hover:animate-pulse" size={36} />
             </div>
-            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-gold)] transition-colors">Quality Assured</h3>
-            <p className="text-gray-700 text-lg">3 months warranty on all products</p>
+            <h3 className="font-orbitron font-bold text-1xl text-gray-900 mb-5 group-hover:text-[var(--brand-gold)] transition-colors">Quality Assured</h3>
+            <p className="text-gray-700 text-lg">We use state of the art equipment and diagnostic tools to ensure that every aspect of your hybrid vehicle is fuctioning at its best.</p>
           </div>
         </div>
 
@@ -58,29 +55,38 @@ export default function ProductsShowcase() {
             <Card className="bg-white/80 backdrop-blur-sm border-l-4 border-[var(--brand-orange)] shadow-lg">
               <CardContent className="p-8">
                 <h3 className="font-orbitron font-bold text-2xl mb-4 flex items-center text-gray-900">
-                  <Battery className="mr-3" size={24} />
-                  Hybrid Battery Packs
+                  <Car className="mr-3" size={24} />
+                  Hybrid Vehicles
                 </h3>
-                <p className="text-gray-700 mb-4">
-                  Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with 3 months warranty on 2012-2016 cells.
+                <p className="text-gray-700 mb-6">
+                  We offer top-notch servicing and repair for hybrid vehicles.As the demand for eco-friendly cars continues to rise, we recognize the importance of providing specialized care for these vehicles.
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Low mileage batteries
+                    Routine Maintenance
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    3 months warranty
+                    Extensive Repairs
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Trade-in options available
+                    Oil Changes
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Professional installation available
+                    Brake Inspectors
                   </li>
+                  <li className="flex items-center">
+                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
+                    Battery Replacements
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
+                    Electrical System Repairs
+                  </li>
+
                 </ul>
               </CardContent>
             </Card>
@@ -89,23 +95,27 @@ export default function ProductsShowcase() {
               <CardContent className="p-8">
                 <h3 className="font-orbitron font-bold text-2xl mb-4 flex items-center text-gray-900">
                   <Zap className="mr-3" size={24} />
-                  Liquid Battery Cooling Systems
+                  Our advance Products
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Specialized liquid battery cooling systems for hybrid vehicles ensuring optimal battery performance and longevity.
+                  If you own a hybrid car or are considering purchasing .
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Hybrid vehicle cooling
+                    Petrol and Diesel high pressure pump, Pump housing, Booster pump
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Battery temperature management
+                    Spiral cables, Valve board, Computer box
                   </li>
                   <li className="flex items-center">
                     <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Performance optimization
+                    Gear box connectors, Abs sensors, Indicator switch, Idle control switch
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="text-[var(--brand-blue)] mr-3" size={16} />
+                    EGR Valve, Injector drive, Pedal sensor, Speedo sensor, OCV/VVT Sensors
                   </li>
                 </ul>
               </CardContent>
@@ -138,7 +148,7 @@ export default function ProductsShowcase() {
             </div>
             <div className="bg-[var(--brand-orange)] text-white rounded-2xl p-6 shadow-lg">
               <div className="text-center">
-                <div className="font-orbitron font-bold text-2xl">200+</div>
+                <div className="font-orbitron font-bold text-2xl">20+</div>
                 <div className="text-sm opacity-90">Products Available</div>
               </div>
             </div>
@@ -154,15 +164,10 @@ export default function ProductsShowcase() {
                 <h3 className="font-orbitron font-black text-3xl md:text-4xl text-gray-900 mb-6">
                   Need Custom Solutions?
                 </h3>
-                <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                  Our extensive inventory includes specialized parts for various vehicle models. 
-                  Contact us for custom orders and bulk purchases.
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                  We are the leading service provider in vehicle diagnosis and supply of Automative Sensors. 
                 </p>
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-                    <span className="text-gray-700">Custom battery pack configurations</span>
-                  </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
                     <span className="text-gray-700">Bulk pricing available</span>
@@ -178,7 +183,7 @@ export default function ProductsShowcase() {
                   <h4 className="font-orbitron font-bold text-xl text-[var(--brand-orange)] mb-4">Quick Quote Request</h4>
                   <div className="space-y-4">
                     <a 
-                      href="https://wa.me/+263719974846?text=Hi! I need a quote for hybrid battery products."
+                      href="https://wa.me/+263719974846?text=Hi! I need a quote for electrical system repairs."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-green-500 to-green-600 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"

@@ -24,16 +24,16 @@ export default function AboutSection() {
           <div className="space-y-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium mb-8">
-                We have been specializing in commercial and private automotive troubleshooting, auto repairs, selling parts and accessories, with extensive experience serving clients across a market including the following:
+                Diagnosis and Sensors is a specialist in motor vehicle diagnosis, troubleshooting, auto repairs, selling parts and accessories.We have experience in servicing client across a number of including the following:
               </p>
 
               {/* Client Categories */}
               <div className="space-y-4 mb-8">
                 {[
-                  'Based on small and medium enterprises', 
+                  'Small to medium sized enterprises', 
                   'Individual customers', 
-                  'Service companies', 
-                  'Other institutions'
+                  'Colleges and Universities', 
+                  'Other tradesman'
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-4 group hover:transform hover:translate-x-2 transition-all duration-300">
                     <div className="w-5 h-5 bg-[var(--brand-orange)] rounded-full shadow-md flex-shrink-0"></div>
@@ -70,7 +70,7 @@ export default function AboutSection() {
               </div>
               <h3 className="font-orbitron font-bold text-xl md:text-2xl mb-3 md:mb-4">Our Mission</h3>
               <p className="text-white/95 leading-relaxed text-sm md:text-base">
-                To provide efficient and effective solutions to all automotive challenges at the most convenient and practical time, ensuring guaranteed customer satisfaction through cutting-edge technology and expert service.
+                To provide efficient and effective solutions to all automotive challenges at the most convenient and practical time, ensuring guaranteed customer satisfaction.
               </p>
             </CardContent>
           </Card>
@@ -82,7 +82,7 @@ export default function AboutSection() {
               </div>
               <h3 className="font-orbitron font-bold text-2xl mb-4">Our Vision</h3>
               <p className="text-white/95 leading-relaxed">
-                To be Zimbabwe's leading automotive diagnostic and sensor technology company, providing innovative solutions in automotive engineering, diagnosis, and premium automotive accessories through world-class expertise.
+                We see envision to be the leading best one stop shop in Zimbabwe that provides efficient services in automotive engineering, diagnosis, selling sensors and accessories.
               </p>
             </CardContent>
           </Card>

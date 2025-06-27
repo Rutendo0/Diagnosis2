@@ -3,12 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function AdvantagesSection() {
   const advantages = [
-    {
-      title: "Free Trade Appraisal",
-      description: "Take advantage of our free trade appraisal offer",
-      icon: Shield,
-      color: "brand-orange"
-    },
+   
     {
       title: "Trained Technicians",
       description: "All our mechanics are trained and certified",
@@ -26,12 +21,6 @@ export default function AdvantagesSection() {
       description: "Auto repair services done right the very first time",
       icon: Award,
       color: "brand-blue"
-    },
-    {
-      title: "A Life-Time Warranty",
-      description: "Never worry about the vehicle's performance",
-      icon: Shield,
-      color: "brand-orange"
     },
     {
       title: "Quick Service Times",

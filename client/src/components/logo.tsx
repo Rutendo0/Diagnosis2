@@ -11,7 +11,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
       src="/images/logo.png" 
       alt="Diagnosis & Sensors Logo" 
       className={`${className} object-contain`}
-      style={{ height: "120px", width: "auto", maxWidth: "300px" }}
+      style={{ height: "130px", width: "auto", maxWidth: "200px" }}
     />
   );
 };
