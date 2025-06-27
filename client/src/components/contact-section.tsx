@@ -29,8 +29,8 @@ export default function ContactSection() {
       icon: MapPin,
       title: "Visit Our Locations",
       details: [
-        { label: "Harare", value: "Stand 3 Robert Mugabe Street" },
-        { label: "Bulawayo", value: "Stand 14 George Silundika Street" }
+        { label: "Harare", value: "Stand 3 Robert Mugabe Str" },
+        { label: "Bulawayo", value: "Stand 14 George Silundika Str" }
       ],
       color: "from-orange-500 to-orange-600"
     },

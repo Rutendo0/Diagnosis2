@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'wouter';
 import Logo from './logo';
 
 export default function FloatingNavigation() {
@@ -17,28 +18,44 @@ export default function FloatingNavigation() {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/', isRoute: true },
+    { name: 'Services', href: '#services', isRoute: false },
+    { name: 'About', href: '#about', isRoute: false },
+    { name: 'Blog', href: '/blog', isRoute: true },
+    { name: 'Contact', href: '#contact', isRoute: false }
   ];
 
-  const handleNavigation = (href: string) => {
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+  const [location, setLocation] = useLocation();
+
+  const handleNavigation = (href: string, isRoute: boolean) => {
+    if (isRoute) {
+      // Use wouter's navigation for smooth routing
+      setLocation(href);
+      setIsMenuOpen(false);
+    } else if (href.startsWith('#')) {
+      // Check if we're on the home page for section scrolling
+      if (location === '/') {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          setIsMenuOpen(false);
+        }
+      } else {
+        // Navigate to home page first, then scroll to section
+        setLocation('/');
         setIsMenuOpen(false);
+        // Wait for navigation to complete, then scroll
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       }
-    } else {
-      window.location.href = href;
     }
   };
 
-  function scrollToSection(_arg0: string): void {
-    throw new Error('Function not implemented.');
-  }
+
 
   return (
     <>
@@ -51,7 +68,7 @@ export default function FloatingNavigation() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <div className="flex items-center backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg ">
+              <div className="flex items-center">
                 <Logo className="h-10 w-auto" />
               </div>
             </div>
@@ -61,7 +78,7 @@ export default function FloatingNavigation() {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => handleNavigation(item.href)}
+                  onClick={() => handleNavigation(item.href, item.isRoute)}
                   className={`font-orbitron font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 ${
                     isScrolled 
                       ? 'text-gray-800 hover:text-orange-600' 
@@ -86,7 +103,7 @@ export default function FloatingNavigation() {
               </div>
 
               <Button
-                onClick={() => scrollToSection('#contact')}
+                onClick={() => handleNavigation('#contact', false)}
                 className={`hidden md:inline-flex bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2 font-orbitron font-bold text-sm tracking-wider uppercase shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 border-0 rounded-full`}
               >
                 Get Quote
@@ -117,7 +134,7 @@ export default function FloatingNavigation() {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => handleNavigation(item.href)}
+                onClick={() => handleNavigation(item.href, item.isRoute)}
                 className="block w-full text-left px-4 py-3 font-orbitron font-semibold text-gray-800 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
               >
                 {item.name}
@@ -133,7 +150,7 @@ export default function FloatingNavigation() {
                 </span>
               </div>
               <Button
-                onClick={() => scrollToSection('#contact')}
+                onClick={() => handleNavigation('#contact', false)}
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 font-orbitron font-bold text-sm tracking-wider uppercase shadow-lg hover:shadow-orange-500/25 transition-all duration-300 border-0 rounded-full"
               >
                 Get Quote

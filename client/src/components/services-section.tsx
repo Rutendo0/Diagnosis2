@@ -67,13 +67,13 @@ export default function ServicesSection() {
       title: "Diagnostic Equipment",
       description: "Professional automotive diagnostic tools and scanners",
       color:"from-orange-500 to-orange-600",
-      image: "/images/parts.jpg",
+      image: "/images/vehicle.jpg",
     },
     {
       title: "Low mileage batteries",
       description: "For your toyota Aqua Hybrid",
       color:"from-orange-500 to-orange-600",
-      image: "/images/image13.jpg",
+      image: "/images/battery.jpg",
       
     }
    

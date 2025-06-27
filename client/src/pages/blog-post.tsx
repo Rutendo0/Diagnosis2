@@ -99,7 +99,7 @@ export default function BlogPostPage() {
           {post.imageUrl && (
             <div className="relative aspect-hero overflow-hidden rounded-xl mb-8 shadow-lg">
               <img
-                src={post.imageUrl}
+                src="/images/image10.jpg"
                 alt={post.title}
                 className="responsive-image"
                 onError={(e) => {
@@ -163,10 +163,10 @@ export default function BlogPostPage() {
             </p>
             <div className="space-y-2 text-sm">
               <p className="text-slate-700 dark:text-slate-300">
-                <strong>Harare:</strong> +263 242 770 389 | +263 772 974 846
+                <strong>Harare:</strong> 0242 770 389 | +263 772 974 846
               </p>
               <p className="text-slate-700 dark:text-slate-300">
-                <strong>Bulawayo:</strong> +263 292 883 884 | +263 779 298 117
+                <strong>Bulawayo:</strong> 0292 883 884 | +263 779 298 117
               </p>
             </div>
           </div>

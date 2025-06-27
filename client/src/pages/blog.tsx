@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import Logo from "@/components/logo";
 import FloatingNavigation from "@/components/floating-navigation";
 import type { BlogPost, InsertBlogPost } from "@shared/schema";
@@ -172,20 +173,26 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-300 via-white to-gray-300">
       {/* Navigation */}
       <FloatingNavigation />
 
-      <div className="container mx-auto px-4 py-24">
+      <div className="container mx-auto px-9 py-20">
 
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-md border border-[var(--brand-blue)]/20">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center space-x-3 bg-white/95 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-md border border-[var(--brand-blue)]/20">
             <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full"></div>
             <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
-              Our Services & Solutions
+              Latest Blog Posts & Updates
             </span>
-          </div> 
+          </div>
+          <h1 className="text-4xl md:text-5xl font-orbitron font-black text-gray-900 mb-4">
+            Blog & Resources
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Stay updated with the latest insights, tips and news.
+          </p>
         </div>
         
         {/* Admin Controls */}
@@ -565,7 +572,7 @@ export default function BlogPage() {
               <CardHeader className="p-0">
                 <div className="relative aspect-card overflow-hidden">
                   <img
-                    src={post.imageUrl || "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"}
+                    src={post.imageUrl || "/images/image10.jpg"}
                     alt={post.title}
                     className="responsive-image group-hover:scale-105 transition-all duration-500"
                     loading="lazy"
@@ -573,7 +580,7 @@ export default function BlogPage() {
                       e.currentTarget.src = "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60"></div>
 
                   {/* Admin Controls */}
                   {isAdminMode && (
@@ -586,18 +593,53 @@ export default function BlogPage() {
                       >
                         <Edit3 className="w-4 h-4" />
                       </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="bg-red-50/90 backdrop-blur-sm border-red-200 hover:bg-red-100"
-                        onClick={() => {
-                          if (confirm("Are you sure you want to delete this post?")) {
-                            deletePostMutation.mutate(post.id);
-                          }
-                        }}
-                      >
-                        <Trash2 className="w-4 h-4 text-red-600" />
-                      </Button>
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="bg-red-50/90 backdrop-blur-sm border-red-200 hover:bg-red-100"
+                          >
+                            <Trash2 className="w-4 h-4 text-red-600" />
+                          </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent className="bg-white border-2 border-red-200 shadow-2xl">
+                          <AlertDialogHeader className="text-center pb-4">
+                            <AlertDialogTitle className="font-orbitron text-xl text-gray-900 flex items-center justify-center space-x-3">
+                              <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                <Trash2 className="w-5 h-5 text-red-600" />
+                              </div>
+                              <span>Delete Blog Post</span>
+                            </AlertDialogTitle>
+                            <AlertDialogDescription className="text-gray-600 text-base mt-3">
+                              Are you sure you want to permanently delete <strong>"{post.title}"</strong>? 
+                              <br />
+                              <span className="text-red-600 font-medium">This action cannot be undone.</span>
+                            </AlertDialogDescription>
+                          </AlertDialogHeader>
+                          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                            <div className="flex items-center space-x-2 text-red-800">
+                              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                              <span className="text-sm font-medium">Warning</span>
+                            </div>
+                            <p className="text-xs text-red-700 mt-1">
+                              This blog post will be permanently removed from your website and cannot be recovered.
+                            </p>
+                          </div>
+                          <AlertDialogFooter className="space-x-4">
+                            <AlertDialogCancel className="px-6 py-3 border-2 border-gray-200 hover:bg-gray-50 font-orbitron">
+                              Cancel
+                            </AlertDialogCancel>
+                            <AlertDialogAction 
+                              onClick={() => deletePostMutation.mutate(post.id)}
+                              className="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-orbitron font-bold transform hover:scale-105 transition-all duration-200"
+                            >
+                              <Trash2 className="w-4 h-4 mr-2" />
+                              Delete Post
+                            </AlertDialogAction>
+                          </AlertDialogFooter>
+                        </AlertDialogContent>
+                      </AlertDialog>
                     </div>
                   )}
 
@@ -615,8 +657,7 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  {/* Professional Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-blue)]/5 to-[var(--brand-orange)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
                 </div>
               </CardHeader>
               <CardContent className="p-6 relative">
