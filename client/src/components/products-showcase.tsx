@@ -1,207 +1,258 @@
-import { Check, Battery, Zap, Fuel, Car } from "lucide-react";
+import { Zap, Settings, Star, Truck, Shield, Award, CheckCircle, ArrowRight, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-const hybridBatteryPackImg = "/images/image7.jpg";
-const hybridBatteryImg = "/images/image15.png";
-const liquidCoolingImg = "/images/image13.png";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function ProductsShowcase() {
+  const productCategories = [
+    {
+      title: "Engine Sensors",
+      description: "High-precision sensors for optimal engine performance and diagnostics",
+      products: [
+        { name: "Oxygen Sensors", image: "/images/sensors.jpg" },
+        { name: "MAP Sensors", image: "/images/sensors.jpg" },
+        { name: "Temperature Sensors", image: "/images/sensors.jpg" },
+        { name: "Pressure Sensors", image: "/images/sensors.jpg" }
+      ],
+      color: "from-orange-500 to-orange-600",
+      icon: Zap
+    },
+    {
+      title: "Automotive Parts",
+      description: "Premium quality OEM and aftermarket parts for all vehicle makes",
+      products: [
+        { name: "Spark Plugs", image: "/images/parts.jpg" },
+        { name: "Air Filters", image: "/images/parts.jpg" },
+        { name: "Fuel Injectors", image: "/images/injector.jpg" },
+        { name: "Brake Pads", image: "/images/parts.jpg" }
+      ],
+      color: "from-blue-500 to-blue-600",
+      icon: Settings
+    }
+  ];
+
+  const featuredProducts = [
+    {
+      name: "Professional Diagnostic Scanner",
+      description: "Advanced OBD-II scanner with comprehensive vehicle coverage",
+      image: "/images/image8.jpg",
+      rating: 5,
+      features: ["Multi-brand Support", "Live Data Stream", "Code Reading", "2-Year Warranty"],
+      badge: "Best Seller"
+    },
+    {
+      name: "Premium Sensor Kit",
+      description: "Complete sensor replacement kit for modern vehicles",
+      image: "/images/sensors.jpg",
+      rating: 5,
+      features: ["Universal Fit", "OEM Quality", "Easy Installation", "1-Year Warranty"],
+      badge: "Popular"
+    }
+  ];
+
   return (
-    <section id="products" className="py-32 px-6 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/2 via-transparent to-[var(--brand-blue)]/2"></div>
+    <section id="products" className="py-32 px-6 relative overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 via-transparent to-blue-50/30"></div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-10 w-40 h-40 bg-gradient-to-r from-orange-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-32 left-10 w-56 h-56 bg-gradient-to-l from-blue-200/20 to-orange-200/20 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Enhanced Section Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 shadow-lg border border-[var(--brand-orange)]/20">
-            <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
-              Explore Our
-            </span>
-            <span className="text-gray-300 font-bold text-sm tracking-widest uppercase">
-              Premium Products & Solutions
+          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-100 to-blue-100 rounded-full px-8 py-4 mb-8 shadow-lg border border-orange-200/50">
+            <span className="text-transparent bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text font-orbitron font-bold text-lg tracking-wider uppercase">
+              Premium Products
             </span>
           </div>
-          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full shadow-2xl mb-8"></div>
-          <p className="text-xl md:text-1xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-light">
-            Our company specializes in providing cutting-edge vehicle diagnosis and sensor solutions to help our clients optimize their vehicle performance and ensure maximum safety on the road.
+
+          <h2 className="font-orbitron font-black text-5xl md:text-7xl lg:text-8xl mb-8 text-gray-900 leading-tight">
+            <span className="block">Product</span>
+            <span className="block bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+              Showcase
+            </span>
+          </h2>
+
+          <div className="w-32 h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 mx-auto rounded-full mb-8 shadow-lg"></div>
+
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+            Explore our comprehensive range of premium automotive sensors, parts, and diagnostic equipment
           </p>
         </div>
 
+        {/* Featured Products */}
+        <div className="mb-24">
+          <h3 className="font-orbitron font-black text-3xl md:text-4xl text-gray-900 text-center mb-12">
+            Featured Products
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {featuredProducts.map((product, index) => (
+              <Card key={index} className="group relative bg-white border-0 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 overflow-hidden">
+                {/* Product Badge */}
+                <div className="absolute top-6 left-6 z-10">
+                  <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 text-sm font-bold">
+                    {product.badge}
+                  </Badge>
+                </div>
+
+                {/* Product Image */}
+                <div className="relative h-64 overflow-hidden rounded-t-3xl">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+
+                <CardContent className="p-8">
+                  {/* Rating */}
+                  <div className="flex items-center space-x-1 mb-4">
+                    {[...Array(product.rating)].map((_, i) => (
+                      <Star key={i} className="text-yellow-400 fill-current" size={20} />
+                    ))}
+                    <span className="text-gray-600 ml-2">(4.9/5)</span>
+                  </div>
+
+                  <h4 className="font-orbitron font-black text-2xl text-gray-900 mb-3">
+                    {product.name}
+                  </h4>
+
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    {product.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-2 mb-6">
+                    {product.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-3">
+                        <CheckCircle className="text-green-500 flex-shrink-0" size={16} />
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="flex space-x-4">
+                    <Button
+                      onClick={() => window.open('tel:+263242770389', '_self')}
+                      className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold py-3 rounded-2xl transition-all duration-300"
+                    >
+                      Get Quote
+                    </Button>
+                    <Button
+                      onClick={() => window.open('https://wa.me/+263719974846', '_blank')}
+                      variant="outline"
+                      className="px-6 border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 rounded-2xl transition-all duration-300"
+                    >
+                      Contact Us
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Product Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-orange)] to-red-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-              <Fuel className="text-white group-hover:animate-pulse" size={36} />
-            </div>
-            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-orange)] transition-colors">Injectors</h3>
-            <p className="text-gray-700 text-lg">Petrol and Diesel Injectors</p>
-          </div>
-          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-blue)] to-blue-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-              <Zap className="text-white group-hover:animate-pulse" size={36} />
-            </div>
-            <h3 className="font-orbitron font-bold text-2xl text-gray-900 mb-3 group-hover:text-[var(--brand-blue)] transition-colors">Hybrid Batteries</h3>
-            <p className="text-gray-700 text-lg">Toyota Aqua Hybrid Battery</p>
-          </div>
-          <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-r from-[var(--brand-gold)] to-yellow-500 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-              <Check className="text-white group-hover:animate-pulse" size={36} />
-            </div>
-            <h3 className="font-orbitron font-bold text-1xl text-gray-900 mb-5 group-hover:text-[var(--brand-gold)] transition-colors">Quality Assured</h3>
-            <p className="text-gray-700 text-lg">We use state of the art equipment and diagnostic tools to ensure that every aspect of your hybrid vehicle is fuctioning at its best.</p>
+        <div className="mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {productCategories.map((category, index) => (
+              <div key={index} className="bg-white rounded-3xl shadow-2xl overflow-hidden border-0">
+                {/* Category Header */}
+                <div className="bg-white p-8 border-b border-gray-100 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-full transform translate-x-16 -translate-y-16"></div>
+                  <div className="relative z-10">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
+                      <category.icon className="text-white" size={32} />
+                    </div>
+                    <h3 className="font-orbitron font-black text-3xl mb-3 text-gray-900">{category.title}</h3>
+                    <p className="text-gray-600 text-lg">{category.description}</p>
+                  </div>
+                </div>
+
+                {/* Products Grid */}
+                <div className="p-8">
+                  <div className="grid grid-cols-2 gap-6">
+                    {category.products.map((product, idx) => (
+                      <div key={idx} className="group cursor-pointer">
+                        <div className="relative aspect-square rounded-2xl overflow-hidden mb-3">
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        </div>
+                        <h4 className="font-orbitron font-bold text-lg text-gray-900 mb-1 group-hover:text-orange-600 transition-colors duration-300">
+                          {product.name}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <Card className="bg-white/80 backdrop-blur-sm border-l-4 border-[var(--brand-orange)] shadow-lg">
-              <CardContent className="p-8">
-                <h3 className="font-orbitron font-bold text-2xl mb-4 flex items-center text-gray-900">
-                  <Car className="mr-3" size={24} />
-                  Hybrid Vehicles
-                </h3>
-                <p className="text-gray-700 mb-6">
-                  We offer top-notch servicing and repair for hybrid vehicles.As the demand for eco-friendly cars continues to rise, we recognize the importance of providing specialized care for these vehicles.
-                </p>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Routine Maintenance
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Extensive Repairs
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Oil Changes
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Brake Inspectors
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Battery Replacements
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-orange)] mr-3" size={16} />
-                    Electrical System Repairs
-                  </li>
-
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/80 backdrop-blur-sm border-l-4 border-[var(--brand-blue)] shadow-lg">
-              <CardContent className="p-8">
-                <h3 className="font-orbitron font-bold text-2xl mb-4 flex items-center text-gray-900">
-                  <Zap className="mr-3" size={24} />
-                  Our advance Products
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  If you own a hybrid car or are considering purchasing .
-                </p>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Petrol and Diesel high pressure pump, Pump housing, Booster pump
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Spiral cables, Valve board, Computer box
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    Gear box connectors, Abs sensors, Indicator switch, Idle control switch
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="text-[var(--brand-blue)] mr-3" size={16} />
-                    EGR Valve, Injector drive, Pedal sensor, Speedo sensor, OCV/VVT Sensors
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="relative space-y-4">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={hybridBatteryPackImg}
-                alt="Complete battery packs for Toyota Aqua and Honda Fit Hybrid" 
-                className="w-full h-64 object-contain bg-gray-100 p-4" 
-              />
+        {/* Enhanced Call-to-Action Section */}
+        <div className="relative">
+          <div className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden shadow-2xl">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-blue-500/30 transform rotate-3"></div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <img 
-                  src={hybridBatteryImg}
-                  alt="Hybrid battery systems" 
-                  className="w-full h-32 object-contain bg-gray-100 p-2" 
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <img 
-                  src={liquidCoolingImg}
-                  alt="Liquid battery cooling systems" 
-                  className="w-full h-32 object-contain bg-gray-100 p-2" 
-                />
-              </div>
-            </div>
-            <div className="bg-[var(--brand-orange)] text-white rounded-2xl p-6 shadow-lg">
-              <div className="text-center">
-                <div className="font-orbitron font-bold text-2xl">20+</div>
-                <div className="text-sm opacity-90">Products Available</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Product Inquiry Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden shadow-lg border border-gray-200">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)]"></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="text-left">
-                <h3 className="font-orbitron font-black text-3xl md:text-4xl text-gray-900 mb-6">
-                  Need Custom Solutions?
-                </h3>
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  We are the leading service provider in vehicle diagnosis and supply of Automative Sensors. 
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-                    <span className="text-gray-700">Bulk pricing available</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-                    <span className="text-gray-700">Professional installation service</span>
-                  </div>
+            <div className="relative z-10">
+              <Award className="mx-auto text-orange-400 mb-8" size={64} />
+
+              <h3 className="font-orbitron font-black text-4xl md:text-5xl text-white mb-6">
+                Need Custom Solutions?
+              </h3>
+
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                We are Zimbabwe's leading service provider in vehicle diagnosis and supply of automotive sensors. 
+                Contact us for bulk pricing and professional installation services.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+                <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-2xl p-4">
+                  <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+                  <span className="text-white font-medium">Bulk pricing available</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3 bg-white/10 rounded-2xl p-4">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                  <span className="text-white font-medium">Professional installation service</span>
                 </div>
               </div>
-              <div className="space-y-6">
-                <div className="bg-gray-100 rounded-2xl p-6 border border-[var(--brand-orange)]/30">
-                  <h4 className="font-orbitron font-bold text-xl text-[var(--brand-orange)] mb-4">Quick Quote Request</h4>
-                  <div className="space-y-4">
-                    <a 
-                      href="https://wa.me/+263719974846?text=Hi! I need a quote for electrical system repairs."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-green-500 to-green-600 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                      </svg>
-                      <span>WhatsApp Quote</span>
-                    </a>
-                    <a 
-                      href="mailto:sales@diagnosisandsensors.co.zw?subject=Product Quote Request"
-                      className="w-full inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-[var(--brand-blue)] to-blue-600 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
-                    >
-                      <i className="fas fa-envelope"></i>
-                      <span>Email Quote</span>
-                    </a>
-                  </div>
-                </div>
+
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold px-10 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-xl"
+                >
+                  Request Quote
+                </Button>
+
+                <Button 
+                  onClick={() => window.open('tel:+263242770389', '_self')}
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-orbitron font-bold px-10 py-6 rounded-2xl transition-all duration-300"
+                >
+                  <Phone className="mr-2" size={24} />
+                  Call Expert
+                </Button>
               </div>
             </div>
           </div>

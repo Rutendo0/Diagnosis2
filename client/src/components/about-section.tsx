@@ -9,13 +9,27 @@ export default function AboutSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/2 via-transparent to-[var(--brand-blue)]/2"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg border border-[var(--brand-orange)]/20">
-            <div className="w-3 h-3 bg-[var(--brand-orange)] rounded-full animate-pulse"></div>
-            <span className="text-gray-300 font-orbitron font-bold text-sm tracking-wide uppercase">About Our Company</span>
-            </div>
+        {/* Enhanced Header Section */}
+        <div className="text-center mb-16 md:mb-20 animate-fade-in">
+          <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-orange-100 to-blue-100 rounded-full px-8 py-4 mb-8 shadow-lg border border-orange-200/50">
+            <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full animate-pulse"></div>
+            <span className="text-transparent bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text font-orbitron font-bold text-lg tracking-wider uppercase">
+              About Our Company
+            </span>
           </div>
+          
+          <h2 className="font-orbitron font-black text-5xl md:text-7xl lg:text-8xl mb-8 text-gray-900 leading-tight">
+            <span className="block">Who</span>
+            <span className="block bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+              We Are
+            </span>
+          </h2>
+          
+          <div className="w-32 h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 mx-auto rounded-full mb-8 shadow-lg"></div>
+          
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+            Your trusted partner in automotive excellence and diagnostic innovation
+          </p>
         </div>
 
         {/* Main Content Grid */}
@@ -46,43 +60,49 @@ export default function AboutSection() {
 
           {/* Right Image */}
           <div className="relative">
-            <div className="relative bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/about.jpg"
-                alt="Diagnosis & Sensors team showcasing automotive expertise" 
-                className="w-full h-auto max-h-96 object-contain p-4"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = '/images/vehicle.jpg';
-                }}
-              />
+            <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50">
+              <div className="aspect-[4/3] p-6">
+                <img 
+                  src="/images/about.jpg"
+                  alt="Diagnosis & Sensors team showcasing automotive expertise" 
+                  className="w-full h-full object-cover rounded-2xl filter brightness-105 contrast-110 shadow-lg"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/images/vehicle.jpg';
+                  }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/5 via-transparent to-blue-500/5 rounded-3xl"></div>
             </div>
           </div>
         </div>
         {/* <-- This closing div properly closes the main content grid */}
+        </div>
 
-        {/* Mission and Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12 md:mb-16">
-          <Card className="bg-gradient-to-br from-[var(--brand-orange)] to-orange-600 border-none text-white transition-all duration-200">
-            <CardContent className="p-6 md:p-8 text-center">
-              <div className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <Target className="text-white" size={28} />
+        {/* Enhanced Mission and Vision Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-20">
+          <Card className="group bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 border-none text-white hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div>
+            <CardContent className="p-8 md:p-10 text-center relative z-10">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Target className="text-white" size={36} />
               </div>
-              <h3 className="font-orbitron font-bold text-xl md:text-2xl mb-3 md:mb-4">Our Mission</h3>
-              <p className="text-white/95 leading-relaxed text-sm md:text-base">
-                To provide efficient and effective solutions to all automotive challenges at the most convenient and practical time, ensuring guaranteed customer satisfaction.
+              <h3 className="font-orbitron font-black text-2xl md:text-3xl mb-6 text-shadow">Our Mission</h3>
+              <p className="text-white/95 leading-relaxed text-base md:text-lg font-light">
+                To provide efficient and effective solutions to all automotive challenges at the most convenient and practical time, ensuring guaranteed customer satisfaction through innovation and excellence.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-[var(--brand-blue)] to-blue-600 border-none text-white hover:scale-105 transition-transform duration-300">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <Award className="text-white" size={32} />
+          <Card className="group bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 border-none text-white hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div>
+            <CardContent className="p-8 md:p-10 text-center relative z-10">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Award className="text-white" size={36} />
               </div>
-              <h3 className="font-orbitron font-bold text-2xl mb-4">Our Vision</h3>
-              <p className="text-white/95 leading-relaxed">
-                We see envision to be the leading best one stop shop in Zimbabwe that provides efficient services in automotive engineering, diagnosis, selling sensors and accessories.
+              <h3 className="font-orbitron font-black text-2xl md:text-3xl mb-6 text-shadow">Our Vision</h3>
+              <p className="text-white/95 leading-relaxed text-base md:text-lg font-light">
+                To be Zimbabwe's leading automotive diagnostic and sensor specialist, providing comprehensive one-stop solutions in automotive engineering, diagnosis, and premium accessories.
               </p>
             </CardContent>
           </Card>
@@ -94,20 +114,20 @@ export default function AboutSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {[
-            { icon: Award, title: 'Excellence', description: 'Delivering superior automotive solutions with precision and expertise' },
-            { icon: Users, title: 'Integrity', description: 'Building trust through honest service and transparent communication' },
-            { icon: Target, title: 'Innovation', description: 'Embracing cutting-edge technology for advanced automotive diagnostics' },
-            { icon: CheckCircle, title: 'Reliability', description: 'Consistent quality service you can depend on every time' }
+            { icon: Award, title: 'Excellence', description: 'Delivering superior automotive solutions with precision and expertise', color: 'from-orange-500 to-orange-600' },
+            { icon: Users, title: 'Integrity', description: 'Building trust through honest service and transparent communication', color: 'from-blue-500 to-blue-600' },
+            { icon: Target, title: 'Innovation', description: 'Embracing cutting-edge technology for advanced automotive diagnostics', color: 'from-orange-500 to-orange-600' },
+            { icon: CheckCircle, title: 'Reliability', description: 'Consistent quality service you can depend on every time', color: 'from-blue-500 to-blue-600' }
           ].map((value, index) => (
-            <Card key={index} className="bg-white border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md">
-              <CardContent className="p-4 md:p-6 text-center">
-                <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 rounded-xl bg-gray-100 flex items-center justify-center">
-                  <value.icon className="text-gray-600" size={20} />
+            <Card key={index} className="group bg-white border-2 border-gray-100 hover:border-orange-200 hover:shadow-xl transition-all duration-500 hover:scale-105 rounded-2xl overflow-hidden">
+              <CardContent className="p-6 md:p-8 text-center">
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <value.icon className="text-white" size={28} />
                 </div>
-                <h4 className="font-orbitron font-bold text-base md:text-lg text-gray-900 mb-2 md:mb-3">{value.title}</h4>
-                <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{value.description}</p>
+                <h4 className="font-orbitron font-black text-lg md:text-xl text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">{value.title}</h4>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed font-light">{value.description}</p>
               </CardContent>
             </Card>
           ))}
