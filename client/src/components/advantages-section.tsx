@@ -72,18 +72,10 @@ export default function AdvantagesSection() {
               Why Choose Us
             </span>
           </div>
-
-          <h2 className="font-orbitron font-black text-5xl md:text-7xl lg:text-8xl mb-8 text-gray-900 leading-tight">
-            <span className="block">Our</span>
-            <span className="block bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-              Advantages
-            </span>
-          </h2>
-
           <div className="w-32 h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 mx-auto rounded-full mb-8 shadow-lg"></div>
 
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-            Discover what sets us apart as Zimbabwe's leading automotive diagnostic specialists
+          <p className="text-xl md:text-1xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+            If you own a hybrid car or are considering purchasing one, trust us with all your maintanance and repair needs. We are dedicated to keeping your vehicle in top condition so that you can enjoy its many benefits for years to come.
           </p>
         </div>
 
@@ -134,53 +126,6 @@ export default function AdvantagesSection() {
           ))}
         </div>
 
-        {/* Enhanced Statistics Section */}
-        <div className="relative">
-          <div className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-2xl">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-orange-500/20 to-blue-500/20 transform skew-y-3"></div>
-            </div>
-
-            <div className="relative z-10">
-              <div className="text-center mb-12">
-                <h3 className="font-orbitron font-black text-4xl md:text-5xl text-white mb-4">
-                  Trusted by Thousands
-                </h3>
-                <p className="text-xl text-gray-300">
-                  Our numbers speak for themselves
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text mb-2">
-                    15+
-                  </div>
-                  <div className="text-gray-300 font-medium">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text mb-2">
-                    5000+
-                  </div>
-                  <div className="text-gray-300 font-medium">Vehicles Serviced</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text mb-2">
-                    98%
-                  </div>
-                  <div className="text-gray-300 font-medium">Customer Satisfaction</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text mb-2">
-                    24/7
-                  </div>
-                  <div className="text-gray-300 font-medium">Support Available</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

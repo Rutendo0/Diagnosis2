@@ -165,8 +165,10 @@ body {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   filter: brightness(1.05) contrast(1.1) saturate(1.05);
   object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .image-enhanced:hover {
@@ -180,6 +182,23 @@ body {
   object-position: center;
   width: 100%;
   height: 100%;
+  display: block;
+}
+
+/* Remove any potential white space around images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Logo specific styles */
+.logo-container img {
+  object-fit: contain !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 /* Professional Image Containers */
@@ -494,6 +513,39 @@ input:focus, textarea:focus {
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scroll animations */
+@keyframes parallax-slow {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-50px); }
+}
+
+@keyframes reveal-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(80px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+@keyframes stagger-fade {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px) rotateX(15deg); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) rotateX(0deg); 
+  }
+}
+
 /* Enhanced Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -626,6 +678,93 @@ input:focus, textarea:focus {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Scroll-triggered animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.parallax-element {
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+}
+
+/* Enhanced card hover effects */
+.modern-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.modern-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 20px rgba(37, 99, 235, 0.1),
+    0 4px 8px rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+/* Modern button with micro-interactions */
+.modern-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--brand-orange), #ff8c42);
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.modern-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.modern-button:hover::before {
+  left: 100%;
+}
+
+.modern-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 8px 25px rgba(249, 115, 22, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Animation Classes */

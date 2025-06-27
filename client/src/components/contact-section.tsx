@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle, Award } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ export default function ContactSection() {
       icon: Phone,
       title: "Phone Support",
       details: [
-        { label: "Harare", value: "+263 242 770 389" },
+        { label: "Harare", value: "0242 770 389" },
         { label: "Mobile", value: "+263 772 974 846" }
       ],
       color: "from-orange-500 to-orange-600"
@@ -20,7 +20,7 @@ export default function ContactSection() {
       icon: Phone,
       title: "Bulawayo Office",
       details: [
-        { label: "Office", value: "+263 292 883 884" },
+        { label: "Office", value: "0292 883 884" },
         { label: "Mobile", value: "+263 779 298 117" }
       ],
       color: "from-blue-500 to-blue-600"
@@ -29,17 +29,25 @@ export default function ContactSection() {
       icon: MapPin,
       title: "Visit Our Locations",
       details: [
-        { label: "Harare", value: "Premier automotive hub" },
-        { label: "Bulawayo", value: "Full service center" }
+        { label: "Harare", value: "Stand 3 Robert Mugabe Street" },
+        { label: "Bulawayo", value: "Stand 14 George Silundika Street" }
       ],
       color: "from-orange-500 to-orange-600"
+    },
+    {
+      icon: Mail,
+      title: "Email Support",
+      details: [
+        { label: "Email", value: "info@diagnosisandsensors.co.zw" },
+      ],
+      color: "from-green-500 to-green-600"
     },
     {
       icon: Clock,
       title: "Business Hours",
       details: [
-        { label: "Mon - Fri", value: "8:00 AM - 6:00 PM" },
-        { label: "Saturday", value: "8:00 AM - 4:00 PM" }
+        { label: "Mon - Saturday", value: "8:00 AM - 5:00 PM" },
+        { label: "Sunday", value: "8:00 AM - 2:00 PM" }
       ],
       color: "from-blue-500 to-blue-600"
     }
@@ -66,37 +74,17 @@ export default function ContactSection() {
               Professional Support & Service
             </span>
           </div>
-          
-          <h2 className="font-orbitron font-black text-5xl md:text-7xl lg:text-8xl mb-8 text-gray-900 leading-tight">
-            <span className="block">Connect</span>
-            <span className="block bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
-              With Us
-            </span>
-          </h2>
-          
-          <div className="w-32 h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 mx-auto rounded-full mb-8 shadow-lg"></div>
-          
           <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
             Ready to elevate your automotive diagnostic capabilities? 
-            <span className="block mt-3 text-transparent bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text font-semibold">
-              Let's discuss your needs today
-            </span>
           </p>
+          <h3 className="font-orbitron font-black text-3xl md:text-4xl text-gray-900 mb-6">
+                Get In Touch
+              </h3>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="mb-12">
-              <h3 className="font-orbitron font-black text-3xl md:text-4xl text-gray-900 mb-6">
-                Get In Touch
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our expert team is ready to assist you with all your automotive diagnostic needs. 
-                Contact us today for professional consultation and service.
-              </p>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="group bg-white border-0 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
@@ -138,7 +126,7 @@ export default function ContactSection() {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
-                    onClick={() => window.open('tel:+263242770389', '_self')}
+                    onClick={() => window.open('tel:0242770389', '_self')}
                     className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold py-3 px-6 rounded-xl transition-all duration-300"
                   >
                     <Phone className="mr-2" size={20} />
@@ -146,11 +134,11 @@ export default function ContactSection() {
                   </Button>
                   
                   <Button 
-                    onClick={() => window.open('https://wa.me/+263719974846', '_blank')}
-                    className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-orbitron font-bold py-3 px-6 rounded-xl transition-all duration-300"
+                    onClick={() => window.open('mailto:info@diagnosisandsensors.co.zw', '_self')}
+                    className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-orbitron font-bold py-3 px-6 rounded-xl transition-all duration-300"
                   >
-                    <MessageSquare className="mr-2" size={20} />
-                    WhatsApp
+                    <Mail className="mr-2" size={20} />
+                    Email Us
                   </Button>
                 </div>
               </div>
@@ -168,7 +156,7 @@ export default function ContactSection() {
                   Request Consultation
                 </h3>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24 hours
+                  Fill out the form below and we'll get back to you
                 </p>
               </div>
 
@@ -249,48 +237,6 @@ export default function ContactSection() {
                   <span>We'll respond within 24 hours</span>
                 </div>
               </form>
-            </div>
-          </div>
-        </div>
-
-        {/* Enhanced Bottom CTA */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-blue-500/30 transform -rotate-2"></div>
-            </div>
-            
-            <div className="relative z-10">
-              <h3 className="font-orbitron font-black text-4xl md:text-5xl text-white mb-6">
-                Experience the Difference
-              </h3>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Join thousands of satisfied customers who trust Diagnosis & Sensors 
-                for their automotive diagnostic and repair needs.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                <div className="text-center">
-                  <div className="text-4xl font-orbitron font-black text-orange-400 mb-2">15+</div>
-                  <div className="text-gray-300">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-orbitron font-black text-blue-400 mb-2">5000+</div>
-                  <div className="text-gray-300">Happy Customers</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-orbitron font-black text-orange-400 mb-2">24/7</div>
-                  <div className="text-gray-300">Support Available</div>
-                </div>
-              </div>
-              
-              <Button 
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold px-12 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-xl"
-              >
-                Start Your Journey
-              </Button>
             </div>
           </div>
         </div>

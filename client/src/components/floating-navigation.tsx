@@ -32,92 +32,100 @@ export default function FloatingNavigation() {
   };
 
   return (
-    <>
-      <nav className="fixed top-0 w-full z-50 transition-all duration-300">
-        {/* Clean Professional Background */}
-        <div className="absolute inset-0 bg-white/98 backdrop-blur-md border-b border-gray-200/80"></div>
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out">
+      <div className={`transition-all duration-500 ease-in-out ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50' 
+          : 'bg-black/20 backdrop-blur-sm border-b border-white/10'
+      }`}>
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Navigation Content */}
+          <div className="flex items-center justify-between h-20">
 
-        {/* Subtle Accent Line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-
-        <div className="relative z-10 ">
-          <div className="max-w-7xl mx-auto px-4 py-2">
-            <div className="flex items-center justify-between">
-                <Logo className="h-14 w-auto filter brightness-110" />
-                <div className="hidden lg:flex items-center space-x-10">
-                  <Link 
-                    href="/" 
-                    className={`relative font-orbitron font-semibold transition-all duration-500 group hover:scale-110 text-shadow-sm ${
-                      location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
-                    }`}
-                  >
-                    <span className="relative z-10 text-lg">Home</span>
-                    <div className={`absolute inset-x-0 -bottom-2 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-all duration-500 rounded-full ${
-                      location === '/' ? 'transform scale-x-100 shadow-lg shadow-orange-500/50' : 'transform scale-x-0 group-hover:scale-x-100 group-hover:shadow-lg group-hover:shadow-orange-500/50'
-                    }`}></div>
-                  </Link>
-                  <button 
-                    onClick={() => scrollToSection('services')} 
-                    className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-                  >
-                    <span className="relative z-10">Services</span>
-                    <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('products')} 
-                    className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-                  >
-                    <span className="relative z-10">Products</span>
-                    <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('about')} 
-                    className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-                  >
-                    <span className="relative z-10">About</span>
-                    <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  </button>
-                  <Link 
-                    href="/blog" 
-                    className={`relative font-orbitron font-semibold transition-all duration-300 group text-shadow-sm ${
-                      location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
-                    }`}
-                  >
-                    <span className="relative z-10">Blog</span>
-                    <div className={`absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-transform duration-300 ${
-                      location === '/blog' ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'
-                    }`}></div>
-                  </Link>
-                  <button 
-                    onClick={() => scrollToSection('contact')} 
-                    className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
-                  >
-                    <span className="relative z-10">Contact</span>
-                    <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  </button>
-              </div>
-
-              <div className="hidden lg:flex items-center space-x-4">
-                <button 
-                  onClick={() => window.open('tel:+263242770389', '_self')}
-                  className="luxury-button px-6 py-2 text-sm font-orbitron font-semibold"
-                >
-                  Call Now
-                </button>
-              </div>
-
-              <div className="lg:hidden">
-                <button 
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-white hover:text-[var(--brand-orange)] transition-colors"
-                >
-                  {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
+            {/* Enhanced Logo */}
+            <div className="flex items-center space-x-3">
+              <Logo className="h-12 w-auto" />
+              <div className="text-xl font-orbitron font-black bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] bg-clip-text text-transparent">
+                Diagnosis & Sensors
               </div>
             </div>
+
+            {/* Navigation Links */}
+            <div className="hidden lg:flex items-center space-x-10">
+              <Link 
+                href="/" 
+                className={`relative font-orbitron font-semibold transition-all duration-500 group hover:scale-110 text-shadow-sm ${
+                  location === '/' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
+                }`}
+              >
+                <span className="relative z-10 text-lg">Home</span>
+                <div className={`absolute inset-x-0 -bottom-2 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-all duration-500 rounded-full ${
+                  location === '/' ? 'transform scale-x-100 shadow-lg shadow-orange-500/50' : 'transform scale-x-0 group-hover:scale-x-100 group-hover:shadow-lg group-hover:shadow-orange-500/50'
+                }`}></div>
+              </Link>
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+              >
+                <span className="relative z-10">Services</span>
+                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              </button>
+              <button 
+                onClick={() => scrollToSection('products')} 
+                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+              >
+                <span className="relative z-10">Products</span>
+                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+              >
+                <span className="relative z-10">About</span>
+                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              </button>
+              <Link 
+                href="/blog" 
+                className={`relative font-orbitron font-semibold transition-all duration-300 group text-shadow-sm ${
+                  location === '/blog' ? 'text-[var(--brand-orange)]' : 'text-white hover:text-[var(--brand-orange)]'
+                }`}
+              >
+                <span className="relative z-10">Blog</span>
+                <div className={`absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transition-transform duration-300 ${
+                  location === '/blog' ? 'transform scale-x-100' : 'transform scale-x-0 group-hover:scale-x-100'
+                }`}></div>
+              </Link>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="relative font-orbitron font-semibold text-gray-800 hover:text-[var(--brand-orange)] transition-all duration-300 group"
+              >
+                <span className="relative z-10">Contact</span>
+                <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              </button>
+            </div>
+
+            {/* Call Now Button */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <button 
+                onClick={() => window.open('tel:+263242770389', '_self')}
+                className="luxury-button px-6 py-2 text-sm font-orbitron font-semibold"
+              >
+                Call Now
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-white hover:text-[var(--brand-orange)] transition-colors"
+              >
+                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
             </div>
           </div>
-        </nav>
+        </div>
+      </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
@@ -195,6 +203,6 @@ export default function FloatingNavigation() {
           </div>
           </>
         )}
-      </>
+      </nav>
     );
   }

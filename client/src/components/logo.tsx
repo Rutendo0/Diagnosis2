@@ -7,12 +7,19 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
-    <img 
-      src="/images/logo.png" 
-      alt="Diagnosis & Sensors Logo" 
-      className={`${className} object-contain max-h-full w-auto`}
-      style={{ maxWidth: "10%", height: "auto" }}
-    />
+    <div className="flex items-center">
+      <img 
+        src="/images/logo.png" 
+        alt="Diagnosis & Sensors Logo" 
+        className={`${className} object-contain h-12 w-auto filter drop-shadow-md`}
+        style={{ 
+          maxHeight: "48px", 
+          width: "auto",
+          objectFit: "contain",
+          objectPosition: "center"
+        }}
+      />
+    </div>
   );
 };
 

@@ -49,6 +49,49 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.put("/api/blog/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid blog post ID" });
+      }
+
+      const result = insertBlogPostSchema.partial().safeParse(req.body);
+      if (!result.success) {
+        return res.status(400).json({ error: "Invalid blog post data", details: result.error });
+      }
+      
+      const post = await storage.updateBlogPost(id, result.data);
+      if (!post) {
+        return res.status(404).json({ error: "Blog post not found" });
+      }
+      
+      res.json(post);
+    } catch (error) {
+      console.log(`Error updating blog post: ${error}`);
+      res.status(500).json({ error: "Failed to update blog post" });
+    }
+  });
+
+  app.delete("/api/blog/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid blog post ID" });
+      }
+      
+      const deleted = await storage.deleteBlogPost(id);
+      if (!deleted) {
+        return res.status(404).json({ error: "Blog post not found" });
+      }
+      
+      res.json({ success: true });
+    } catch (error) {
+      console.log(`Error deleting blog post: ${error}`);
+      res.status(500).json({ error: "Failed to delete blog post" });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

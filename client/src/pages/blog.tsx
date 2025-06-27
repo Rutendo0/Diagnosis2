@@ -1,11 +1,19 @@
 
-import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare } from "lucide-react";
+import { useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare, Plus, Edit3, Trash2, Eye, EyeOff } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
 import Logo from "@/components/logo";
 import FloatingNavigation from "@/components/floating-navigation";
+import type { BlogPost, InsertBlogPost } from "@shared/schema";
 
 // Image declarations
 const businessVehicleImg = "/images/bussinesvehicle1.jpg";
@@ -24,113 +32,145 @@ const warrantyImg = "/images/image13.jpg";
 const dieselInjectorsImg = "/images/injector.jpg";
 
 export default function BlogPage() {
-  const services = [
-    {
-      id: 1,
-      title: "Vehicle Servicing and Repairs",
-      excerpt: "Complete automotive servicing including wiring repairs, sensor replacement, common rail injector fitments, high pressure pump fitment, and oil changes.",
-      image: vehicleServicingImg,
-      services: [
-        "Wiring repairs",
-        "Sensor replacement", 
-        "Common rail injector fitments",
-        "High pressure pump fitment",
-        "Changing oil",
-        "Changing filters",
-        "Checking leaks",
-        "Checking idle position"
-      ]
+  const [isAdminMode, setIsAdminMode] = useState(false);
+  const [adminPassword, setAdminPassword] = useState("");
+  const [showPasswordDialog, setShowPasswordDialog] = useState(false);
+  const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>("");
+  const [formData, setFormData] = useState<Partial<InsertBlogPost>>({
+    title: "",
+    content: "",
+    excerpt: "",
+    imageUrl: "",
+    category: "",
+    published: true,
+  });
+
+  const queryClient = useQueryClient();
+
+  const { data: blogPosts = [], isLoading } = useQuery<BlogPost[]>({
+    queryKey: ["/api/blog"],
+  });
+
+  const createPostMutation = useMutation({
+    mutationFn: async (post: InsertBlogPost) => {
+      const response = await fetch("/api/blog", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(post),
+      });
+      if (!response.ok) throw new Error("Failed to create post");
+      return response.json();
     },
-    {
-      id: 2,
-      title: "Diesel Injectors - IN STOCK",
-      excerpt: "Toyota D4D 1KD, Land Rover TDV6, Mercedes Benz and many more. Visit us today and get your injectors checked, serviced or replaced.",
-      image: dieselInjectorsImg,
-      services: [
-        "Toyota D4D 1KD",
-        "Land Rover TDV6", 
-        "Mercedes Benz",
-        "Injector checking",
-        "Injector servicing",
-        "Injector replacement"
-      ]
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/blog"] });
+      setIsCreateDialogOpen(false);
+      resetForm();
     },
-    {
-      id: 3,
-      title: "Spark Plug Diagnostics & Replacement",
-      excerpt: "A Spark Plug supplies the spark that ignites the air/fuel mixture, creating the explosion which makes the engine produce power.",
-      image: sparkPlugImg,
-      services: [
-        "Engine misfire diagnosis",
-        "High fuel consumption analysis",
-        "Black smoke troubleshooting",
-        "Poor idling repair",
-        "Car stalling solutions"
-      ]
+  });
+
+  const updatePostMutation = useMutation({
+    mutationFn: async ({ id, ...post }: Partial<BlogPost>) => {
+      const response = await fetch(`/api/blog/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(post),
+      });
+      if (!response.ok) throw new Error("Failed to update post");
+      return response.json();
     },
-    {
-      id: 4,
-      title: "Coolant Temperature Sensors",
-      excerpt: "Professional coolant temperature sensor diagnosis and replacement for optimal engine performance and temperature regulation.",
-      image: coolantSensorsImg,
-      services: [
-        "Temperature sensor testing",
-        "Sensor replacement",
-        "Cooling system diagnosis",
-        "Engine temperature monitoring"
-      ]
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/blog"] });
+      setEditingPost(null);
+      resetForm();
     },
-    {
-      id: 5,
-      title: "Complete Battery Packs - Toyota Aqua & Honda Fit Hybrid",
-      excerpt: "Complete battery packs for Toyota Aqua and Honda Fit Hybrid vehicles with warranty on quality cells.",
-      image: hybridBatteryImg,
-      services: [
-        "Low mileage batteries",
-        "Quality warranty",
-        "2012-2016 cells",
-        "Trade-in options available",
-        "Professional installation",
-        "Battery pack replacement"
-      ]
+  });
+
+  const deletePostMutation = useMutation({
+    mutationFn: async (id: number) => {
+      const response = await fetch(`/api/blog/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) throw new Error("Failed to delete post");
+      return response.json();
     },
-    {
-      id: 6,
-      title: "Liquid Battery Cooling Systems",
-      excerpt: "Specialized liquid battery cooling systems for hybrid vehicles ensuring optimal battery performance and longevity.",
-      image: liquidCoolingImg,
-      services: [
-        "Hybrid vehicle cooling",
-        "Battery temperature management",
-        "Cooling system maintenance",
-        "Performance optimization"
-      ]
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/blog"] });
     },
-    {
-      id: 7,
-      title: "Professional Service - Car Trouble Solutions",
-      excerpt: "Service due? Car trouble? Wait no more! Our experienced technicians provide comprehensive automotive diagnostics and repairs.",
-      image: servicePromoImg,
-      services: [
-        "Comprehensive diagnostics",
-        "Professional service",
-        "Experienced technicians",
-        "Quick turnaround times"
-      ]
-    },
-    {
-      id: 8,
-      title: "Our Business Vehicle",
-      excerpt: "Our mobile diagnostic unit equipped with the latest automotive diagnostic equipment, ready to serve you at your location.",
-      image: businessVehicleImg,
-      services: [
-        "Mobile diagnostics",
-        "On-site service",
-        "Professional equipment",
-        "Convenient location service"
-      ]
+  });
+
+  const resetForm = () => {
+    setFormData({
+      title: "",
+      content: "",
+      excerpt: "",
+      imageUrl: "",
+      category: "",
+      published: true,
+    });
+    setImageFile(null);
+    setImagePreview("");
+  };
+
+  const handleAdminLogin = () => {
+    // Simple password protection - in production, use proper authentication
+    if (adminPassword === "diagnosis2024") {
+      setIsAdminMode(true);
+      setShowPasswordDialog(false);
+      setAdminPassword("");
+    } else {
+      alert("Incorrect password");
     }
-  ];
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImagePreview(reader.result as string);
+        setFormData({ ...formData, imageUrl: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (editingPost) {
+      updatePostMutation.mutate({ ...formData, id: editingPost.id });
+    } else {
+      createPostMutation.mutate(formData as InsertBlogPost);
+    }
+  };
+
+  const handleEdit = (post: BlogPost) => {
+    setEditingPost(post);
+    setFormData({
+      title: post.title,
+      content: post.content,
+      excerpt: post.excerpt,
+      imageUrl: post.imageUrl || "",
+      category: post.category,
+      published: post.published,
+    });
+    setImagePreview(post.imageUrl || "");
+    setIsCreateDialogOpen(true);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[var(--brand-orange)]"></div>
+          <p className="mt-4 text-gray-600">Loading blog posts...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
@@ -146,72 +186,273 @@ export default function BlogPage() {
             <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
               Our Services & Solutions
             </span>
-          </div>
-          
-          <h1 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-gray-900 leading-tight">
-            <span className="text-[var(--brand-blue)]">Automotive</span>
-            <br />
-            <span className="text-[var(--brand-orange)]">Excellence</span>
-          </h1>
-          
-          <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[var(--brand-orange)] via-[var(--brand-gold)] to-[var(--brand-blue)] rounded-full mb-8"></div>
-          
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">
-            Comprehensive automotive diagnostic solutions and professional vehicle services. 
-            Discover our expertise in vehicle diagnosis, sensor technology, and electrical systems.
-          </p>
+          </div> 
         </div>
-
-        {/* Learn More About Us Section */}
-        <div className="text-center mb-16">
-          <div className="bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
-            <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-md border border-[var(--brand-blue)]/20">
-              <User className="w-4 h-4 text-[var(--brand-orange)]" />
-              <span className="text-gray-700 font-orbitron font-bold text-sm tracking-widest uppercase">
-                Our Story
-              </span>
+        {/* Admin Controls */}
+        {isAdminMode && (
+          <div className="mb-8 bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-6 border border-gray-200 shadow-lg">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-orbitron font-bold text-xl text-gray-900">Content Management</h3>
+              <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold">
+                    <Plus className="w-4 h-4 mr-2" />
+                    Add New Post
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="font-orbitron text-xl">
+                      {editingPost ? "Edit Blog Post" : "Create New Blog Post"}
+                    </DialogTitle>
+                  </DialogHeader>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="title">Post Title *</Label>
+                        <Input
+                          id="title"
+                          value={formData.title}
+                          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                          required
+                          placeholder="Enter a compelling title"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="category">Category *</Label>
+                        <Input
+                          id="category"
+                          value={formData.category}
+                          onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                          required
+                          placeholder="e.g., Diagnostic Tools, Vehicle Maintenance"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="excerpt">Short Description *</Label>
+                      <Textarea
+                        id="excerpt"
+                        value={formData.excerpt}
+                        onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
+                        required
+                        rows={3}
+                        placeholder="Write a brief summary that will appear on the blog page"
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="content">Full Content *</Label>
+                      <Textarea
+                        id="content"
+                        value={formData.content}
+                        onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                        required
+                        rows={10}
+                        placeholder="Write the full blog post content here..."
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="image">Post Image</Label>
+                      <div className="space-y-4">
+                        <div className="flex flex-col space-y-2">
+                          <Input
+                            id="image"
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="cursor-pointer"
+                          />
+                          <p className="text-sm text-gray-500">Upload an image from your device</p>
+                        </div>
+                        
+                        {imagePreview && (
+                          <div className="mt-4">
+                            <p className="text-sm font-medium mb-2">Image Preview:</p>
+                            <img 
+                              src={imagePreview} 
+                              alt="Preview" 
+                              className="w-full h-48 object-cover rounded-lg border border-gray-200"
+                            />
+                          </div>
+                        )}
+                        
+                        <div className="relative">
+                          <div className="absolute inset-0 flex items-center">
+                            <span className="w-full border-t border-gray-200" />
+                          </div>
+                          <div className="relative flex justify-center text-xs uppercase">
+                            <span className="bg-white px-2 text-gray-500">Or</span>
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <Label htmlFor="imageUrl">Image URL</Label>
+                          <Input
+                            id="imageUrl"
+                            value={formData.imageUrl ?? ""}
+                            onChange={(e) => {
+                              setFormData({ ...formData, imageUrl: e.target.value });
+                              setImagePreview(e.target.value);
+                            }}
+                            placeholder="https://images.unsplash.com/..."
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Switch
+                        id="published"
+                        checked={formData.published ?? false}
+                        onCheckedChange={(checked) => setFormData({ ...formData, published: checked })}
+                      />
+                      <Label htmlFor="published">Published</Label>
+                    </div>
+                    <div className="flex justify-end space-x-4">
+                      <Button type="button" variant="outline" onClick={() => {
+                        setIsCreateDialogOpen(false);
+                        setEditingPost(null);
+                        resetForm();
+                      }}>
+                        Cancel
+                      </Button>
+                      <Button 
+                        type="submit" 
+                        className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white"
+                        disabled={createPostMutation.isPending || updatePostMutation.isPending}
+                      >
+                        {editingPost ? "Update" : "Create"} Post
+                      </Button>
+                    </div>
+                  </form>
+                </DialogContent>
+              </Dialog>
             </div>
-            
-            <h2 className="font-orbitron font-black text-3xl md:text-4xl mb-6 text-gray-900">
-              Learn More About <span className="text-[var(--brand-orange)]">Diagnosis & Sensors</span>
-            </h2>
-            
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light mb-8">
-              Discover our journey, values, and commitment to automotive excellence. Learn about our team, 
-              our mission, and why we're the leading brand in automotive vehicle diagnosis.
-            </p>
-            
-            <Button 
-              size="lg"
-              className="group relative bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-12 py-6 rounded-2xl border-0 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              onClick={() => window.open('https://sites.google.com/d/1KKFaXr6fxUDk93lgw8I7eOOTKB4kmIyK/p/1LEAHvzUj7nTZkEPKphu14A_q57guBDpH/edit', '_blank')}
-            >
-              <span className="relative z-10 flex items-center text-lg">
-                LEARN ABOUT US
-                <User className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
-              </span>
-            </Button>
+            <p className="text-gray-600">You can add, edit, or delete blog posts. Changes are saved immediately.</p>
           </div>
+        )}
+
+        {/* Admin Toggle */}
+        <div className="fixed top-24 right-8 z-50">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              if (isAdminMode) {
+                setIsAdminMode(false);
+              } else {
+                setShowPasswordDialog(true);
+              }
+            }}
+            className="bg-white/90 backdrop-blur-sm border-[var(--brand-blue)]/20 hover:bg-[var(--brand-orange)]/10"
+          >
+            {isAdminMode ? (
+              <>
+                <EyeOff className="w-4 h-4 mr-2" />
+                Exit Admin
+              </>
+            ) : (
+              <>
+                <Settings className="w-4 h-4 mr-2" />
+                Admin
+              </>
+            )}
+          </Button>
         </div>
 
-        {/* Services Grid */}
+        {/* Admin Password Dialog */}
+        <Dialog open={showPasswordDialog} onOpenChange={setShowPasswordDialog}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle className="font-orbitron text-xl">Admin Access</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="password">Enter Admin Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={adminPassword}
+                  onChange={(e) => setAdminPassword(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleAdminLogin()}
+                  placeholder="Enter password"
+                />
+              </div>
+              <div className="flex justify-end space-x-4">
+                <Button 
+                  variant="outline" 
+                  onClick={() => {
+                    setShowPasswordDialog(false);
+                    setAdminPassword("");
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button 
+                  onClick={handleAdminLogin}
+                  className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-[var(--brand-orange)] text-white"
+                >
+                  Login
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Blog Posts Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {blogPosts.map((post) => (
             <Card  
-              key={service.id}
+              key={post.id}
               className="group bg-white backdrop-blur-sm border border-gray-200 shadow-lg overflow-hidden hover:shadow-xl hover:shadow-[var(--brand-orange)]/10 transition-all duration-300 transform hover:scale-102"
             >
               <CardHeader className="p-0">
                 <div className="relative overflow-hidden h-64">
                   <img
-                    src={service.image}
-                    alt={service.title}
+                    src={post.imageUrl || "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"}
+                    alt={post.title}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-500"
                     loading="lazy"
-                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                 
+                  {/* Admin Controls */}
+                  {isAdminMode && (
+                    <div className="absolute top-4 right-4 flex space-x-2">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="bg-white/90 backdrop-blur-sm"
+                        onClick={() => handleEdit(post)}
+                      >
+                        <Edit3 className="w-4 h-4" />
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="bg-red-50/90 backdrop-blur-sm border-red-200 hover:bg-red-100"
+                        onClick={() => {
+                          if (confirm("Are you sure you want to delete this post?")) {
+                            deletePostMutation.mutate(post.id);
+                          }
+                        }}
+                      >
+                        <Trash2 className="w-4 h-4 text-red-600" />
+                      </Button>
+                    </div>
+                  )}
+
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 text-white border-0">
+                      {post.category}
+                    </Badge>
+                  </div>
+
                   {/* Service Icon */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                     <div className="w-12 h-12 bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 rounded-full flex items-center justify-center shadow-lg">
@@ -228,84 +469,52 @@ export default function BlogPage() {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 
                 {/* Title */}
-                <h2 className="font-orbitron text-xl font-bold mb-4 transition-all duration-300 text-gray-900 group-hover:text-[var(--brand-orange)]">
-                  {service.title}
+                <h2 className="font-orbitron text-xl font-bold mb-4 transition-all duration-300 text-gray-900 group-hover:text-[var(--brand-orange)] line-clamp-2">
+                  {post.title}
                 </h2>
                 
                 {/* Description */}
-                <p className="text-gray-700 mb-6 leading-relaxed font-light transition-colors duration-300">
-                  {service.excerpt}
+                <p className="text-gray-700 mb-6 leading-relaxed font-light transition-colors duration-300 line-clamp-3">
+                  {post.excerpt}
                 </p>
                 
-                {/* Services List */}
+                {/* Date */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-bold text-[var(--brand-orange)] mb-4 font-orbitron flex items-center uppercase tracking-wider">
-                    <div className="w-2 h-2 bg-[var(--brand-orange)] rounded-full mr-3"></div>
-                    Services Included:
-                  </h4>
-                  <ul className="text-sm text-gray-700 space-y-2">
-                    {service.services.slice(0, 4).map((item, idx) => (
-                      <li key={idx} className="flex items-center space-x-3 group/item hover:text-[var(--brand-orange)] transition-all duration-300">
-                        <div className="w-1.5 h-1.5 bg-[var(--brand-blue)] rounded-full group-hover/item:bg-[var(--brand-orange)] transition-all duration-300"></div>
-                        <span className="font-medium">{item}</span>
-                      </li>
-                    ))}
-                    {service.services.length > 4 && (
-                      <li className="text-[var(--brand-orange)] font-bold flex items-center space-x-2 pt-2 border-t border-gray-200">
-                        <Settings size={12} />
-                        <span>+ {service.services.length - 4} more services</span>
-                      </li>
-                    )}
-                  </ul>
+                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                    <Calendar className="w-4 h-4 text-[var(--brand-orange)]" />
+                    <span>
+                      {post.createdAt ? new Date(post.createdAt).toLocaleDateString() : "Recently posted"}
+                    </span>
+                  </div>
                 </div>
                 
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-4 text-xs text-gray-600">
                     <div className="flex items-center space-x-2 hover:text-[var(--brand-orange)] transition-all duration-300 cursor-pointer">
-                      <Calendar className="w-4 h-4" />
-                      <span className="font-semibold">Available Now</span>
+                      <Clock className="w-4 h-4" />
+                      <span className="font-semibold">5 min read</span>
                     </div>
                     <div className="flex items-center space-x-2 hover:text-[var(--brand-blue)] transition-all duration-300 cursor-pointer">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="font-semibold">Expert Service</span>
+                      <span className="font-semibold">Expert Content</span>
                     </div>
                   </div>
                   
-                  <Button 
-                    size="sm" 
-                    className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-red-500 text-white font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-300 transform hover:scale-105 shadow-md"
-                    onClick={() => window.open('tel:+263242770389', '_self')}
-                  >
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now
-                  </Button>
+                  <Link href={`/blog/${post.id}`}>
+                    <Button 
+                      size="sm" 
+                      className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-red-500 text-white font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-300 transform hover:scale-105 shadow-md"
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      Read More
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
-
-        {/* Contact Information */}
-        <div className="mt-16 bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
-          <h3 className="text-2xl font-bold text-[var(--brand-blue)] mb-6 font-orbitron text-center">Get Professional Help</h3>
-          <p className="text-lg text-gray-700 mb-6 text-center max-w-3xl mx-auto">
-            Our expert technicians are ready to help with all your automotive diagnostic needs. Contact us today for professional service.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6 text-center">
-            <div className="bg-white/80 rounded-2xl p-6 shadow-md border border-gray-200">
-              <h4 className="font-bold text-[var(--brand-orange)] mb-2 font-orbitron">Harare Office</h4>
-              <p className="text-gray-700">+263 242 770 389</p>
-              <p className="text-gray-700">+263 772 974 846</p>
-            </div>
-            <div className="bg-white/80 rounded-2xl p-6 shadow-md border border-gray-200">
-              <h4 className="font-bold text-[var(--brand-orange)] mb-2 font-orbitron">Bulawayo Office</h4>
-              <p className="text-gray-700">+263 292 883 884</p>
-              <p className="text-gray-700">+263 779 298 117</p>
-            </div>
-          </div>
-        </div>
-
         {/* Floating Action Buttons */}
         <div className="fixed bottom-8 right-8 z-40">
           <div className="flex flex-col space-y-4">

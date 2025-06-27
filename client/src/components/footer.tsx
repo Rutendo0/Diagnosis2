@@ -1,5 +1,5 @@
-import { Facebook, Mail, MessageSquare, Phone } from "lucide-react";
-import { Button } from "./ui/button";
+import { Facebook, Mail, MessageSquare } from "lucide-react";
+import Logo from "./logo";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -10,22 +10,19 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-16 px-6 bg-gradient-to-t from-gray-900 to-gray-800 relative overflow-hidden border-t border-gray-700">
+    <footer className="py-10 px-6 bg-gradient-to-t from-gray-900 to-gray-800 relative overflow-hidden border-t border-gray-700">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-orange)]/5 via-transparent to-[var(--brand-blue)]/5 opacity-50"></div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           {/* Logo/Title */}
-          <div className="font-orbitron font-bold text-3xl md:text-4xl gradient-text mb-6 tracking-tight">
-            DIAGNOSIS & SENSORS
-          </div>
-          
-          {/* Tagline */}
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
-            Premier automotive diagnostic solutions for the modern workshop
-          </p>
-          
+          <div className="logo-container mb-6">
+              <Logo className="h-16 w-auto" />
+            </div>
+            <div className="text-3xl font-orbitron font-black bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent mb-4">
+              Diagnosis & Sensors
+            </div>
           {/* Navigation Links */}
           <nav className="flex justify-center gap-6 mb-8 flex-wrap">
             {['home', 'services', 'products', 'about', 'contact'].map((item) => (
@@ -37,12 +34,20 @@ export default function Footer() {
                 {item}
               </button>
             ))}
+            <a 
+              href="https://fadarc.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-orange-500 hover:text-white transition-colors duration-200 font-medium px-3 py-1 rounded-md hover:bg-gray-700/50"
+            >
+              Fadarc (Sister Company)
+            </a>
           </nav>
-          
-         
+
+
           {/* Social/Contact Info */}
           <div className="flex justify-center gap-6 mb-8">
-            <a href="mailto:info@diagnosis.com" className="text-gray-400 hover:text-orange-600 transition-colors">
+            <a href="mailto:info@diagnosis.co.zw" className="text-gray-400 hover:text-orange-600 transition-colors">
               <Mail size={20} />
             </a>
             <a href="https://wa.me/+263719974846" className="text-gray-400 hover:text-orange-600 transition-colors">
@@ -65,13 +70,11 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          
+
           {/* Copyright and Credits */}
           <div className="text-gray-500 text-sm flex flex-col md:flex-row justify-center items-center gap-2">
             <span>&copy; {new Date().getFullYear()} Diagnosis & Sensors. All rights reserved.</span>
-            <span className="hidden md:block">|</span>
-            <span>Engineered for Excellence</span>
-            <span className="hidden md:block">|</span>   
+            <span className="hidden md:block"></span>
           </div>
         </div>
       </div>
