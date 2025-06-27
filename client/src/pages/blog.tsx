@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare, Plus, Edit3, Trash2, Eye, EyeOff } from "lucide-react";
+import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare, Plus, Edit3, Trash2, Eye, EyeOff, Share2 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -61,13 +61,50 @@ export default function BlogPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),
       });
-      if (!response.ok) throw new Error("Failed to create post");
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: "Unknown error" }));
+        const errorMessage = errorData.error || `HTTP ${response.status}: ${response.statusText}`;
+        throw new Error(errorMessage);
+      }
       return response.json();
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/blog"] });
+      // Close dialog and reset form
       setIsCreateDialogOpen(false);
+      setEditingPost(null);
       resetForm();
+      // Show success message
+      const toast = document.createElement('div');
+      toast.textContent = '✅ Blog post created successfully!';
+      toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300';
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(toast), 300);
+      }, 3000);
+    },
+    onError: (error: Error) => {
+      console.error('Create post error:', error);
+      // Show detailed error message
+      const toast = document.createElement('div');
+      toast.innerHTML = `
+        <div class="flex items-center space-x-3">
+          <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-red-600 text-sm">✕</span>
+          </div>
+          <div>
+            <div class="font-semibold text-red-800">Failed to create blog post</div>
+            <div class="text-red-700 text-sm mt-1">${error.message}</div>
+          </div>
+        </div>
+      `;
+      toast.className = 'fixed top-4 right-4 bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg shadow-lg z-50 transition-all duration-300 max-w-md';
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(toast), 300);
+      }, 5000);
     },
   });
 
@@ -78,13 +115,49 @@ export default function BlogPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),
       });
-      if (!response.ok) throw new Error("Failed to update post");
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: "Unknown error" }));
+        const errorMessage = errorData.error || `HTTP ${response.status}: ${response.statusText}`;
+        throw new Error(errorMessage);
+      }
       return response.json();
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/blog"] });
       setEditingPost(null);
       resetForm();
+      setIsCreateDialogOpen(false);
+      // Show success message
+      const toast = document.createElement('div');
+      toast.textContent = '✅ Blog post updated successfully!';
+      toast.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300';
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(toast), 300);
+      }, 3000);
+    },
+    onError: (error: Error) => {
+      console.error('Update post error:', error);
+      // Show detailed error message
+      const toast = document.createElement('div');
+      toast.innerHTML = `
+        <div class="flex items-center space-x-3">
+          <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-red-600 text-sm">✕</span>
+          </div>
+          <div>
+            <div class="font-semibold text-red-800">Failed to update blog post</div>
+            <div class="text-red-700 text-sm mt-1">${error.message}</div>
+          </div>
+        </div>
+      `;
+      toast.className = 'fixed top-4 right-4 bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg shadow-lg z-50 transition-all duration-300 max-w-md';
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(toast), 300);
+      }, 5000);
     },
   });
 
@@ -128,11 +201,30 @@ export default function BlogPage() {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Validate file type
+      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+      if (!allowedTypes.includes(file.type)) {
+        alert('Please upload only JPG, PNG, or WEBP images.');
+        e.target.value = '';
+        return;
+      }
+      
+      // Validate file size (max 5MB)
+      const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+      if (file.size > maxSize) {
+        alert('Image size should be less than 5MB.');
+        e.target.value = '';
+        return;
+      }
+      
       setImageFile(file);
       const reader = new FileReader();
       reader.onload = () => {
         setImagePreview(reader.result as string);
         setFormData({ ...formData, imageUrl: reader.result as string });
+      };
+      reader.onerror = () => {
+        alert('Error reading the image file.');
       };
       reader.readAsDataURL(file);
     }
@@ -140,10 +232,37 @@ export default function BlogPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation only
+    if (!formData.title?.trim()) {
+      alert("Please enter a title.");
+      return;
+    }
+    
+    if (!formData.content?.trim()) {
+      alert("Please enter content.");
+      return;
+    }
+    
+    if (!formData.excerpt?.trim()) {
+      alert("Please enter an excerpt.");
+      return;
+    }
+    
+    // Prepare final data
+    const finalData = {
+      title: formData.title.trim(),
+      content: formData.content.trim(),
+      excerpt: formData.excerpt.trim(),
+      category: formData.category?.trim() || "General",
+      imageUrl: formData.imageUrl?.trim() || "",
+      published: formData.published ?? true
+    };
+    
     if (editingPost) {
-      updatePostMutation.mutate({ ...formData, id: editingPost.id });
+      updatePostMutation.mutate({ ...finalData, id: editingPost.id });
     } else {
-      createPostMutation.mutate(formData as InsertBlogPost);
+      createPostMutation.mutate(finalData as InsertBlogPost);
     }
   };
 
@@ -207,7 +326,13 @@ export default function BlogPage() {
               </div>
               <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-red-500 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-8 py-4 text-lg rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200">
+                  <Button 
+                    className="bg-gradient-to-r from-[var(--brand-orange)] to-red-500 hover:from-red-500 hover:to-[var(--brand-orange)] text-white font-orbitron font-bold px-8 py-4 text-lg rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+                    onClick={() => {
+                      setEditingPost(null);
+                      resetForm();
+                    }}
+                  >
                     <Plus className="w-5 h-5 mr-3" />
                     ✨ Create New Post
                   </Button>
@@ -670,9 +795,17 @@ export default function BlogPage() {
                 </h2>
 
                 {/* Description */}
-                <p className="text-gray-700 mb-6 leading-relaxed font-light transition-colors duration-300 line-clamp-3">
-                  {post.excerpt}
-                </p>
+                <div className="mb-6">
+                  <p className="text-gray-700 leading-relaxed font-light transition-colors duration-300 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-3 flex items-center text-xs text-gray-500 hover:text-[var(--brand-orange)] transition-colors duration-300">
+                    <div className="w-1 h-1 bg-[var(--brand-orange)] rounded-full mr-2"></div>
+                    <span className="font-medium">Full article with detailed guide available</span>
+                    <div className="flex-1 mx-3 border-t border-dotted border-gray-300"></div>
+                    <span className="font-semibold">Click to read more →</span>
+                  </div>
+                </div>
 
                 {/* Date */}
                 <div className="mb-6">
@@ -697,15 +830,40 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <Link href={`/blog/${post.id}`}>
+                  <div className="flex items-center space-x-3">
+                    <Link href={`/blog/${post.id}`}>
+                      <Button 
+                        size="sm" 
+                        className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-red-500 text-white font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-300 transform hover:scale-105 shadow-md"
+                      >
+                        <Eye className="w-4 h-4 mr-2 group-hover/btn:animate-pulse" />
+                        Read Full Article
+                      </Button>
+                    </Link>
+                    
+                    {/* Quick Share Button */}
                     <Button 
                       size="sm" 
-                      className="group/btn bg-gradient-to-r from-[var(--brand-orange)] to-orange-500 hover:from-orange-600 hover:to-red-500 text-white font-orbitron font-bold text-sm px-6 py-3 rounded-xl border-0 transition-all duration-300 transform hover:scale-105 shadow-md"
+                      variant="outline"
+                      className="group/share bg-white hover:bg-[var(--brand-blue)]/10 border-[var(--brand-blue)]/20 text-[var(--brand-blue)] hover:text-[var(--brand-blue)] transition-all duration-300 transform hover:scale-105"
+                      onClick={() => {
+                        const shareText = `🔧 Check out this automotive guide: "${post.title}"\n\n${post.excerpt}\n\n🔗 Read more: ${window.location.origin}/blog/${post.id}\n\n#AutomotiveTips #CarMaintenance`;
+                        
+                        if (navigator.share) {
+                          navigator.share({
+                            title: post.title,
+                            text: post.excerpt,
+                            url: `${window.location.origin}/blog/${post.id}`,
+                          });
+                        } else {
+                          // WhatsApp as fallback
+                          window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+                        }
+                      }}
                     >
-                      <Eye className="w-4 h-4 mr-2" />
-                      Read More
+                      <Share2 className="w-4 h-4" />
                     </Button>
-                  </Link>
+                  </div>
                 </div>
               </CardContent>
             </Card>

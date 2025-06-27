@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
-import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, MessageSquare, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { BlogPost } from "@shared/schema";
@@ -99,7 +99,7 @@ export default function BlogPostPage() {
           {post.imageUrl && (
             <div className="relative aspect-hero overflow-hidden rounded-xl mb-8 shadow-lg">
               <img
-                src="/images/image10.jpg"
+                src={post.imageUrl}
                 alt={post.title}
                 className="responsive-image"
                 onError={(e) => {
@@ -112,62 +112,70 @@ export default function BlogPostPage() {
 
           {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <div className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              {post.content && post.content.split('\n').map((paragraph, index) => (
-                <p key={index} className="mb-4">
-                  {paragraph}
-                </p>
-              ))}
+            <div className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+              {post.content && post.content.split('\n').map((paragraph, index) => {
+                // Skip empty paragraphs
+                if (paragraph.trim() === '') {
+                  return <div key={index} className="h-4"></div>;
+                }
+                
+                return (
+                  <p key={index} className="mb-6 text-justify leading-8">
+                    {paragraph}
+                  </p>
+                );
+              })}
             </div>
           </div>
 
-          {/* Share Section */}
+          {/* Simple Share and Contact Section */}
           <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+              {/* Share */}
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">
-                  Found this helpful?
+                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">
+                  Share This Article
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                  Share it with others who might benefit from this information.
-                </p>
+                <div className="flex gap-3">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => {
+                      const shareText = `Check out: "${post.title}" - ${window.location.href}`;
+                      window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+                    }}
+                  >
+                    <MessageSquare className="w-4 h-4 mr-2" />
+                    WhatsApp
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      const toast = document.createElement('div');
+                      toast.textContent = '✅ Link copied!';
+                      toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50';
+                      document.body.appendChild(toast);
+                      setTimeout(() => document.body.removeChild(toast), 2000);
+                    }}
+                  >
+                    <Share2 className="w-4 h-4 mr-2" />
+                    Copy Link
+                  </Button>
+                </div>
               </div>
-              <Button 
-                variant="outline" 
-                className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-orange-200 hover:bg-orange-50"
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({
-                      title: post.title,
-                      text: post.excerpt,
-                      url: window.location.href,
-                    });
-                  } else {
-                    navigator.clipboard.writeText(window.location.href);
-                  }
-                }}
-              >
-                <Share2 className="w-4 h-4 mr-2" />
-                Share
-              </Button>
-            </div>
-          </div>
 
-          {/* Related/Contact Section */}
-          <div className="mt-12 p-8 bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 rounded-xl">
-            <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-4">
-              Need Professional Help?
-            </h3>
-            <p className="text-slate-600 dark:text-slate-300 mb-6">
-              Our expert technicians are ready to help with all your automotive diagnostic needs.
-            </p>
-            <div className="space-y-2 text-sm">
-              <p className="text-slate-700 dark:text-slate-300">
-                <strong>Harare:</strong> 0242 770 389 | +263 772 974 846
-              </p>
-              <p className="text-slate-700 dark:text-slate-300">
-                <strong>Bulawayo:</strong> 0292 883 884 | +263 779 298 117
-              </p>
+              {/* Contact */}
+              <div className="text-right">
+                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">
+                  Need Help?
+                </h3>
+                <div className="text-sm text-slate-600 dark:text-slate-400">
+                  <p>Harare: 0242 770 389</p>
+                  <p>Bulawayo: 0292 883 884</p>
+                </div>
+              </div>
             </div>
           </div>
         </article>
