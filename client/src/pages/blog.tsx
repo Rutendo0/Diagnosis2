@@ -14,6 +14,7 @@ import { Link, useLocation } from "wouter";
 import Logo from "@/components/logo";
 import FloatingNavigation from "@/components/floating-navigation";
 import type { BlogPost, InsertBlogPost } from "@shared/schema";
+import React from "react";
 
 // Image declarations
 const businessVehicleImg = "/images/bussinesvehicle1.jpg";
@@ -223,7 +224,7 @@ export default function BlogPage() {
         setIsAdminMode(true);
         setShowPasswordDialog(false);
         setAdminPassword("");
-        
+
         // Show success message
         const toast = document.createElement('div');
         toast.textContent = '🔓 Admin access granted';
@@ -252,7 +253,7 @@ export default function BlogPage() {
         e.target.value = '';
         return;
       }
-      
+
       // Validate file size (max 5MB)
       const maxSize = 5 * 1024 * 1024; // 5MB in bytes
       if (file.size > maxSize) {
@@ -260,7 +261,7 @@ export default function BlogPage() {
         e.target.value = '';
         return;
       }
-      
+
       setImageFile(file);
       const reader = new FileReader();
       reader.onload = () => {
@@ -276,23 +277,23 @@ export default function BlogPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation only
     if (!formData.title?.trim()) {
       alert("Please enter a title.");
       return;
     }
-    
+
     if (!formData.content?.trim()) {
       alert("Please enter content.");
       return;
     }
-    
+
     if (!formData.excerpt?.trim()) {
       alert("Please enter an excerpt.");
       return;
     }
-    
+
     // Prepare final data
     const finalData = {
       title: formData.title.trim(),
@@ -302,7 +303,7 @@ export default function BlogPage() {
       imageUrl: formData.imageUrl?.trim() || "",
       published: formData.published ?? true
     };
-    
+
     if (editingPost) {
       updatePostMutation.mutate({ ...finalData, id: editingPost.id });
     } else {
@@ -357,7 +358,7 @@ export default function BlogPage() {
             Stay updated with the latest insights, tips and news.
           </p>
         </div>
-        
+
         {/* Admin Controls */}
         {isAdminMode && (
           <div className="mb-8 bg-gradient-to-r from-[var(--brand-blue)]/10 via-white to-[var(--brand-orange)]/10 rounded-3xl p-8 border-2 border-gray-200 shadow-xl">
@@ -390,14 +391,14 @@ export default function BlogPage() {
                       {editingPost ? "Update your existing blog post" : "Add a new blog post to share with your audience"}
                     </p>
                   </DialogHeader>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-8 pt-6">
                     {/* Basic Information Section */}
                     <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-6 rounded-xl border border-gray-200">
                       <h3 className="font-orbitron font-bold text-lg mb-4 text-gray-800 flex items-center">
                         📝 Basic Information
                       </h3>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                         <div className="space-y-2">
                           <Label htmlFor="title" className="text-sm font-semibold text-gray-700">
                             Post Title *
@@ -475,7 +476,7 @@ export default function BlogPage() {
                         🖼️ Featured Image
                       </h3>
                       <div className="space-y-6">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                           <div className="space-y-4">
                             <div className="space-y-2">
                               <Label className="text-sm font-semibold text-gray-700">
@@ -598,7 +599,7 @@ export default function BlogPage() {
                 </DialogContent>
               </Dialog>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center space-x-3 mb-3">
@@ -609,7 +610,7 @@ export default function BlogPage() {
                 </div>
                 <p className="text-sm text-gray-600">Add new blog posts with rich content and images</p>
               </div>
-              
+
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
@@ -619,7 +620,7 @@ export default function BlogPage() {
                 </div>
                 <p className="text-sm text-gray-600">Click the edit button on any post to modify it</p>
               </div>
-              
+
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
@@ -630,7 +631,7 @@ export default function BlogPage() {
                 <p className="text-sm text-gray-600">Remove unwanted posts with confirmation dialog</p>
               </div>
             </div>
-            
+
             <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
               <div className="flex items-center space-x-2 text-amber-800">
                 <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
@@ -650,7 +651,7 @@ export default function BlogPage() {
               if (isAdminMode) {
                 setIsAdminMode(false);
                 localStorage.removeItem("admin_token");
-                
+
                 // Show logout message
                 const toast = document.createElement('div');
                 toast.textContent = '🔒 Admin mode disabled';
@@ -697,7 +698,7 @@ export default function BlogPage() {
                 </div>
                 <p className="text-xs text-blue-600 mt-1">You need admin access to create, edit, or delete blog posts</p>
               </div>
-              
+
               <div className="space-y-3">
                 <Label htmlFor="admin-password" className="text-sm font-semibold text-gray-700">
                   Admin Password
@@ -719,7 +720,7 @@ export default function BlogPage() {
                   Contact the system administrator if you've forgotten your password
                 </p>
               </div>
-              
+
               <div className="flex justify-center space-x-4 pt-4">
                 <Button
                   variant="outline"
@@ -837,7 +838,7 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  
+
                 </div>
               </CardHeader>
               <CardContent className="p-6 relative">
@@ -895,7 +896,7 @@ export default function BlogPage() {
                         Read Full Article
                       </Button>
                     </Link>
-                    
+
                     {/* Quick Share Button */}
                     <Button 
                       size="sm" 
@@ -903,7 +904,7 @@ export default function BlogPage() {
                       className="group/share bg-white hover:bg-[var(--brand-blue)]/10 border-[var(--brand-blue)]/20 text-[var(--brand-blue)] hover:text-[var(--brand-blue)] transition-all duration-300 transform hover:scale-105"
                       onClick={() => {
                         const shareText = `🔧 Check out this automotive guide: "${post.title}"\n\n${post.excerpt}\n\n🔗 Read more: ${window.location.origin}/blog/${post.id}\n\n#AutomotiveTips #CarMaintenance`;
-                        
+
                         if (navigator.share) {
                           navigator.share({
                             title: post.title,

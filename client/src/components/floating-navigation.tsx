@@ -142,7 +142,7 @@ export default function FloatingNavigation() {
             ))}
 
             {/* Mobile Contact Info */}
-            <div className="px-4 py-3 border-t border-gray-200">
+            <div className="px-4 py-4 border-t border-gray-200 bg-gray-50">
               <div className="flex items-center space-x-3 mb-3">
                 <Phone className="text-orange-600" size={18} />
                 <span className="font-orbitron font-bold text-sm text-gray-800">

@@ -17,7 +17,7 @@ export default function BlogPostPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="animate-pulse space-y-8 max-w-4xl mx-auto">
             <div className="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/4"></div>
             <div className="h-64 bg-slate-200 dark:bg-slate-700 rounded"></div>
@@ -36,7 +36,7 @@ export default function BlogPostPage() {
   if (error || !post) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="text-center max-w-2xl mx-auto">
             <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-4">
               Blog Post Not Found
@@ -58,7 +58,7 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <article className="max-w-4xl mx-auto">
           {/* Back Button */}
           <Link href="/blog" className="inline-flex items-center space-x-2 text-orange-600 hover:text-orange-700 mb-8 transition-colors">
@@ -118,7 +118,7 @@ export default function BlogPostPage() {
                 if (paragraph.trim() === '') {
                   return <div key={index} className="h-4"></div>;
                 }
-                
+
                 return (
                   <p key={index} className="mb-6 text-justify leading-8">
                     {paragraph}

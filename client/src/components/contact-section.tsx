@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -58,7 +57,7 @@ export default function ContactSection() {
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 via-transparent to-blue-50/40"></div>
-      
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-200 to-transparent transform skew-y-6"></div>
@@ -85,18 +84,18 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="group bg-white border-0 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                   <CardContent className="p-6">
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       <info.icon className="text-white" size={28} />
                     </div>
-                    
+
                     <h4 className="font-orbitron font-bold text-lg text-gray-900 mb-3">
                       {info.title}
                     </h4>
-                    
+
                     <div className="space-y-2">
                       {info.details.map((detail, idx) => (
                         <div key={idx} className="flex justify-between items-center">
@@ -115,7 +114,7 @@ export default function ContactSection() {
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-blue-500/30 transform rotate-2"></div>
               </div>
-              
+
               <div className="relative z-10">
                 <h4 className="font-orbitron font-black text-2xl mb-4">
                   Need Immediate Assistance?
@@ -123,7 +122,7 @@ export default function ContactSection() {
                 <p className="text-gray-300 mb-6">
                   Our expert technicians are standing by to help with urgent diagnostic needs
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
                     onClick={() => window.open('tel:0242770389', '_self')}
@@ -132,7 +131,7 @@ export default function ContactSection() {
                     <Phone className="mr-2" size={20} />
                     Call Now
                   </Button>
-                  
+
                   <Button 
                     onClick={() => window.open('mailto:info@diagnosisandsensors.co.zw', '_self')}
                     className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-orbitron font-bold py-3 px-6 rounded-xl transition-all duration-300"
@@ -148,7 +147,7 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-0 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500"></div>
-            
+
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <Award className="mx-auto text-orange-500 mb-4" size={48} />

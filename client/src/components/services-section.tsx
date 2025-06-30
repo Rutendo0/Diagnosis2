@@ -108,7 +108,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Enhanced Advantages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-10">
           {advantages.map((service, index) => (
             <Card key={index} className="group relative bg-white border-0 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 overflow-hidden scroll-reveal">
               {/* Service Image */}

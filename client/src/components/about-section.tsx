@@ -143,7 +143,7 @@ export default function AboutSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-blue)] mx-auto mb-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {[
             { icon: Award, title: 'Excellence', description: 'Delivering superior automotive solutions with precision and expertise', color: 'from-orange-500 to-orange-600' },
             { icon: Users, title: 'Integrity', description: 'Building trust through honest service and transparent communication', color: 'from-blue-500 to-blue-600' },
