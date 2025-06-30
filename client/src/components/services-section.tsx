@@ -170,9 +170,7 @@ export default function ServicesSection() {
               Contact our expert team for comprehensive diagnostic and repair solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="modern-button bg-white text-orange-600 hover:bg-gray-100 font-orbitron font-bold px-8 py-4 text-lg border-0">
-                Get Quote Now
-              </Button>
+             
             </div>
           </div>
         </div>
