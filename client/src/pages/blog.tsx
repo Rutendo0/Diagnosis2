@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, Phone, MapPin, Wrench, Battery, Zap, Home, Settings, User, MessageSquare, Plus, Edit3, Trash2, Eye, EyeOff, Share2 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -14,7 +14,6 @@ import { Link, useLocation } from "wouter";
 import Logo from "@/components/logo";
 import FloatingNavigation from "@/components/floating-navigation";
 import type { BlogPost, InsertBlogPost } from "@shared/schema";
-import React from "react";
 
 // Image declarations
 const businessVehicleImg = "/images/bussinesvehicle1.jpg";
