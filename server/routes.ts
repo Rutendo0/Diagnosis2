@@ -92,6 +92,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin authentication endpoint
+  app.post("/api/admin/login", async (req, res) => {
+    try {
+      const { password } = req.body;
+      const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
+      
+      if (password === adminPassword) {
+        // Generate a simple session token
+        const sessionToken = Date.now().toString(36) + Math.random().toString(36).substr(2);
+        res.json({ success: true, token: sessionToken });
+      } else {
+        res.status(401).json({ error: "Invalid password" });
+      }
+    } catch (error) {
+      console.log(`Error in admin login: ${error}`);
+      res.status(500).json({ error: "Login failed" });
+    }
+  });
+
+  // Admin verification endpoint
+  app.get("/api/admin/verify", async (req, res) => {
+    try {
+      const token = req.headers.authorization?.replace('Bearer ', '');
+      if (token && token.length > 10) {
+        res.json({ valid: true });
+      } else {
+        res.status(401).json({ valid: false });
+      }
+    } catch (error) {
+      res.status(401).json({ valid: false });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

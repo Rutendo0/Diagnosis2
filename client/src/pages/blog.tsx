@@ -50,6 +50,28 @@ export default function BlogPage() {
 
   const queryClient = useQueryClient();
 
+  // Check admin session on component mount
+  React.useEffect(() => {
+    const checkAdminSession = async () => {
+      const token = localStorage.getItem("admin_token");
+      if (token) {
+        try {
+          const response = await fetch("/api/admin/verify", {
+            headers: { "Authorization": `Bearer ${token}` },
+          });
+          if (response.ok) {
+            setIsAdminMode(true);
+          } else {
+            localStorage.removeItem("admin_token");
+          }
+        } catch (error) {
+          localStorage.removeItem("admin_token");
+        }
+      }
+    };
+    checkAdminSession();
+  }, []);
+
   const { data: blogPosts = [], isLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog"],
   });
@@ -187,14 +209,36 @@ export default function BlogPage() {
     setImagePreview("");
   };
 
-  const handleAdminLogin = () => {
-    // Simple password protection - in production, use proper authentication
-    if (adminPassword === "admin123") {
-      setIsAdminMode(true);
-      setShowPasswordDialog(false);
-      setAdminPassword("");
-    } else {
-      alert("Incorrect password. Please contact administrator.");
+  const handleAdminLogin = async () => {
+    try {
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: adminPassword }),
+      });
+
+      if (response.ok) {
+        const { token } = await response.json();
+        localStorage.setItem("admin_token", token);
+        setIsAdminMode(true);
+        setShowPasswordDialog(false);
+        setAdminPassword("");
+        
+        // Show success message
+        const toast = document.createElement('div');
+        toast.textContent = '🔓 Admin access granted';
+        toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => document.body.removeChild(toast), 300);
+        }, 2000);
+      } else {
+        alert("Incorrect password. Please contact administrator.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Login failed. Please try again.");
     }
   };
 
@@ -605,6 +649,17 @@ export default function BlogPage() {
             onClick={() => {
               if (isAdminMode) {
                 setIsAdminMode(false);
+                localStorage.removeItem("admin_token");
+                
+                // Show logout message
+                const toast = document.createElement('div');
+                toast.textContent = '🔒 Admin mode disabled';
+                toast.className = 'fixed top-4 right-4 bg-gray-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                document.body.appendChild(toast);
+                setTimeout(() => {
+                  toast.style.opacity = '0';
+                  setTimeout(() => document.body.removeChild(toast), 300);
+                }, 2000);
               } else {
                 setShowPasswordDialog(true);
               }
