@@ -51,7 +51,7 @@ export default function BlogPage() {
   const queryClient = useQueryClient();
 
   // Check admin session on component mount
-  React.useEffect(() => {
+  useEffect(() => {
     const checkAdminSession = async () => {
       const token = localStorage.getItem("admin_token");
       if (token) {
