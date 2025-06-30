@@ -58,8 +58,8 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <article className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12">
+        <article className="max-w-5xl mx-auto">
           {/* Back Button */}
           <Link href="/blog" className="inline-flex items-center space-x-2 text-orange-600 hover:text-orange-700 mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4" />
@@ -86,22 +86,22 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-blue-900 dark:text-blue-100 mb-6 leading-tight">
               {post.title}
             </h1>
 
-            <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-8">
               {post.excerpt}
             </p>
           </header>
 
           {/* Featured Image */}
           {post.imageUrl && (
-            <div className="relative aspect-hero overflow-hidden rounded-xl mb-8 shadow-lg">
+            <div className="relative w-full overflow-hidden rounded-xl mb-8 shadow-2xl">
               <img
                 src={post.imageUrl}
                 alt={post.title}
-                className="responsive-image"
+                className="w-full h-auto max-h-[600px] object-cover"
                 onError={(e) => {
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80';
                 }}
@@ -111,16 +111,16 @@ export default function BlogPostPage() {
           )}
 
           {/* Article Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <div className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+          <div className="prose prose-xl dark:prose-invert max-w-none">
+            <div className="text-slate-700 dark:text-slate-300 leading-relaxed">
               {post.content && post.content.split('\n').map((paragraph, index) => {
                 // Skip empty paragraphs
                 if (paragraph.trim() === '') {
-                  return <div key={index} className="h-4"></div>;
+                  return <div key={index} className="h-6"></div>;
                 }
 
                 return (
-                  <p key={index} className="mb-6 text-justify leading-8">
+                  <p key={index} className="mb-8 text-lg leading-9 text-justify font-light tracking-wide">
                     {paragraph}
                   </p>
                 );
@@ -129,8 +129,8 @@ export default function BlogPostPage() {
           </div>
 
           {/* Simple Share and Contact Section */}
-          <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+          <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
               {/* Share */}
               <div>
                 <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">
