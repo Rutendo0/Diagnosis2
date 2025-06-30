@@ -1,18 +1,25 @@
 import { useQuery } from "@tanstack/react-query";
-import { useRoute, Link } from "wouter";
+import { useRoute, Link, useParams } from "wouter";
 import { Calendar, Clock, ArrowLeft, Share2, MessageSquare, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { BlogPost } from "@shared/schema";
 
 export default function BlogPostPage() {
-  const [match, params] = useRoute("/blog/:id");
+  const params = useParams();
   const postId = params?.id ? parseInt(params.id) : null;
 
-  const { data: post, isLoading, error } = useQuery<BlogPost>({
+   const { data: post, isLoading, error } = useQuery<BlogPost>({
     queryKey: ["/api/blog", postId],
+    queryFn: async () => {
+      if (!postId) throw new Error("No post ID provided");
+      const response = await fetch(`/api/blog/${postId}`);
+      if (!response.ok) throw new Error("Failed to fetch post");
+      return response.json();
+    },
     enabled: !!postId,
   });
+
 
   if (isLoading) {
     return (

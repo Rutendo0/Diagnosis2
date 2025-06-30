@@ -16,20 +16,6 @@ import FloatingNavigation from "@/components/floating-navigation";
 import type { BlogPost, InsertBlogPost } from "@shared/schema";
 
 // Image declarations
-const businessVehicleImg = "/images/bussinesvehicle1.jpg";
-const vehicleServicingImg = "/images/vehicle-servicing.jpg";
-const coolentTemperitureSensorsImg = "/images/sensors.jpg";
-const sparkPlugImg = "/images/parts.jpg";
-const coolantSensorsImg = "/images/sensors.jpg";
-const servicePromoImg = "/images/vehicle.jpg";
-const batteryPackImg = "/images/battery.jpg";
-const liquidCoolingImg = "/images/battery2.jpg";
-const hybridBatteryImg = "/images/battery3.jpg";
-const aquaFitImg = "/images/image10.jpg";
-const hybridBatteryPackImg = "/images/battery.jpg";
-const teamPhotoImg = "/images/about.jpg";
-const warrantyImg = "/images/image13.jpg";
-const dieselInjectorsImg = "/images/injector.jpg";
 
 export default function BlogPage() {
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -705,7 +691,7 @@ export default function BlogPage() {
                 <Input
                   id="admin-password"
                   type="password"
-                  placeholder="Enter your admin password here"
+                  placeholder="Enter password"
                   value={adminPassword}
                   onChange={(e) => setAdminPassword(e.target.value)}
                   className="h-12 text-base text-center border-2 border-gray-200 focus:border-[var(--brand-orange)] transition-colors"
@@ -858,7 +844,6 @@ export default function BlogPage() {
                     <div className="w-1 h-1 bg-[var(--brand-orange)] rounded-full mr-2"></div>
                     <span className="font-medium">Full article with detailed guide available</span>
                     <div className="flex-1 mx-3 border-t border-dotted border-gray-300"></div>
-                    <span className="font-semibold">Click to read more →</span>
                   </div>
                 </div>
 
