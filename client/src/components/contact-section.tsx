@@ -158,7 +158,7 @@ export default function ContactSection() {
                             {detail.value}
                           </span>
                         </div>
-                      ))}</div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
@@ -276,7 +276,7 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
                     Vehicle Information
                   </label>
                   <Input 
@@ -284,7 +284,7 @@ export default function ContactSection() {
                     value={formData.vehicle}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Make, Model, Year (e.g., Toyota Camry 2020)"
+                  placeholder="Make, Model, Year (e.g., Toyota Camry 2020)"
                   />
                 </div>
 

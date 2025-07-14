@@ -33,7 +33,7 @@ export default function Footer() {
               <a href="mailto:sales@diagnosisandsensors.co.zw" className="text-gray-400 hover:text-orange-500 transition-colors">
                 <Mail size={20} />
               </a>
-              <a href="https://wa.me/+263719974846" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <a href="https://wa.me/+263772974846" className="text-gray-400 hover:text-orange-500 transition-colors">
                 <MessageSquare size={20} />
               </a>
               <a href="https://www.facebook.com/p/Diagnosis-and-Sensors-100063639080600/" className="text-gray-400 hover:text-orange-500 transition-colors">
