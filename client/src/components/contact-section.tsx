@@ -152,11 +152,13 @@ export default function ContactSection() {
 
                     <div className="space-y-2">
                       {info.details.map((detail, idx) => (
-                        <div key={idx} className="flex justify-between items-center">
+                        <div key={idx} className={info.title === "Email Support" ? "space-y-1" : "flex justify-between items-center"}>
                           <span className="text-gray-600 text-sm">{detail.label}:</span>
-                          <span className="text-gray-900 font-medium text-sm">{detail.value}</span>
+                          <span className={`text-gray-900 font-medium ${info.title === "Email Support" ? "text-xs break-all" : "text-sm"}`}>
+                            {detail.value}
+                          </span>
                         </div>
-                      ))}
+                      ))}</div>
                     </div>
                   </CardContent>
                 </Card>
