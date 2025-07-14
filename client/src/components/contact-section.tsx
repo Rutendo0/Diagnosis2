@@ -3,14 +3,68 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    vehicle: '',
+    service: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          vehicle: '',
+          service: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactInfo = [
     {
       icon: Phone,
       title: "Phone Support",
       details: [
-        { label: "Harare", value: "0242 770 389" },
+        { label: "Harare", value: "+263 242 770 389" },
         { label: "Mobile", value: "+263 772 974 846" }
       ],
       color: "from-orange-500 to-orange-600"
@@ -19,7 +73,7 @@ export default function ContactSection() {
       icon: Phone,
       title: "Bulawayo Office",
       details: [
-        { label: "Office", value: "0292 883 884" },
+        { label: "Office", value: "+263 292 883 884" },
         { label: "Mobile", value: "+263 779 298 117" }
       ],
       color: "from-blue-500 to-blue-600"
@@ -37,7 +91,7 @@ export default function ContactSection() {
       icon: Mail,
       title: "Email Support",
       details: [
-        { label: "Email", value: "info@diagnosisandsensors.co.zw" },
+        { label: "Email", value: "sales@diagnosisandsensors.co.zw" },
       ],
       color: "from-green-500 to-green-600"
     },
@@ -125,7 +179,7 @@ export default function ContactSection() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
-                    onClick={() => window.open('tel:0242770389', '_self')}
+                    onClick={() => window.open('tel:+263242770389', '_self')}
                     className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold py-3 px-6 rounded-xl transition-all duration-300"
                   >
                     <Phone className="mr-2" size={20} />
@@ -133,7 +187,7 @@ export default function ContactSection() {
                   </Button>
 
                   <Button 
-                    onClick={() => window.open('mailto:diagnosisandsensors@gmail.com', '_self')}
+                    onClick={() => window.open('mailto:sales@diagnosisandsensors.co.zw', '_self')}
                     className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-orbitron font-bold py-3 px-6 rounded-xl transition-all duration-300"
                   >
                     <Mail className="mr-2" size={20} />
@@ -159,13 +213,17 @@ export default function ContactSection() {
                 </p>
               </div>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       First Name *
                     </label>
                     <Input 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                       placeholder="Enter your first name"
                     />
@@ -175,6 +233,10 @@ export default function ContactSection() {
                       Last Name *
                     </label>
                     <Input 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                       placeholder="Enter your last name"
                     />
@@ -187,6 +249,10 @@ export default function ContactSection() {
                   </label>
                   <Input 
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your email address"
                   />
@@ -198,6 +264,10 @@ export default function ContactSection() {
                   </label>
                   <Input 
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your phone number"
                   />
@@ -208,6 +278,9 @@ export default function ContactSection() {
                     Vehicle Information
                   </label>
                   <Input 
+                    name="vehicle"
+                    value={formData.vehicle}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     placeholder="Make, Model, Year (e.g., Toyota Camry 2020)"
                   />
@@ -218,6 +291,10 @@ export default function ContactSection() {
                     Service Required *
                   </label>
                   <Textarea 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 min-h-[120px]"
                     placeholder="Describe the service or diagnostic needs for your vehicle..."
                   />
@@ -225,16 +302,32 @@ export default function ContactSection() {
 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-orbitron font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="mr-3" size={20} />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
 
-                <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                  <CheckCircle className="text-green-500" size={16} />
-                  <span>We'll respond within 24 hours</span>
-                </div>
+                {submitStatus === 'success' && (
+                  <div className="flex items-center justify-center space-x-2 text-sm text-green-600 bg-green-50 p-3 rounded-xl">
+                    <CheckCircle className="text-green-500" size={16} />
+                    <span>Message sent successfully! We'll respond within 24 hours.</span>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center justify-center space-x-2 text-sm text-red-600 bg-red-50 p-3 rounded-xl">
+                    <span>Failed to send message. Please try again or contact us directly.</span>
+                  </div>
+                )}
+
+                {submitStatus === 'idle' && (
+                  <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
+                    <CheckCircle className="text-green-500" size={16} />
+                    <span>We'll respond within 24 hours</span>
+                  </div>
+                )}
               </form>
             </div>
           </div>

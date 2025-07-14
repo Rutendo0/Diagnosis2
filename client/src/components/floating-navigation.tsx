@@ -146,7 +146,7 @@ export default function FloatingNavigation() {
               <div className="flex items-center space-x-3 mb-3">
                 <Phone className="text-orange-600" size={18} />
                 <span className="font-orbitron font-bold text-sm text-gray-800">
-                  0772 974 846
+                  +263 772 974 846
                 </span>
               </div>
               <Button

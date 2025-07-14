@@ -30,7 +30,7 @@ export default function Footer() {
             </p>
             {/* Social Icons */}
             <div className="flex gap-4 mt-6">
-              <a href="mailto:info@diagnosis.co.zw" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <a href="mailto:sales@diagnosisandsensors.co.zw" className="text-gray-400 hover:text-orange-500 transition-colors">
                 <Mail size={20} />
               </a>
               <a href="https://wa.me/+263719974846" className="text-gray-400 hover:text-orange-500 transition-colors">
@@ -67,11 +67,11 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div>
                 <span className="text-gray-400">Phone:</span>
-                <div className="text-gray-300">0772 974 846</div>
+                <div className="text-gray-300">+263 772 974 846</div>
               </div>
               <div>
                 <span className="text-gray-400">Email:</span>
-                <div className="text-gray-300">info@diagnosis.co.zw</div>
+                <div className="text-gray-300">sales@diagnosisandsensors.co.zw</div>
               </div>
             </div>
           </div>

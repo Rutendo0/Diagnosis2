@@ -179,8 +179,8 @@ export default function BlogPostPage() {
                   Need Help?
                 </h3>
                 <div className="text-sm text-slate-600 dark:text-slate-400">
-                  <p>Harare: 0242 770 389</p>
-                  <p>Bulawayo: 0292 883 884</p>
+                  <p>Harare: +263 242 770 389</p>
+                  <p>Bulawayo: +263 292 883 884</p>
                 </div>
               </div>
             </div>
