@@ -27,10 +27,19 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.service) {
+      setSubmitStatus('error');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
+      console.log('Submitting form data:', formData);
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -39,7 +48,10 @@ export default function ContactSection() {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      console.log('Server response:', result);
+
+      if (response.ok && result.success) {
         setSubmitStatus('success');
         setFormData({
           firstName: '',
@@ -50,6 +62,7 @@ export default function ContactSection() {
           service: ''
         });
       } else {
+        console.error('Server error:', result);
         setSubmitStatus('error');
       }
     } catch (error) {
@@ -226,7 +239,7 @@ export default function ContactSection() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
                       placeholder="Enter your first name"
                     />
                   </div>
@@ -239,7 +252,7 @@ export default function ContactSection() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -255,7 +268,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -270,7 +283,7 @@ export default function ContactSection() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -283,8 +296,8 @@ export default function ContactSection() {
                     name="vehicle"
                     value={formData.vehicle}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                  placeholder="Make, Model, Year (e.g., Toyota Camry 2020)"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
+                    placeholder="Make, Model, Year (e.g., Toyota Camry 2020)"
                   />
                 </div>
 
@@ -297,7 +310,7 @@ export default function ContactSection() {
                     value={formData.service}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 min-h-[120px]"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 min-h-[120px] bg-white text-gray-900"
                     placeholder="Describe the service or diagnostic needs for your vehicle..."
                   />
                 </div>
@@ -320,7 +333,7 @@ export default function ContactSection() {
 
                 {submitStatus === 'error' && (
                   <div className="flex items-center justify-center space-x-2 text-sm text-red-600 bg-red-50 p-3 rounded-xl">
-                    <span>Failed to send message. Please try again or contact us directly.</span>
+                    <span>Please fill in all required fields or try again. If the issue persists, contact us directly at sales@diagnosisandsensors.co.zw</span>
                   </div>
                 )}
 

@@ -200,37 +200,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       // Configure email transporter
-      // Note: In production, you should use environment variables for email credentials
-      const transporter = nodemailer.createTransporter({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-          user: process.env.EMAIL_USER || 'your-email@gmail.com',
-          pass: process.env.EMAIL_PASSWORD || 'your-app-password'
-        }
-      });
-
-      // Email options
-      const mailOptions = {
-        from: process.env.EMAIL_USER || 'website@diagnosisandsensors.co.zw',
-        to: 'sales@diagnosisandsensors.co.zw',
-        subject: emailSubject,
-        html: emailContent,
-        replyTo: email
-      };
-
-      // Send email (only if email credentials are configured)
+      let emailSent = false;
+      
       if (process.env.EMAIL_USER && process.env.EMAIL_PASSWORD) {
-        await transporter.sendMail(mailOptions);
-        console.log('Contact form email sent successfully');
+        try {
+          const transporter = nodemailer.createTransporter({
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false,
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASSWORD
+            }
+          });
+
+          // Email options
+          const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: 'sales@diagnosisandsensors.co.zw',
+            subject: emailSubject,
+            html: emailContent,
+            replyTo: email
+          };
+
+          await transporter.sendMail(mailOptions);
+          console.log('Contact form email sent successfully to sales@diagnosisandsensors.co.zw');
+          emailSent = true;
+        } catch (emailError) {
+          console.error('Email sending failed:', emailError);
+          // Continue execution - we'll still log the form submission
+        }
       } else {
-        console.log('Email not sent - configure EMAIL_USER and EMAIL_PASSWORD environment variables');
+        console.log('Email credentials not configured - form data logged only');
       }
 
       res.json({ 
         success: true, 
-        message: 'Contact form submitted successfully. We will get back to you within 24 hours.' 
+        message: 'Contact form submitted successfully. We will get back to you within 24 hours.',
+        emailSent: emailSent
       });
     } catch (error) {
       console.log(`Error processing contact form: ${error}`);
